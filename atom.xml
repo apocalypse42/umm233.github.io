@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>那一年河川</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://umm233.github.io/"/>
+  <updated>2018-11-09T13:21:53.971Z</updated>
+  <id>https://umm233.github.io/</id>
+  
+  <author>
+    <name>Seeno</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>修改next博客logo</title>
+    <link href="https://umm233.github.io/p/8a74e107/"/>
+    <id>https://umm233.github.io/p/8a74e107/</id>
+    <published>2018-11-09T12:35:09.000Z</published>
+    <updated>2018-11-09T13:21:53.971Z</updated>
+    
+    <content type="html"><![CDATA[<p>每次看完番，都有一些不(da)安(dan)分的想法，于是乎就折腾博客logo，但总是忘记怎么改/无奈…</p><p>于是乎记录一下。</p><a id="more"></a><ul><li><p>生成图标文件</p><blockquote><p>在 <a href="https://www.easyicon.net/covert/" rel="external nofollow noopener noreferrer" target="_blank">easyicon</a>上传喜欢的图片，然后可以转换成各种尺寸大小，eg.16x16,32x32,128x128等等，ps.图片生成格式支持选择<code>Microsoft.icon</code>和<code>MacOs.icon</code>，一般博客logo大小转换成32x32就ok了。</p></blockquote></li><li><p>修改logo</p><blockquote><p>这个地方我一直搞混了😂，其实应该很清楚才是。在<code>themes\next\source\images</code>这个文件夹下有一些<code>.ico</code>后缀的文件可以不动它们，直接讲自己的logo文件放入，这样就ok了。</p></blockquote></li><li><p>修改主题配置文件</p><blockquote><p>在<code>themes\next\_config.yml</code>中找到<code>favicon</code>这一项，修改成对应的文件名就好了。</p></blockquote></li></ul><p>eg.</p><blockquote><p>small: /images/favicon.ico<br>medium: /images/favicon-32x32.ico</p></blockquote><p>然后，常规套路<code>hexo clean</code>-&gt;<code>hexo g</code>-&gt;<code>hexo s</code>-&gt;<code>hexo d</code></p><p>大功告成…</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;每次看完番，都有一些不(da)安(dan)分的想法，于是乎就折腾博客logo，但总是忘记怎么改/无奈…&lt;/p&gt;
+&lt;p&gt;于是乎记录一下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://umm233.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Hexo" scheme="https://umm233.github.io/categories/%E7%AC%94%E8%AE%B0/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="https://umm233.github.io/tags/Hexo/"/>
+    
+      <category term="next" scheme="https://umm233.github.io/tags/next/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>今年时间进度</title>
+    <link href="https://umm233.github.io/p/5a3f823d/"/>
+    <id>https://umm233.github.io/p/5a3f823d/</id>
+    <published>2018-11-02T15:03:26.000Z</published>
+    <updated>2018-11-02T15:51:14.907Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考即刻「今年的时间进度变更提醒」<br>做了一个一模(mao)一样的…<br>Interesting!</p><a id="more"></a><p>只要用<code>time</code>库就可以实现</p><h2 id="判断平闰年"><a href="#判断平闰年" class="headerlink" title="判断平闰年"></a>判断平闰年</h2><blockquote><p>根据平闰年的概念定义进行判断</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def judgeYear(year):</span><br><span class="line">    if (year%4 == 0) &amp; (year%100 != 0):</span><br><span class="line">        allday = 366</span><br><span class="line">    elif year%400 == 0:</span><br><span class="line">        allday = 366</span><br><span class="line">    else:</span><br><span class="line">        allday = 365</span><br><span class="line">    return allday</span><br></pre></td></tr></table></figure><h2 id="time库"><a href="#time库" class="headerlink" title="time库"></a>time库</h2><blockquote><p>这是一个很基础的，也很常用的库<br><code>time.localtime()</code>返回的是一个类(class)<br> 返回的是time.struct_time(tm_year=2018, tm_mon=11, tm_mday=2, tm_hour=23, tm_min=24, tm_sec=46, tm_wday=4, tm_yday=306, tm_isdst=0)<br>尝试print你就知道每个变量的含义了，其实看名字也一目了然……<br>那这个程序里，我要的只是，“今天是一年中的第几天”，即<code>tm_yday</code><br>调用的话就是 <code>time.localtime().tm_yday</code></p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">localt = time.localtime()</span><br><span class="line"># print(localt)</span><br><span class="line">allday = judgeYear(localt.tm_year)</span><br></pre></td></tr></table></figure><h2 id="进度条"><a href="#进度条" class="headerlink" title="进度条"></a>进度条</h2><blockquote><p>进度条想设计成什么样看个人，也可以用turtle画一个，也蛮简单的<br>这里用的是文本进度条<br>简单粗暴，字符相加，就成一家</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sad = yday/allday # 一年进度 sad~</span><br><span class="line">scale = 15 # 进度条长度</span><br><span class="line">i = int(15*sad)</span><br><span class="line">passed = &apos;▓&apos; * i # 今年走过的%</span><br><span class="line">leave = &apos;░&apos; * (scale - i) # 今年剩下的%</span><br><span class="line">print(&quot;\r&#123;0&#125;&#123;1&#125; &#123;2:3.0f&#125;% \n&quot;.format(passed,leave,sad*100),end=&apos;&apos;)</span><br></pre></td></tr></table></figure><p>▓▓▓▓▓▓▓▓▓▓▓▓░░░  84% </p><p>至此一个进度条就出来了 <a href="https://github.com/umm233/SeeNo/blob/master/missDay.py" target="_blank" rel="noopener">完整代码</a></p><h2 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h2><p>今年只剩下59天了，还有很多东西想学好🙃🙃🙃，加把劲了~</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;参考即刻「今年的时间进度变更提醒」&lt;br&gt;做了一个一模(mao)一样的…&lt;br&gt;Interesting!&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://umm233.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Python" scheme="https://umm233.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>caj转pdf并添加书签</title>
+    <link href="https://umm233.github.io/p/49abadb9/"/>
+    <id>https://umm233.github.io/p/49abadb9/</id>
+    <published>2018-10-28T09:55:47.000Z</published>
+    <updated>2018-11-03T01:23:40.085Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近因为一些莫须有的原因阅览caj文件，需要转成pdf文件。<br>简单呀：CAJviewr里利用打印就可以生成PDF</p><blockquote><p>缺点：转换得到的是图片构成的pdf，这下不舒服了</p></blockquote><a id="more"></a><p>换方法：在GitHub上看到一个项目 <strong><a href="https://github.com/JeziL/caj2pdf" target="_blank" rel="noopener">caj2pdf</a></strong>，但···😥作者如是说:</p><blockquote><p>Convert CAJ (China Academic Journals) files to PDF. 转换中国知网 CAJ 格式文献为 PDF。佛系转换，成功与否，皆是玄学。</p></blockquote><p>再换：那就从根本上入手，直接从知网上<code>down pdf</code></p><blockquote><p>想起之前藏的一个脚本：<a href="https://greasyfork.org/zh-CN/scripts/18842-cnki-中国知网-pdf-全文下载-特制版" rel="external nofollow noopener noreferrer" target="_blank">CNKI 中国知网 PDF 全文下载（特制版）</a></p></blockquote><p>终于，有点顺了，问题来了，down下来的内容虽然不是图片了，但是没有目录，这么多页，看锤子？嗯，后来被坑了点，走了弯路 /心情复杂。最后用的这个解决🙁</p><blockquote><p><code>Freepictopdf</code>和<code>PdgCntEditor</code>然后参见<a href="https://zhuanlan.zhihu.com/p/47271995" rel="external nofollow noopener noreferrer" target="_blank">如何用FreePic2Pdf和PdgCntEditor制作目录</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近因为一些莫须有的原因阅览caj文件，需要转成pdf文件。&lt;br&gt;简单呀：CAJviewr里利用打印就可以生成PDF&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;缺点：转换得到的是图片构成的pdf，这下不舒服了&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://umm233.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="小技巧" scheme="https://umm233.github.io/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python的sort函数</title>
+    <link href="https://umm233.github.io/p/8394e334/"/>
+    <id>https://umm233.github.io/p/8394e334/</id>
+    <published>2018-10-02T14:45:19.000Z</published>
+    <updated>2018-10-29T05:56:59.670Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>sort</code>函数小记</p><blockquote><p>list.sort(cmp=None, key=None, reverse=False)<br>l<em>   cmp – 可选参数, 如果指定了该参数会使用该参数的方法进行排序。<br>l</em>   key – 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。<br>l*   reverse – 排序规则，reverse = True 降序， reverse = False 升序（默认）。</p></blockquote><a id="more"></a><p>关于sort函数的坑是在做<code>Leetcode</code>的时候发现的，为了偷懒，坑了自己…</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [1,4,2,6,3,8]</span><br><span class="line">b = a.sort() # 错误的用法</span><br><span class="line">print(a) # 结果是[1,2,3,4,6,8]</span><br><span class="line">print(b) # None</span><br><span class="line">print(type(b)) # 结果是 &lt;class &apos;NoneType&apos;&gt;</span><br></pre></td></tr></table></figure><p>刚开始觉得没毛病，但是<code>b</code>没有取值，然后去查了一下，sort函数返回的就是<code>None</code>，<code>a.sort()</code>将<code>a</code>排序好后，不返回值，直接对<code>a</code>本身进行操作。</p><h5 id="参数说明参考-菜鸟教程"><a href="#参数说明参考-菜鸟教程" class="headerlink" title="参数说明参考 菜鸟教程"></a>参数说明参考 <a href="http://www.runoob.com/python/att-list-sort.html" rel="external nofollow noopener noreferrer" target="_blank">菜鸟教程</a></h5>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;sort&lt;/code&gt;函数小记&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;list.sort(cmp=None, key=None, reverse=False)&lt;br&gt;l&lt;em&gt;   cmp – 可选参数, 如果指定了该参数会使用该参数的方法进行排序。&lt;br&gt;l&lt;/em&gt;   key – 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。&lt;br&gt;l*   reverse – 排序规则，reverse = True 降序， reverse = False 升序（默认）。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://umm233.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Python" scheme="https://umm233.github.io/tags/Python/"/>
+    
+      <category term="踩坑" scheme="https://umm233.github.io/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python的深浅拷贝</title>
+    <link href="https://umm233.github.io/p/562ac769/"/>
+    <id>https://umm233.github.io/p/562ac769/</id>
+    <published>2018-10-02T14:00:19.000Z</published>
+    <updated>2018-10-29T05:56:59.670Z</updated>
+    
+    <content type="html"><![CDATA[<p>关于Python中的列表复制操作<br><del>刚开始没注意坑一踩一个准</del></p><a id="more"></a><ul><li>浅拷贝只是将另一个变量指向要复制的变量地址，并没有重新分配地址，所以就会出现“你变我也变”的情况：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [1,2]</span><br><span class="line">b = a</span><br><span class="line">print(id(a))</span><br><span class="line">print(id(b))</span><br><span class="line">a.append(5) </span><br><span class="line">print(b) # 结果是 [1,2,5]</span><br><span class="line"></span><br><span class="line"># 最后会发现 a 和 b 的地址是一样的</span><br><span class="line"># 在 a 的末尾加入5，b 也跟着变了，这就是坑(mmp -_-|||</span><br></pre></td></tr></table></figure><h2 id="–更新-这还是浅拷贝"><a href="#–更新-这还是浅拷贝" class="headerlink" title="–更新 这还是浅拷贝"></a>–更新 <strong>这还是浅拷贝</strong></h2><ul><li>对于<del>深拷贝最简单的方法就是利用<code>copy()</code>函数或者<code>b = a[:]</code>实现：</del></li><li>以下均为浅拷贝的情况： </li></ul><ul><li>使用切片[:]操作</li><li>使用工厂函数（如list/dir/set）</li><li>使用copy模块中的copy()函数</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [1,2]</span><br><span class="line">b = a.copy()</span><br><span class="line">print(id(a))</span><br><span class="line">print(id(b)) # 结果是 1739769111752</span><br><span class="line">a.append(5)  # 结果是 1739769111496</span><br><span class="line">print(a) # 结果是 [1,2,5]</span><br><span class="line">print(b) # 结果是 [1,2]</span><br><span class="line"></span><br><span class="line"># 这里 a,b 的地址不一样了，在a中添加元素没有对b起作用._.</span><br></pre></td></tr></table></figure><p>！但是，如果列表中嵌套了列表，拷贝后的列表中嵌套的列表元素指针，指向原列表中嵌套列表的整体地址，而不是指向嵌套列表中元素的内存地址。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = [[1,2],3,4]</span><br><span class="line">s1 = s.copy()</span><br><span class="line">id(s)</span><br><span class="line">id(s1)</span><br><span class="line">id(s[0][1])</span><br><span class="line">id(s1[0][1])</span><br><span class="line">s.append(&quot;hello&quot;)</span><br><span class="line">print(&quot;s:&quot;,s) </span><br><span class="line">print(&quot;s1:&quot;,s1)   # s: [[1, 2], 3, 4, &apos;hello&apos;]  s1: [[1, 2], 3, 4]</span><br><span class="line">s1[0][1] = &quot;Holy Shit!&quot;</span><br><span class="line">print(&quot;s: &quot;,s)     # s: [[1, &apos;Holy Shit!&apos;], 3, 4, &apos;hello&apos;]</span><br><span class="line">print(&quot;s1:&quot;,s1)  # s1: [[1, &apos;Holy Shit!&apos;], 3,</span><br></pre></td></tr></table></figure><p>在上面的测试中容易发现，在操作列表中的嵌套列表就会出现浅拷贝的问题。</p><p>具体的可以参考: <a href="https://www.cnblogs.com/pyramid1001/p/5844905.html" rel="external nofollow noopener noreferrer" target="_blank">Python——列表深浅拷贝</a></p><p>那么深拷贝的话：利用<code>copy</code>模块的<code>copy.deepcopy(list)</code></p><p>具体可以看看 <a href="https://www.cnblogs.com/wilber2013/p/4645353.html" rel="external nofollow noopener noreferrer" target="_blank">图解Python深拷贝和浅拷贝</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关于Python中的列表复制操作&lt;br&gt;&lt;del&gt;刚开始没注意坑一踩一个准&lt;/del&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://umm233.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Python" scheme="https://umm233.github.io/tags/Python/"/>
+    
+      <category term="踩坑" scheme="https://umm233.github.io/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>异步十进制加法加法计数器(VHDL实现)</title>
+    <link href="https://umm233.github.io/p/69a664c6/"/>
+    <id>https://umm233.github.io/p/69a664c6/</id>
+    <published>2018-10-02T09:29:19.000Z</published>
+    <updated>2018-10-29T05:56:59.680Z</updated>
+    
+    <content type="html"><![CDATA[<p>初学VHDL，练手写了一个异步十进制加法计数器，过程有许多细节上的错误，在此记录一下。</p><a id="more"></a><blockquote><p><strong>VHDL</strong>，全称<strong>超高速集成电路硬件描述语言</strong>（英语：<strong><a href="https://zh.wikipedia.org/wiki/VHSIC" title="VHSIC" rel="external nofollow noopener noreferrer" target="_blank">VHSIC</a> very high-speed hardware description language</strong>），在基于<a href="https://zh.wikipedia.org/wiki/%E8%A4%87%E9%9B%9C%E5%8F%AF%E7%A8%8B%E5%BC%8F%E9%82%8F%E8%BC%AF%E8%A3%9D%E7%BD%AE" title="复杂可编程逻辑器件" rel="external nofollow noopener noreferrer" target="_blank">复杂可编程逻辑器件</a>、<a href="https://zh.wikipedia.org/wiki/%E7%8E%B0%E5%9C%BA%E5%8F%AF%E7%BC%96%E7%A8%8B%E9%80%BB%E8%BE%91%E9%97%A8%E9%98%B5%E5%88%97" title="现场可编程逻辑门阵列" rel="external nofollow noopener noreferrer" target="_blank">现场可编程逻辑门阵列</a>和<a href="https://zh.wikipedia.org/wiki/%E7%89%B9%E6%AE%8A%E6%87%89%E7%94%A8%E7%A9%8D%E9%AB%94%E9%9B%BB%E8%B7%AF" title="专用集成电路" rel="external nofollow noopener noreferrer" target="_blank">专用集成电路</a>的<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF" title="数字电路" rel="external nofollow noopener noreferrer" target="_blank">数字系统</a> 设计中有着广泛的应用。（via 维基百科）</p></blockquote><blockquote><ul><li>异步功能实现：信号 <code>clr</code>  高电平实现异步清零<br>十进制：</li><li>利用VHDL中的标准逻辑矢量类型 STD_LOGIC_VECTOR 构建四位的计数变量</li><li>运用 <strong>IF</strong> 语句实现十进制循环 ：“0000” -&gt;“1001” -&gt;“0000”</li><li>利用Quartus进行仿真检测其功能实现</li></ul></blockquote><p>构建实体 <code>tenAdd</code>： <del>瞎起的</del></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">entity tenAdd is</span><br><span class="line">    port( clr, clk : in std_logic;</span><br><span class="line">          cnt10: out std_logic_vector (3 downto 0)); -- 设置一个四位矢量计数</span><br><span class="line">end tenAdd;</span><br></pre></td></tr></table></figure><p>条件判断实现计数器循环：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if (clr = &apos;1&apos;) then</span><br><span class="line">   count &lt;= &quot;0000&quot;; -- 0000 要用双引号括起来，单引号只能引单个字符</span><br><span class="line">elsif clk&apos;event and clk = &apos;1&apos; then -- clk上升沿触发计数</span><br><span class="line">  if (count &lt; &quot;1001&quot;) then</span><br><span class="line">    count &lt;= count + 1; -- 计数加1</span><br><span class="line">  else</span><br><span class="line">    count &lt;= &quot;0000&quot;; -- 计数到9之后回到0000</span><br><span class="line">  end if;</span><br><span class="line">end if;</span><br></pre></td></tr></table></figure><p>– PS. 上面的<code>count</code>是在结构体中定义的变量，不需要在实体中提前定义。</p><blockquote><p>1.关于仿真，在Quartus中，新建一个<code>University Program VWF</code>进行波形仿真：<br>2.在<code>Edit</code> -&gt; <code>Insert</code> -&gt; <code>Insert Node or Bus...</code><br>3.在<code>Node Finder...</code> -&gt;<code>List</code> 里面选择要控制和查看的信号</p><ul><li>给<code>clk</code>加一个连续的方波信号观察，输出变量值的变化</li></ul></blockquote><p>一些自己容易忽略的小细节：</p><blockquote><p><code>&lt;=</code>: 用于信号赋值，延迟赋值  – <strong>信号赋初值的时候可以用 := </strong>）<br><code>:=</code>: 用于变量赋值，立即赋值<br>保存文件的时候文件名要和实体名一样，不一致会出现<code>Error: xxx undefined</code></p></blockquote><p>完整代码见github：<a href="https://github.com/umm233/SeeNo/blob/master/tenAdd.vhd" target="_blank" rel="noopener">异步十进制加法计数器</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;初学VHDL，练手写了一个异步十进制加法计数器，过程有许多细节上的错误，在此记录一下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://umm233.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="VHDL" scheme="https://umm233.github.io/tags/VHDL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>唯一可译码Python实现</title>
+    <link href="https://umm233.github.io/p/ee97a480/"/>
+    <id>https://umm233.github.io/p/ee97a480/</id>
+    <published>2018-09-26T11:29:31.000Z</published>
+    <updated>2018-10-29T06:00:44.900Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近学习信息论，上课讲的概念晦涩，课后自己领悟 <del>老师催眠/无奈</del></p><p>对于唯一可译码，看概念一直绕圈圈，后来看一眼流程图，实践一下明了许多。而后参考网上的算法（Java/C++），自己用Python写了一遍，方便写作业…</p><a id="more"></a><h3 id="算法实现如下"><a href="#算法实现如下" class="headerlink" title="算法实现如下"></a>算法实现如下</h3><blockquote><p>1． 输入原始数据，并用ArrayList()类存储起来；<br>2． 在使用规则之前，先判断是否奇异，如果奇异，将没有进行后续判断的必要，如果非奇异，进入第3步；否则结束程序，输出结果（奇异）；<br>3． 第一次寻找，调用自己设定的seek（array），在初始数据中找到符合条件的尾随后缀，然后进入第4步；<br>4． 通过第一次寻找，可以得到一个arr数组，如果该数组为空，那么就没有必要再进行下去，已经证明找不到更多的尾随后缀了，直接进入第6步；否则进入第5步；<br>5． 通过第一次的寻找，已经得到基本的arr,但是arr是用于判断的，所以首先克隆arr到arrclone中，并且将arr清空，调用seek（array，arrclone）,再将arrclone的字符串和原始数据进行对比，再次得到arr,如果arr为空，进入第6步，否则循环第5步；<br>6． 得到了S，若S为空，则证明不存在尾随后缀，则为即时码，输出结果；若不为空，将原始数据array和S进行对比，若有相同的字符串，则不是唯一可译码，反之，是唯一可译码。</p></blockquote><p>具体代码见github：<a href="https://github.com/umm233/SeeNo/blob/master/%E5%94%AF%E4%B8%80%E5%8F%AF%E8%AF%91%E7%A0%81.py" target="_blank" rel="noopener">唯一可译码Python实现</a></p><h5 id="算法参考-信息论-唯一可译码的判决算法实现（UDC）"><a href="#算法参考-信息论-唯一可译码的判决算法实现（UDC）" class="headerlink" title="算法参考  [信息论]唯一可译码的判决算法实现（UDC）"></a>算法参考 <a href="https://blog.csdn.net/u010536377/article/details/44862493" rel="external nofollow noopener noreferrer" target="_blank"> [信息论]唯一可译码的判决算法实现（UDC）</a></h5>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近学习信息论，上课讲的概念晦涩，课后自己领悟 &lt;del&gt;老师催眠/无奈&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;对于唯一可译码，看概念一直绕圈圈，后来看一眼流程图，实践一下明了许多。而后参考网上的算法（Java/C++），自己用Python写了一遍，方便写作业…&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://umm233.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Python" scheme="https://umm233.github.io/tags/Python/"/>
+    
+      <category term="信息论" scheme="https://umm233.github.io/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows软件整理</title>
+    <link href="https://umm233.github.io/p/2fc530c8/"/>
+    <id>https://umm233.github.io/p/2fc530c8/</id>
+    <published>2018-09-01T04:45:01.000Z</published>
+    <updated>2018-10-29T05:56:59.670Z</updated>
+    
+    <content type="html"><![CDATA[<p>整理一下电脑上各种奇奇怪怪的软件，以此记录。<del>排名不分先后</del></p><a id="more"></a><p>7-zip：开源压缩软件</p><p>Adobe Acrobat DC：查看，编辑PDF<br>Adobe Media Encode CC：视频音频编码<br>Adobe Photoshop CC：修图<br>Altium Designer：绘制PCB<br>Anaconda：Python包管理<br>Apowersoft：安卓/iPhone手机画面实时投屏<br>ABBYY：OCR</p><p>BTsync：文件同步备份<br>冰点文库下载器：下载百度文库<br>百度网盘：不解释</p><p>calibre：图书馆管理，编辑（支持kindle的azw3格式）<br>CCleaner：系统优化工具，清理垃圾，注册表等等<br>CAJviewer：查看caj文件（知网）<br>ComIntRep：一键网络修复<del>看运气，逃</del></p><p>Dev Cpp：C/C++ IDE<br>Ditto：Windows 剪贴板增强工具(MS store)<br>Dism++：Windows系统辅助工具<br>DiskGenius：数据恢复软件,硬盘分区工具,系统备份软件</p><p>Everything：文件快速搜索</p><p>Firefox：浏览器<br>FastStoneCapture：截图，录屏<br>foobar2000：音乐播放器</p><p>Google Chrome：浏览器<br>格式工厂：格式转换<br>GifCam：录制Gif</p><p>火绒：杀毒软件(还有小红伞，卡巴斯基等等，<del>一起下会怼起来</del>)</p><p>Internet Download Manager：下载器<br>iSider Tools：PPT插件</p><p>坚果云：网盘</p><p>Listary：文件搜索<br>Listen1：聚合音乐播放器<br>LockHunter：删除顽固文件</p><p>Matlab：数学软件<br>Microsoft Office：Word，Excel，PPT<br>MinGW：C/C++<br>Memreduct：内存清理<br>MPV：播放器</p><p>NI Multisim：电路仿真<br>Node.js：博客搭建<br>notepad：编辑器</p><p>Onedrive：微软云</p><p>PanDownload：下载百度云<br>PhotoZoom Pro：图片放大，不失真<br>PotPlayer：播放器<br>Pycharm：Python IDE<br>Pngyu：png压缩软件</p><p>Quicklook：文件预览（MS Store）</p><p>RainMeter：系统美化<br>Resilio Sync：备份<br>人人影视：看剧</p><p>Sketchbook：画图（MS Store）<br>Snipaste：截图软件（MS Store）<br>Splash!：Unsplash（MS Store）<br>Steam：为了Wallpaper Engine下的<br>Sublime：编辑器<br>Shape Collage：拼图<br>spacesniffer：磁盘分析<br>射手播放器：播放器-字幕<br>TeamViewer：远程桌面<br>Tim：QQ<br>天若OCR：OCR</p><p>VMware：虚拟机<br>VS 2017：IDE<br>VS Code：编辑器</p><p>Wox：快捷启动<br>万彩脑图大师：思维导图<br>万彩办公大师：奇奇怪怪的办公小工具，功能齐全<br>网易云UWP：音乐播放器<br>微信：…</p><p>逍遥安卓：安卓模拟器<br>迅雷：下载器<br>Xmind：思维导图</p><p>Yu-writer：Markdown写作</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;整理一下电脑上各种奇奇怪怪的软件，以此记录。&lt;del&gt;排名不分先后&lt;/del&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="软件" scheme="https://umm233.github.io/categories/%E8%BD%AF%E4%BB%B6/"/>
+    
+    
+      <category term="Windows" scheme="https://umm233.github.io/tags/Windows/"/>
+    
+      <category term="Software" scheme="https://umm233.github.io/tags/Software/"/>
+    
+  </entry>
+  
+</feed>
