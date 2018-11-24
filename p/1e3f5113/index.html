@@ -94,12 +94,12 @@
 <meta property="og:site_name" content="那一年河川">
 <meta property="og:description" content="捡起之前想做的图片拼接：刚学Python的时候一个图，将各种图拼起来做成特定的形状，觉得很酷然后刚开始各种百度图片拼接程序，未果。这两天闲下来就想动动手，想给做出来。然后经过一番挣扎，有点丑的做出来了😂效果图如下：(最好模板图片背景是白色的)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://umm233.github.io/p/1e3f5113/result-2018-11-22-13-47-22.png">
+<meta property="og:image" content="https://umm233.github.io/p/1e3f5113/PIL%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/result-2018-11-22-13-47-22.png">
 <meta property="og:updated_time" content="2018-11-22T10:10:44.907Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PIL实现图片拼接">
 <meta name="twitter:description" content="捡起之前想做的图片拼接：刚学Python的时候一个图，将各种图拼起来做成特定的形状，觉得很酷然后刚开始各种百度图片拼接程序，未果。这两天闲下来就想动动手，想给做出来。然后经过一番挣扎，有点丑的做出来了😂效果图如下：(最好模板图片背景是白色的)">
-<meta name="twitter:image" content="https://umm233.github.io/p/1e3f5113/result-2018-11-22-13-47-22.png">
+<meta name="twitter:image" content="https://umm233.github.io/p/1e3f5113/PIL%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/result-2018-11-22-13-47-22.png">
 
 
 
@@ -411,7 +411,7 @@
 
       
         <p>捡起之前想做的图片拼接：刚学Python的时候一个图，将各种图拼起来做成特定的形状，觉得很酷<del>然后刚开始各种百度图片拼接程序</del>，未果。这两天闲下来就想动动手，想给做出来。<br>然后经过一番挣扎，有点丑的做出来了😂<br>效果图如下：(最好模板图片背景是白色的)</p>
-<p><img src="/p/1e3f5113/result-2018-11-22-13-47-22.png" alt="result-2018-11-22-13-47-22"></p>
+<p><img src="PIL%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/result-2018-11-22-13-47-22.png" alt="result-2018-11-22-13-47-22"></p>
 <a id="more"></a>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><blockquote>
 <p>将像素点“替换”成图片，设置一个灰度值作为阈值来选择要替换成图片的像素点，然后再新建图里将图片粘贴上去。</p>
@@ -419,7 +419,7 @@
 <p>PS.思路就是这么简单粗暴</p>
 <h2 id="具体实现："><a href="#具体实现：" class="headerlink" title="具体实现："></a>具体实现：</h2><h3 id="1-读取图片基本信息及改变像素模式"><a href="#1-读取图片基本信息及改变像素模式" class="headerlink" title="1. 读取图片基本信息及改变像素模式"></a><strong>1. 读取图片基本信息及改变像素模式</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">modelImg = Image.open(model_path) # 模板图片</span><br><span class="line">im1 = modelImg.resize((500,500)) # 重设modelImg的尺寸</span><br><span class="line">print(&quot;修改后模板图像尺寸为: &quot;,im1.size) </span><br><span class="line">width,height = im1.size # 模板图片尺寸</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>刚开始对图像没有什么概念，后来发现一共有九种不同的像素模式，分别是 1，L，P，RGB，RGBA，CMYK，YCbCr，I，F。具体概念可以参考：<a href="https://blog.csdn.net/icamera0/article/details/50843172" rel="external nofollow noopener noreferrer" target="_blank">Python图像处理库PIL中图像格式转换（一）</a></p>
+<p>刚开始对图像没有什么概念，后来发现一共有九种不同的像素模式，分别是 1，L，P，RGB，RGBA，CMYK，YCbCr，I，F。具体概念可以参考：<a href="https://blog.csdn.net/icamera0/article/details/50843172" target="_blank" rel="noopener">Python图像处理库PIL中图像格式转换（一）</a></p>
 </blockquote>
 <p>这里简单起见就选择 <code>L</code> 模式</p>
 <blockquote>
@@ -443,8 +443,8 @@
 <p>除了思路之外，中间过程的一些地方，文件路径什么的，还是瞎(shi)操(jian)作(jin)<br>处理图像先对图像的基本情况稍作了解，后面会少走许多弯路。</p>
 <p>程序公开在Github上：<a href="https://github.com/umm233/SeeNo/blob/master/pinaddfile.py" target="_blank" rel="noopener">图片拼接</a></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li><a href="https://blog.csdn.net/icamera0/article/details/50843172" rel="external nofollow noopener noreferrer" target="_blank">Python图像处理库PIL中图像格式转换（一）</a></li>
-<li><a href="https://blog.csdn.net/icamera0/article/details/50706615" rel="external nofollow noopener noreferrer" target="_blank"># Python图像处理库PIL的Image模块介绍（四）</a></li>
+<li><a href="https://blog.csdn.net/icamera0/article/details/50843172" target="_blank" rel="noopener">Python图像处理库PIL中图像格式转换（一）</a></li>
+<li><a href="https://blog.csdn.net/icamera0/article/details/50706615" target="_blank" rel="noopener"># Python图像处理库PIL的Image模块介绍（四）</a></li>
 </ol>
 
       
