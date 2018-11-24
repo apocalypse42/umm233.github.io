@@ -73,7 +73,7 @@
 
 
 
-  <meta name="keywords" content="VHDL,">
+  <meta name="keywords" content="Python,图像处理,">
 
 
 
@@ -86,18 +86,20 @@
 
 
 
-<meta name="description" content="初学VHDL，练手写了一个异步十进制加法计数器，过程有许多细节上的错误，在此记录一下。">
-<meta name="keywords" content="VHDL">
+<meta name="description" content="捡起之前想做的图片拼接：刚学Python的时候一个图，将各种图拼起来做成特定的形状，觉得很酷然后刚开始各种百度图片拼接程序，未果。这两天闲下来就想动动手，想给做出来。然后经过一番挣扎，有点丑的做出来了😂效果图如下：(最好模板图片背景是白色的)">
+<meta name="keywords" content="Python,图像处理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="异步十进制加法加法计数器(VHDL实现)">
-<meta property="og:url" content="https://umm233.github.io/p/69a664c6/index.html">
+<meta property="og:title" content="PIL实现图片拼接">
+<meta property="og:url" content="https://umm233.github.io/p/1e3f5113/index.html">
 <meta property="og:site_name" content="那一年河川">
-<meta property="og:description" content="初学VHDL，练手写了一个异步十进制加法计数器，过程有许多细节上的错误，在此记录一下。">
+<meta property="og:description" content="捡起之前想做的图片拼接：刚学Python的时候一个图，将各种图拼起来做成特定的形状，觉得很酷然后刚开始各种百度图片拼接程序，未果。这两天闲下来就想动动手，想给做出来。然后经过一番挣扎，有点丑的做出来了😂效果图如下：(最好模板图片背景是白色的)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-29T05:56:59.680Z">
+<meta property="og:image" content="https://umm233.github.io/p/1e3f5113/PIL%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/result-2018-11-22-13-47-22.png">
+<meta property="og:updated_time" content="2018-11-24T04:09:45.612Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="异步十进制加法加法计数器(VHDL实现)">
-<meta name="twitter:description" content="初学VHDL，练手写了一个异步十进制加法计数器，过程有许多细节上的错误，在此记录一下。">
+<meta name="twitter:title" content="PIL实现图片拼接">
+<meta name="twitter:description" content="捡起之前想做的图片拼接：刚学Python的时候一个图，将各种图拼起来做成特定的形状，觉得很酷然后刚开始各种百度图片拼接程序，未果。这两天闲下来就想动动手，想给做出来。然后经过一番挣扎，有点丑的做出来了😂效果图如下：(最好模板图片背景是白色的)">
+<meta name="twitter:image" content="https://umm233.github.io/p/1e3f5113/PIL%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/result-2018-11-22-13-47-22.png">
 
 
 
@@ -127,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://umm233.github.io/p/69a664c6/">
+  <link rel="canonical" href="https://umm233.github.io/p/1e3f5113/">
 
 
 
 
 
-  <title>异步十进制加法加法计数器(VHDL实现) | 那一年河川</title>
+  <title>PIL实现图片拼接 | 那一年河川</title>
   
 
 
@@ -283,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://umm233.github.io/p/69a664c6/">
+    <link itemprop="mainEntityOfPage" href="https://umm233.github.io/p/1e3f5113/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seeno">
@@ -300,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">异步十进制加法加法计数器(VHDL实现)</h1>
+          <h1 class="post-title" itemprop="name headline">PIL实现图片拼接</h1>
         
 
         <div class="post-meta">
@@ -312,8 +314,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T17:29:19+08:00">
-                2018-10-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-22T12:58:41+08:00">
+                2018-11-22
               </time>
             
 
@@ -371,7 +373,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  496
+                  1.1k
                 </span>
               
 
@@ -387,7 +389,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 min
+                  4 min
                 </span>
               
             </div>
@@ -408,35 +410,42 @@
       
 
       
-        <p>初学VHDL，练手写了一个异步十进制加法计数器，过程有许多细节上的错误，在此记录一下。</p>
+        <p>捡起之前想做的图片拼接：刚学Python的时候一个图，将各种图拼起来做成特定的形状，觉得很酷<del>然后刚开始各种百度图片拼接程序</del>，未果。这两天闲下来就想动动手，想给做出来。<br>然后经过一番挣扎，有点丑的做出来了😂<br>效果图如下：(最好模板图片背景是白色的)</p>
+<p><img src="PIL%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/result-2018-11-22-13-47-22.png" alt="result-2018-11-22-13-47-22"></p>
 <a id="more"></a>
-<blockquote>
-<p><strong>VHDL</strong>，全称<strong>超高速集成电路硬件描述语言</strong>（英语：<strong><a href="https://zh.wikipedia.org/wiki/VHSIC" title="VHSIC" rel="external nofollow noopener noreferrer" target="_blank">VHSIC</a> very high-speed hardware description language</strong>），在基于<a href="https://zh.wikipedia.org/wiki/%E8%A4%87%E9%9B%9C%E5%8F%AF%E7%A8%8B%E5%BC%8F%E9%82%8F%E8%BC%AF%E8%A3%9D%E7%BD%AE" title="复杂可编程逻辑器件" rel="external nofollow noopener noreferrer" target="_blank">复杂可编程逻辑器件</a>、<a href="https://zh.wikipedia.org/wiki/%E7%8E%B0%E5%9C%BA%E5%8F%AF%E7%BC%96%E7%A8%8B%E9%80%BB%E8%BE%91%E9%97%A8%E9%98%B5%E5%88%97" title="现场可编程逻辑门阵列" rel="external nofollow noopener noreferrer" target="_blank">现场可编程逻辑门阵列</a>和<a href="https://zh.wikipedia.org/wiki/%E7%89%B9%E6%AE%8A%E6%87%89%E7%94%A8%E7%A9%8D%E9%AB%94%E9%9B%BB%E8%B7%AF" title="专用集成电路" rel="external nofollow noopener noreferrer" target="_blank">专用集成电路</a>的<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF" title="数字电路" rel="external nofollow noopener noreferrer" target="_blank">数字系统</a> 设计中有着广泛的应用。（via 维基百科）</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<p>将像素点“替换”成图片，设置一个灰度值作为阈值来选择要替换成图片的像素点，然后再新建图里将图片粘贴上去。</p>
 </blockquote>
+<p>PS.思路就是这么简单粗暴</p>
+<h2 id="具体实现："><a href="#具体实现：" class="headerlink" title="具体实现："></a>具体实现：</h2><h3 id="1-读取图片基本信息及改变像素模式"><a href="#1-读取图片基本信息及改变像素模式" class="headerlink" title="1. 读取图片基本信息及改变像素模式"></a><strong>1. 读取图片基本信息及改变像素模式</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">modelImg = Image.open(model_path) # 模板图片</span><br><span class="line">im1 = modelImg.resize((500,500)) # 重设modelImg的尺寸</span><br><span class="line">print(&quot;修改后模板图像尺寸为: &quot;,im1.size) </span><br><span class="line">width,height = im1.size # 模板图片尺寸</span><br></pre></td></tr></table></figure>
 <blockquote>
-<ul>
-<li>异步功能实现：信号 <code>clr</code>  高电平实现异步清零<br>十进制：</li>
-<li>利用VHDL中的标准逻辑矢量类型 STD_LOGIC_VECTOR 构建四位的计数变量</li>
-<li>运用 <strong>IF</strong> 语句实现十进制循环 ：“0000” -&gt;“1001” -&gt;“0000”</li>
-<li>利用Quartus进行仿真检测其功能实现</li>
-</ul>
+<p>刚开始对图像没有什么概念，后来发现一共有九种不同的像素模式，分别是 1，L，P，RGB，RGBA，CMYK，YCbCr，I，F。具体概念可以参考：<a href="https://blog.csdn.net/icamera0/article/details/50843172" target="_blank" rel="noopener">Python图像处理库PIL中图像格式转换（一）</a></p>
 </blockquote>
-<p>构建实体 <code>tenAdd</code>： <del>瞎起的</del></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">entity tenAdd is</span><br><span class="line">    port( clr, clk : in std_logic;</span><br><span class="line">          cnt10: out std_logic_vector (3 downto 0)); -- 设置一个四位矢量计数</span><br><span class="line">end tenAdd;</span><br></pre></td></tr></table></figure>
-<p>条件判断实现计数器循环：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if (clr = &apos;1&apos;) then</span><br><span class="line">   count &lt;= &quot;0000&quot;; -- 0000 要用双引号括起来，单引号只能引单个字符</span><br><span class="line">elsif clk&apos;event and clk = &apos;1&apos; then -- clk上升沿触发计数</span><br><span class="line">  if (count &lt; &quot;1001&quot;) then</span><br><span class="line">    count &lt;= count + 1; -- 计数加1</span><br><span class="line">  else</span><br><span class="line">    count &lt;= &quot;0000&quot;; -- 计数到9之后回到0000</span><br><span class="line">  end if;</span><br><span class="line">end if;</span><br></pre></td></tr></table></figure>
-<p>– PS. 上面的<code>count</code>是在结构体中定义的变量，不需要在实体中提前定义。</p>
+<p>这里简单起见就选择 <code>L</code> 模式</p>
 <blockquote>
-<p>1.关于仿真，在Quartus中，新建一个<code>University Program VWF</code>进行波形仿真：<br>2.在<code>Edit</code> -&gt; <code>Insert</code> -&gt; <code>Insert Node or Bus...</code><br>3.在<code>Node Finder...</code> -&gt;<code>List</code> 里面选择要控制和查看的信号</p>
-<ul>
-<li>给<code>clk</code>加一个连续的方波信号观察，输出变量值的变化</li>
-</ul>
+<p>模式“L”为灰色图像，它的每个像素用8个bit表示，0表示黑，255表示白，其他数字表示不同的灰度。</p>
 </blockquote>
-<p>一些自己容易忽略的小细节：</p>
-<blockquote>
-<p><code>&lt;=</code>: 用于信号赋值，延迟赋值  – <strong>信号赋初值的时候可以用 := </strong>）<br><code>:=</code>: 用于变量赋值，立即赋值<br>保存文件的时候文件名要和实体名一样，不一致会出现<code>Error: xxx undefined</code></p>
+<p><strong>将图片像素格式统一转换成灰度值，方面后面阈值操作。</strong></p>
+<p>这是一个坑，不同的图片如果直接利用<code>Image</code>库里的<code>getpixel</code>函数就会出现有的时候返回的是RGB,RGBA,P或者L的，每次的像素格式都不一样，传参都麻烦起来。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">im = im1.convert(&quot;L&quot;)</span><br></pre></td></tr></table></figure>
+<h3 id="2-读取模板图片像素值存入数组"><a href="#2-读取模板图片像素值存入数组" class="headerlink" title="2. 读取模板图片像素值存入数组"></a><strong>2. 读取模板图片像素值存入数组</strong></h3><blockquote>
+<p>这一步在改变模式后就很容易实现了。</p>
 </blockquote>
-<p>完整代码见github：<a href="https://github.com/umm233/SeeNo/blob/master/tenAdd.vhd" target="_blank" rel="noopener">异步十进制加法计数器</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">def openModel(model_path):</span><br><span class="line">    modelImg = Image.open(model_path)</span><br><span class="line">    im1 = modelImg.resize((500,500)) # 重设模板图片的尺寸，为了避免最后成图顺序出错</span><br><span class="line">    print(&quot;修改图像尺寸为: &quot;,im1.size)</span><br><span class="line">    width,height = im1.size # 修改后的图片尺寸</span><br><span class="line"></span><br><span class="line">    # 修改图像模式为:</span><br><span class="line">    im = im1.convert(&quot;L&quot;)</span><br><span class="line">    print(&quot;修改图像模式为: &quot;,im.mode)</span><br><span class="line">    # 读取像素值</span><br><span class="line">    array = [] # 存放像素值的列表</span><br><span class="line">    </span><br><span class="line">    # 优化一下采集方式，不是每个点都要采集</span><br><span class="line">    # 否则一张100x100的图片，拼接50x50的图片之后的大小会是5000x5000</span><br><span class="line">    for x in range(0, width, 10): </span><br><span class="line">        for y in range(0, height, 10):</span><br><span class="line">            pixel = im.getpixel((x,y)) # 读取像素点灰度值</span><br><span class="line">            array.append(pixel)</span><br><span class="line">    # print(array)</span><br><span class="line">    # print(len(array))</span><br><span class="line">    return array</span><br></pre></td></tr></table></figure>
+<h3 id="3-图片拼接"><a href="#3-图片拼接" class="headerlink" title="3. 图片拼接"></a><strong>3. 图片拼接</strong></h3><p>之前的步骤弄好之后，开始拼接，<code>if</code>语句根据设置的阈值简单判断一下，哪些点是要用图片替代的，然后转换成新图相应的坐标，将图片拼接上去就完成了。时间关系，许多地方就没有考虑太仔细，没去做优化。<del>要考试复习，对我现在就是在浪🙃</del></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    model_path = getImgPath(<span class="number">0</span>)[<span class="number">1</span>]</span><br><span class="line">    print(model_path)</span><br><span class="line">    <span class="comment"># 新建画布</span></span><br><span class="line">    imnew = Image.new(<span class="string">"RGB"</span>, (<span class="number">2500</span>,<span class="number">2500</span>),<span class="string">"#FFFFFF"</span>)</span><br><span class="line">    piclen = <span class="number">1654</span> <span class="comment"># 文件夹下拼接图片数量</span></span><br><span class="line">    array = openModel(model_path) <span class="comment"># 模板像素点数组</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(array)):</span><br><span class="line">        <span class="keyword">if</span>(i &lt; piclen):</span><br><span class="line">            picI = i</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            picI = i<span class="number">-1000</span> <span class="comment"># 这里是图不够了😂</span></span><br><span class="line">        pasteImg = getImgPath(picI)[<span class="number">0</span>] <span class="comment"># 第picI张图片</span></span><br><span class="line">        imgpaste = Image.open(pasteImg).resize((<span class="number">50</span>,<span class="number">50</span>)) <span class="comment"># 统一用于拼接图片的尺寸</span></span><br><span class="line">        <span class="comment"># imgpaste = Image.open(modelImg).resize((50,50))</span></span><br><span class="line">        <span class="comment"># 行 Row 列 Column</span></span><br><span class="line">        row, column = i/<span class="number">50</span>,i%<span class="number">50</span> <span class="comment"># 行列值，相当于图片在新图中的坐标</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="number">10</span> &lt; array[i] &lt; <span class="number">245</span>):</span><br><span class="line">            imnew.paste(imgpaste,(int(row*<span class="number">50</span>), int(column*<span class="number">50</span>)))</span><br><span class="line">            print(<span class="string">"正在拼接第 %d 张图，还剩下 %d 张"</span> %(i,len(array)-i))</span><br><span class="line">            <span class="comment"># print((int(row*50), int(column*50)))</span></span><br><span class="line">    imnew.show()</span><br></pre></td></tr></table></figure>
+<h3 id="待优化"><a href="#待优化" class="headerlink" title="待优化"></a>待优化</h3><ol>
+<li>颜色分布与原图匹配</li>
+<li>运行速度</li>
+</ol>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这次呢做出了想要的目标效果，但是很多地方没有异常处理，用老师的话说就是程序不够“壮”(健壮性)</p>
+<p>在思路方面以前最开始没做出出来就是以为那时候想法不对：只想着在原图上将图片直接替换像素点，然后搜索资料的发现也被带偏。后来换个方法，不在原图操作，那我自己重新画一张图出来不就好了 (√)。</p>
+<p>除了思路之外，中间过程的一些地方，文件路径什么的，还是瞎(shi)操(jian)作(jin)<br>处理图像先对图像的基本情况稍作了解，后面会少走许多弯路。</p>
+<p>程序公开在Github上：<a href="https://github.com/umm233/SeeNo/blob/master/pinaddfile.py" target="_blank" rel="noopener">图片拼接</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://blog.csdn.net/icamera0/article/details/50843172" target="_blank" rel="noopener">Python图像处理库PIL中图像格式转换（一）</a></li>
+<li><a href="https://blog.csdn.net/icamera0/article/details/50706615" target="_blank" rel="noopener">Python图像处理库PIL的Image模块介绍（四）</a></li>
+</ol>
 
       
     </div>
@@ -457,7 +466,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://umm233.github.io/p/69a664c6/" title="异步十进制加法加法计数器(VHDL实现)">https://umm233.github.io/p/69a664c6/</a>
+    <a href="https://umm233.github.io/p/1e3f5113/" title="PIL实现图片拼接">https://umm233.github.io/p/1e3f5113/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -472,7 +481,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/VHDL/" rel="tag"># VHDL</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/图像处理/" rel="tag"># 图像处理</a>
           
         </div>
       
@@ -500,8 +511,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/p/ee97a480/" rel="next" title="唯一可译码Python实现">
-                <i class="fa fa-chevron-left"></i> 唯一可译码Python实现
+              <a href="/p/d5a52b94/" rel="next" title="2DPSK波形">
+                <i class="fa fa-chevron-left"></i> 2DPSK波形
               </a>
             
           </div>
@@ -509,10 +520,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/p/562ac769/" rel="prev" title="Python的深浅拷贝">
-                Python的深浅拷贝 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -564,8 +571,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -644,6 +660,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体实现："><span class="nav-number">2.</span> <span class="nav-text">具体实现：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-读取图片基本信息及改变像素模式"><span class="nav-number">2.1.</span> <span class="nav-text">1. 读取图片基本信息及改变像素模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-读取模板图片像素值存入数组"><span class="nav-number">2.2.</span> <span class="nav-text">2. 读取模板图片像素值存入数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-图片拼接"><span class="nav-number">2.3.</span> <span class="nav-text">3. 图片拼接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#待优化"><span class="nav-number">2.4.</span> <span class="nav-text">待优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
