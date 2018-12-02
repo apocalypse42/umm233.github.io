@@ -86,20 +86,20 @@
 
 
 
-<meta name="description" content="前情之前粗糙写了一个实现根据模板形状拼图的程序，最明显的缺点就是，拼出来形状，但是丢失了原有图片的颜色。然后“基于搜索引擎“优化了一下。主要参考  主要是发现了 Image  库里的 blend 函数 和 composite函数。  具体实现 方法一（推荐）   blend函数简介定义：Image.blend(image1,image2, alpha) ⇒ image含义：使用给定的两张图像及透明">
+<meta name="description" content="前情之前粗糙写了一个实现根据模板形状拼图的程序，最明显的缺点就是，拼出来形状，但是丢失了原有图片的颜色。然后“基于搜索引擎“优化了一下。主要参考  主要是发现了 Image  库里的 blend 函数 和 composite函数。">
 <meta name="keywords" content="Python,图像处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="拼图优化">
 <meta property="og:url" content="https://umm233.github.io/p/6f136742/index.html">
 <meta property="og:site_name" content="宇宙人的小怪屋">
-<meta property="og:description" content="前情之前粗糙写了一个实现根据模板形状拼图的程序，最明显的缺点就是，拼出来形状，但是丢失了原有图片的颜色。然后“基于搜索引擎“优化了一下。主要参考  主要是发现了 Image  库里的 blend 函数 和 composite函数。  具体实现 方法一（推荐）   blend函数简介定义：Image.blend(image1,image2, alpha) ⇒ image含义：使用给定的两张图像及透明">
+<meta property="og:description" content="前情之前粗糙写了一个实现根据模板形状拼图的程序，最明显的缺点就是，拼出来形状，但是丢失了原有图片的颜色。然后“基于搜索引擎“优化了一下。主要参考  主要是发现了 Image  库里的 blend 函数 和 composite函数。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://umm233.github.io/p/6f136742/tmdu1-12-0.618.png">
 <meta property="og:image" content="https://umm233.github.io/p/6f136742/tmdu2-12-b1.png">
-<meta property="og:updated_time" content="2018-12-02T14:38:29.943Z">
+<meta property="og:updated_time" content="2018-12-02T14:46:00.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="拼图优化">
-<meta name="twitter:description" content="前情之前粗糙写了一个实现根据模板形状拼图的程序，最明显的缺点就是，拼出来形状，但是丢失了原有图片的颜色。然后“基于搜索引擎“优化了一下。主要参考  主要是发现了 Image  库里的 blend 函数 和 composite函数。  具体实现 方法一（推荐）   blend函数简介定义：Image.blend(image1,image2, alpha) ⇒ image含义：使用给定的两张图像及透明">
+<meta name="twitter:description" content="前情之前粗糙写了一个实现根据模板形状拼图的程序，最明显的缺点就是，拼出来形状，但是丢失了原有图片的颜色。然后“基于搜索引擎“优化了一下。主要参考  主要是发现了 Image  库里的 blend 函数 和 composite函数。">
 <meta name="twitter:image" content="https://umm233.github.io/p/6f136742/tmdu1-12-0.618.png">
 
 
@@ -415,6 +415,7 @@
 <blockquote>
 <p>主要是发现了 <code>Image</code>  库里的 <code>blend</code> 函数 和 <code>composite</code>函数。</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><ul>
 <li>方法一（推荐）</li>
 </ul>
