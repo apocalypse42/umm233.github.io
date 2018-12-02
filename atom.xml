@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://umm233.github.io/"/>
-  <updated>2018-11-29T07:50:59.467Z</updated>
+  <updated>2018-12-02T12:43:32.184Z</updated>
   <id>https://umm233.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://umm233.github.io/p/6f136742/"/>
     <id>https://umm233.github.io/p/6f136742/</id>
     <published>2018-11-29T07:21:36.000Z</published>
-    <updated>2018-11-29T07:50:59.467Z</updated>
+    <updated>2018-12-02T12:43:32.184Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前情"><a href="#前情" class="headerlink" title="前情"></a>前情</h2><p>之前粗糙写了一个实现根据模板形状拼图的程序，最明显的缺点就是，拼出来形状，但是丢失了原有图片的颜色。<br>然后“基于搜索引擎“优化了一下。</p><p>主要是发现了 <code>Image</code>  库里的 <code>blend</code> 函数 和 <code>composite</code>函数。</p><blockquote><h3 id="blend函数简介"><a href="#blend函数简介" class="headerlink" title="blend函数简介"></a><code>blend</code>函数简介</h3></blockquote><h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><ul><li><p>方法一（推荐）</p><p>  im1 = Image.open(“Image1.png”)<br>  im2 = Image.open(“Image2.png”)<br>  im = Image.blend(im1,im2,0.618)<br>  im.save(“pin-pic.png”)</p></li></ul><blockquote><p>这里0.618是黄金比例值，<del>偷懒随便选的</del></p></blockquote><p>关于参数设置，简单来说，<br>如果设置为 0，那么显示<code>Image1.png</code><br>如果设置为 1，那么显示<code>Image2.png</code></p><ul><li>方法二（不好看🙃）</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">im1 = Image.open(&quot;Image1.png&quot;)</span><br><span class="line">im2 = Image.open(&quot;Image2.png&quot;)</span><br><span class="line"># 因为下面要对图像的RGB三通道进行分割，所以这里将格式转换为RGB</span><br><span class="line">im1 = im1.convert(&quot;RGB&quot;)</span><br><span class="line">im2 = im2.convert(&quot;RGB&quot;)</span><br><span class="line">r,g,b = im1.split() # 通道分离</span><br><span class="line">print(g.mode)</span><br><span class="line">im = Image.composite(im1,im2,g)</span><br><span class="line">im.save(&quot;pin-pic.jpg&quot;)</span><br><span class="line">b.save(&quot;image-b.jpg&quot;)</span><br></pre></td></tr></table></figure>]]></content>
     
