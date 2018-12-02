@@ -283,6 +283,195 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://umm233.github.io/p/6f136742/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Seeno">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/first.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="宇宙人的小怪屋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/p/6f136742/" itemprop="url">拼图优化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-29T15:21:36+08:00">
+                2018-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  255
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前情"><a href="#前情" class="headerlink" title="前情"></a>前情</h2><p>之前粗糙写了一个实现根据模板形状拼图的程序，最明显的缺点就是，拼出来形状，但是丢失了原有图片的颜色。<br>然后“基于搜索引擎“优化了一下。</p>
+<p>主要是发现了 <code>Image</code>  库里的 <code>blend</code> 函数 和 <code>composite</code>函数。</p>
+<blockquote>
+<h3 id="blend函数简介"><a href="#blend函数简介" class="headerlink" title="blend函数简介"></a><code>blend</code>函数简介</h3></blockquote>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><ul>
+<li><p>方法一（推荐）</p>
+<p>  im1 = Image.open(“Image1.png”)<br>  im2 = Image.open(“Image2.png”)<br>  im = Image.blend(im1,im2,0.618)<br>  im.save(“pin-pic.png”)</p>
+</li>
+</ul>
+<blockquote>
+<p>这里0.618是黄金比例值，<del>偷懒随便选的</del></p>
+</blockquote>
+<p>关于参数设置，简单来说，<br>如果设置为 0，那么显示<code>Image1.png</code><br>如果设置为 1，那么显示<code>Image2.png</code></p>
+<ul>
+<li>方法二（不好看🙃）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">im1 = Image.open(&quot;Image1.png&quot;)</span><br><span class="line">im2 = Image.open(&quot;Image2.png&quot;)</span><br><span class="line"># 因为下面要对图像的RGB三通道进行分割，所以这里将格式转换为RGB</span><br><span class="line">im1 = im1.convert(&quot;RGB&quot;)</span><br><span class="line">im2 = im2.convert(&quot;RGB&quot;)</span><br><span class="line">r,g,b = im1.split() # 通道分离</span><br><span class="line">print(g.mode)</span><br><span class="line">im = Image.composite(im1,im2,g)</span><br><span class="line">im.save(&quot;pin-pic.jpg&quot;)</span><br><span class="line">b.save(&quot;image-b.jpg&quot;)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://umm233.github.io/p/1e3f5113/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -407,7 +596,7 @@
       
         
           <p>捡起之前想做的图片拼接：刚学Python的时候一个图，将各种图拼起来做成特定的形状，觉得很酷<del>然后刚开始各种百度图片拼接程序</del>，未果。这两天闲下来就想动动手，想给做出来。<br>然后经过一番挣扎，有点丑的做出来了😂<br>效果图如下：(最好模板图片背景是白色的)</p>
-<p><img src="/p/1e3f5113/result-2018-11-22-13-47-22.png" alt="result-2018-11-22-13-47-22"></p>
+<p><img src="PIL%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/result-2018-11-22-13-47-22.png" alt="result-2018-11-22-13-47-22"></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/p/1e3f5113/" rel="contents">
@@ -1872,186 +2061,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://umm233.github.io/p/2fc530c8/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Seeno">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/first.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="宇宙人的小怪屋">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/p/2fc530c8/" itemprop="url">Windows软件整理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T12:45:01+08:00">
-                2018-09-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/软件/" itemprop="url" rel="index">
-                    <span itemprop="name">软件</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  519
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 min
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>整理一下电脑上各种奇奇怪怪的软件，以此记录。<del>排名不分先后</del></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/p/2fc530c8/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2097,7 +2113,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2196,7 +2212,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.7k</span>
+    <span title="Site words total count">4.9k</span>
   
 </div>
 
