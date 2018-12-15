@@ -283,6 +283,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://umm233.github.io/p/ad444f4c/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Seeno">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/first.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="宇宙人的小怪屋">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/p/ad444f4c/" itemprop="url">Octave安装使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-14T22:24:41+08:00">
+                2018-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  699
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>引自<a href="https://zh.wikipedia.org/wiki/GNU_Octave" rel="external nofollow noopener noreferrer" target="_blank">维基百科</a></p>
+<blockquote>
+<p><strong>GNU Octave</strong>是一种采用<a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80" title="高级语言" rel="external nofollow noopener noreferrer" target="_blank">高级</a><a href="https://zh.wikipedia.org/wiki/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80" title="编程语言" rel="external nofollow noopener noreferrer" target="_blank">编程语言</a>的主要用于<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90" title="数值分析" rel="external nofollow noopener noreferrer" target="_blank">数值分析</a>的软件。Octave有助于以数值方式解决线性和非线性问题，并使用与<a href="https://zh.wikipedia.org/wiki/MATLAB" title="MATLAB" rel="external nofollow noopener noreferrer" target="_blank">MATLAB</a>兼容的语言进行其他数值实验。它也可以作为<a href="https://zh.wikipedia.org/wiki/%E6%89%B9%E5%A4%84%E7%90%86%E4%BB%BB%E5%8A%A1" title="批处理任务" rel="external nofollow noopener noreferrer" target="_blank">面向批处理</a>的语言使用。因为它是<a href="https://zh.wikipedia.org/wiki/GNU%E8%A8%88%E5%8A%83" title="GNU计划" rel="external nofollow noopener noreferrer" target="_blank">GNU计划</a>的一部分，所以它是<a href="https://zh.wikipedia.org/wiki/GNU%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81" title="GNU通用公共许可证" rel="external nofollow noopener noreferrer" target="_blank">GNU通用公共许可证</a>条款下的<a href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6" title="自由软件" rel="external nofollow noopener noreferrer" target="_blank">自由软件</a>。</p>
+</blockquote>
+<blockquote>
+<p>Octave是MATLAB的主要<a href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6" title="自由软件" rel="external nofollow noopener noreferrer" target="_blank">自由</a>替代品之一，其他还有<a href="https://zh.wikipedia.org/wiki/Scilab" title="Scilab" rel="external nofollow noopener noreferrer" target="_blank">Scilab</a>和<a href="https://zh.wikipedia.org/wiki/FreeMat" title="FreeMat" rel="external nofollow noopener noreferrer" target="_blank">FreeMat</a>。<a href="https://zh.wikipedia.org/wiki/GNU_Octave#cite_note-Trappenberg2010-5" rel="external nofollow noopener noreferrer" target="_blank">[5]</a><a href="https://zh.wikipedia.org/wiki/GNU_Octave#cite_note-MuhammadZalizniak2011-6" rel="external nofollow noopener noreferrer" target="_blank">[6]</a><a href="https://zh.wikipedia.org/wiki/GNU_Octave#cite_note-MegreyMoksness2008-7" rel="external nofollow noopener noreferrer" target="_blank">[7]</a><a href="https://zh.wikipedia.org/wiki/GNU_Octave#cite_note-Kapuno2008-8" rel="external nofollow noopener noreferrer" target="_blank">[8]</a> 然而，与Octave相比，Scilab更少强调与MATLAB的（双向）句法兼容性。</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/p/ad444f4c/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://umm233.github.io/p/6f136742/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1874,184 +2068,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://umm233.github.io/p/ee97a480/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Seeno">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/first.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="宇宙人的小怪屋">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/p/ee97a480/" itemprop="url">唯一可译码Python实现</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T19:29:31+08:00">
-                2018-09-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  445
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 min
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>最近学习信息论，上课讲的概念晦涩，课后自己领悟 <del>老师催眠/无奈</del></p>
-<p>对于唯一可译码，看概念一直绕圈圈，后来看一眼流程图，实践一下明了许多。而后参考网上的算法（Java/C++），自己用Python写了一遍，方便写作业…</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/p/ee97a480/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2104,7 +2120,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2115,7 +2131,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2126,7 +2142,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2209,7 +2225,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.3k</span>
+    <span title="Site words total count">6k</span>
   
 </div>
 
