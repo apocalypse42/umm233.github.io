@@ -73,7 +73,7 @@
 
 
 
-  <meta name="keywords" content="Python,踩坑,">
+  <meta name="keywords" content="Python,github,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="关于Python中的列表复制操作刚开始没注意坑一踩一个准">
-<meta name="keywords" content="Python,踩坑">
+<meta name="description" content="之前没怎么接触api，最近分析了一下关于GitHub用户的commit时间，初步得出关于该用户的commit时间规律等等。（ 事前查了一下，网上大部分关于GitHub上数据分析的文章推荐使用官方提供的api: GitHub Developer">
+<meta name="keywords" content="Python,github">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python的深浅拷贝">
-<meta property="og:url" content="https://umm233.github.io/p/562ac769/index.html">
+<meta property="og:title" content="github commit时间分析">
+<meta property="og:url" content="https://umm233.github.io/p/5c5365ec/index.html">
 <meta property="og:site_name" content="宇宙人的小怪屋">
-<meta property="og:description" content="关于Python中的列表复制操作刚开始没注意坑一踩一个准">
+<meta property="og:description" content="之前没怎么接触api，最近分析了一下关于GitHub用户的commit时间，初步得出关于该用户的commit时间规律等等。（ 事前查了一下，网上大部分关于GitHub上数据分析的文章推荐使用官方提供的api: GitHub Developer">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-29T05:56:59.670Z">
+<meta property="og:updated_time" content="2018-12-28T11:20:37.504Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python的深浅拷贝">
-<meta name="twitter:description" content="关于Python中的列表复制操作刚开始没注意坑一踩一个准">
+<meta name="twitter:title" content="github commit时间分析">
+<meta name="twitter:description" content="之前没怎么接触api，最近分析了一下关于GitHub用户的commit时间，初步得出关于该用户的commit时间规律等等。（ 事前查了一下，网上大部分关于GitHub上数据分析的文章推荐使用官方提供的api: GitHub Developer">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://umm233.github.io/p/562ac769/">
+  <link rel="canonical" href="https://umm233.github.io/p/5c5365ec/">
 
 
 
 
 
-  <title>Python的深浅拷贝 | 宇宙人的小怪屋</title>
+  <title>github commit时间分析 | 宇宙人的小怪屋</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://umm233.github.io/p/562ac769/">
+    <link itemprop="mainEntityOfPage" href="https://umm233.github.io/p/5c5365ec/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seeno">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python的深浅拷贝</h1>
+          <h1 class="post-title" itemprop="name headline">github commit时间分析</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T22:00:19+08:00">
-                2018-10-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-18T22:47:24+08:00">
+                2018-12-18
               </time>
             
 
@@ -371,7 +371,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  471
+                  447
                 </span>
               
 
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 min
+                  1 min
                 </span>
               
             </div>
@@ -408,28 +408,29 @@
       
 
       
-        <p>关于Python中的列表复制操作<br><del>刚开始没注意坑一踩一个准</del></p>
+        <p>之前没怎么接触api，最近分析了一下关于GitHub用户的<code>commit</code>时间，初步得出关于该用户的<code>commit</code>时间规律等等。（ 事前查了一下，网上大部分关于GitHub上数据分析的文章推荐使用官方提供的api: <a href="https://developer.github.com/v3/" rel="external nofollow noopener noreferrer" target="_blank">GitHub Developer</a></p>
 <a id="more"></a>
-<ul>
-<li>浅拷贝只是将另一个变量指向要复制的变量地址，并没有重新分配地址，所以就会出现“你变我也变”的情况：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [1,2]</span><br><span class="line">b = a</span><br><span class="line">print(id(a))</span><br><span class="line">print(id(b))</span><br><span class="line">a.append(5) </span><br><span class="line">print(b) # 结果是 [1,2,5]</span><br><span class="line"></span><br><span class="line"># 最后会发现 a 和 b 的地址是一样的</span><br><span class="line"># 在 a 的末尾加入5，b 也跟着变了，这就是坑(mmp -_-|||</span><br></pre></td></tr></table></figure>
-<h2 id="–更新-这还是浅拷贝"><a href="#–更新-这还是浅拷贝" class="headerlink" title="–更新 这还是浅拷贝"></a>–更新 <strong>这还是浅拷贝</strong></h2><ul>
-<li>对于<del>深拷贝最简单的方法就是利用<code>copy()</code>函数或者<code>b = a[:]</code>实现：</del></li>
-<li>以下均为浅拷贝的情况： </li>
-</ul>
-<ul>
-<li>使用切片[:]操作</li>
-<li>使用工厂函数（如list/dir/set）</li>
-<li>使用copy模块中的copy()函数</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [1,2]</span><br><span class="line">b = a.copy()</span><br><span class="line">print(id(a))</span><br><span class="line">print(id(b)) # 结果是 1739769111752</span><br><span class="line">a.append(5)  # 结果是 1739769111496</span><br><span class="line">print(a) # 结果是 [1,2,5]</span><br><span class="line">print(b) # 结果是 [1,2]</span><br><span class="line"></span><br><span class="line"># 这里 a,b 的地址不一样了，在a中添加元素没有对b起作用._.</span><br></pre></td></tr></table></figure>
-<p>！但是，如果列表中嵌套了列表，拷贝后的列表中嵌套的列表元素指针，指向原列表中嵌套列表的整体地址，而不是指向嵌套列表中元素的内存地址。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = [[1,2],3,4]</span><br><span class="line">s1 = s.copy()</span><br><span class="line">id(s)</span><br><span class="line">id(s1)</span><br><span class="line">id(s[0][1])</span><br><span class="line">id(s1[0][1])</span><br><span class="line">s.append(&quot;hello&quot;)</span><br><span class="line">print(&quot;s:&quot;,s) </span><br><span class="line">print(&quot;s1:&quot;,s1)   # s: [[1, 2], 3, 4, &apos;hello&apos;]  s1: [[1, 2], 3, 4]</span><br><span class="line">s1[0][1] = &quot;Holy Shit!&quot;</span><br><span class="line">print(&quot;s: &quot;,s)     # s: [[1, &apos;Holy Shit!&apos;], 3, 4, &apos;hello&apos;]</span><br><span class="line">print(&quot;s1:&quot;,s1)  # s1: [[1, &apos;Holy Shit!&apos;], 3,</span><br></pre></td></tr></table></figure>
-<p>在上面的测试中容易发现，在操作列表中的嵌套列表就会出现浅拷贝的问题。</p>
-<p>具体的可以参考: <a href="https://www.cnblogs.com/pyramid1001/p/5844905.html" rel="external nofollow noopener noreferrer" target="_blank">Python——列表深浅拷贝</a></p>
-<p>那么深拷贝的话：利用<code>copy</code>模块的<code>copy.deepcopy(list)</code></p>
-<p>具体可以看看 <a href="https://www.cnblogs.com/wilber2013/p/4645353.html" rel="external nofollow noopener noreferrer" target="_blank">图解Python深拷贝和浅拷贝</a></p>
+<h2 id="API调用"><a href="#API调用" class="headerlink" title="API调用"></a>API调用</h2><p>对于Github上用户 所有提交的<code>commmit</code>，通过遍历其每个仓库的<code>commit</code>得到。</p>
+<h3 id="某用户所有的仓库"><a href="#某用户所有的仓库" class="headerlink" title="某用户所有的仓库"></a>某用户所有的仓库</h3><p>链接格式：<code>https://api.github.com/users/{username}/repos</code></p>
+<blockquote>
+<p>具体使用可参考：<a href="https://developer.github.com/v3/repos/#list-user-repositories" rel="external nofollow noopener noreferrer" target="_blank">List user repositories</a></p>
+</blockquote>
+<h3 id="单个仓库的commits"><a href="#单个仓库的commits" class="headerlink" title="单个仓库的commits"></a>单个仓库的commits</h3><p>链接格式：<code>https://api.github.com/repos/{owner}/{repo}/commits</code></p>
+<p>++注意：commits后面不能加<code>/</code>，因为加<code>/</code>后面要到<code>SHA</code>值，否则，会出现 <code>&quot;No commit found for SHA: &quot;</code>的错误。++</p>
+<blockquote>
+<p>具体使用可参考：<a href="https://developer.github.com/v3/repos/commits/#get-a-single-commit" rel="external nofollow noopener noreferrer" target="_blank">get-a-single-commit</a></p>
+</blockquote>
+<blockquote>
+<p>调用api后返回整整齐齐的json数据，在其中对于json数据操作就可以得到想要的信息。<br>完整api文档/教程可参考：<br><a href="https://developer.github.com/v3/" rel="external nofollow noopener noreferrer" target="_blank">GitHub Developer v3 API文档</a><br><a href="https://developer.github.com/v3/guides/getting-started/" rel="external nofollow noopener noreferrer" target="_blank">GitHub Developer v3 API教程</a></p>
+</blockquote>
+<h2 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h2><h3 id="获取某用户所有的repo-name。"><a href="#获取某用户所有的repo-name。" class="headerlink" title="获取某用户所有的repo name。"></a>获取某用户所有的repo name。</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_all_repo</span><span class="params">(name)</span>:</span> <span class="comment"># 某人所有的repo</span></span><br><span class="line">    url_repos = <span class="string">'https://api.github.com/users/&#123;name&#125;/repos'</span>.format(name=name)</span><br><span class="line">    html = get_data(url_repos)</span><br><span class="line"></span><br><span class="line">    json_data = json.loads(html)</span><br><span class="line">    <span class="comment"># json_data里储存的是html下的所有数据</span></span><br><span class="line">    all_repos = [] <span class="comment"># repos's name数据存放数组</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> json_data:</span><br><span class="line">            repo = item[<span class="string">'name'</span>]</span><br><span class="line">            all_repos.append(repo)</span><br><span class="line">        print(all_repos) <span class="comment"># 某用户的所有repo列表</span></span><br><span class="line">        print( <span class="string">"the %s totally has %d repos"</span> %(name,len(all_repos)) )</span><br><span class="line">        <span class="keyword">return</span> name,all_repos</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            print(e)</span><br></pre></td></tr></table></figure>
+<h3 id="获取repo下作者的commit时间"><a href="#获取repo下作者的commit时间" class="headerlink" title="获取repo下作者的commit时间"></a>获取repo下作者的commit时间</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_data</span><span class="params">(html)</span>:</span></span><br><span class="line">    json_data = json.loads(html) <span class="comment"># json_data里储存的是html下的所有数据</span></span><br><span class="line">    commit_date_all = [] <span class="comment"># commits date数据存放数组</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> json_data:</span><br><span class="line">            commits = item[<span class="string">'commit'</span>][<span class="string">'committer'</span>]</span><br><span class="line">            commit_date_all.append(commits[<span class="string">'date'</span>])</span><br><span class="line">            <span class="comment"># print(commit_date_all)</span></span><br><span class="line">        <span class="keyword">return</span> commit_date_all</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        print(e)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>btw: get_data() 返回的是<code>html.content</code></p>
+</blockquote>
+<h2 id="代理ip"><a href="#代理ip" class="headerlink" title="代理ip"></a>代理ip</h2><blockquote>
+<p>参考：<a href="https://blog.csdn.net/lammonpeter/article/details/52917264" target="_blank" rel="noopener"># Python爬虫技巧—设置代理IP</a><br>IP地址取自国内髙匿代理IP网站：<a href="http://www.xicidaili.com/nn/" rel="external nofollow noopener noreferrer" target="_blank">http://www.xicidaili.com/nn/</a></p>
+</blockquote>
 
       
     </div>
@@ -450,7 +451,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://umm233.github.io/p/562ac769/" title="Python的深浅拷贝">https://umm233.github.io/p/562ac769/</a>
+    <a href="https://umm233.github.io/p/5c5365ec/" title="github commit时间分析">https://umm233.github.io/p/5c5365ec/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -467,7 +468,7 @@
           
             <a href="/tags/Python/" rel="tag"># Python</a>
           
-            <a href="/tags/踩坑/" rel="tag"># 踩坑</a>
+            <a href="/tags/github/" rel="tag"># github</a>
           
         </div>
       
@@ -495,8 +496,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/p/69a664c6/" rel="next" title="异步十进制加法加法计数器(VHDL实现)">
-                <i class="fa fa-chevron-left"></i> 异步十进制加法加法计数器(VHDL实现)
+              <a href="/p/ad444f4c/" rel="next" title="Octave安装使用">
+                <i class="fa fa-chevron-left"></i> Octave安装使用
               </a>
             
           </div>
@@ -505,8 +506,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/p/8394e334/" rel="prev" title="Python的sort函数">
-                Python的sort函数 <i class="fa fa-chevron-right"></i>
+              <a href="/p/c00bdf6b/" rel="prev" title="Image Compressor">
+                Image Compressor <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -664,7 +665,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#–更新-这还是浅拷贝"><span class="nav-number">1.</span> <span class="nav-text">–更新 这还是浅拷贝</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#API调用"><span class="nav-number">1.</span> <span class="nav-text">API调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#某用户所有的仓库"><span class="nav-number">1.1.</span> <span class="nav-text">某用户所有的仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单个仓库的commits"><span class="nav-number">1.2.</span> <span class="nav-text">单个仓库的commits</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python实现"><span class="nav-number">2.</span> <span class="nav-text">Python实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取某用户所有的repo-name。"><span class="nav-number">2.1.</span> <span class="nav-text">获取某用户所有的repo name。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取repo下作者的commit时间"><span class="nav-number">2.2.</span> <span class="nav-text">获取repo下作者的commit时间</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代理ip"><span class="nav-number">3.</span> <span class="nav-text">代理ip</span></a></li></ol></div>
             
 
           </div>
