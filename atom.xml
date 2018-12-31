@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://umm233.github.io/"/>
-  <updated>2018-12-28T11:32:36.268Z</updated>
+  <updated>2018-12-31T11:06:44.354Z</updated>
   <id>https://umm233.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>8102的最后一天</title>
+    <link href="https://umm233.github.io/p/6ad40d1c/"/>
+    <id>https://umm233.github.io/p/6ad40d1c/</id>
+    <published>2018-12-31T04:14:00.000Z</published>
+    <updated>2018-12-31T11:06:44.354Z</updated>
+    
+    <content type="html"><![CDATA[<p>今年也许是大学里最开心的一年，也是相对充实的一年。</p><a id="more"></a><h2 id="今年最佳"><a href="#今年最佳" class="headerlink" title="今年最佳"></a>今年最佳</h2><blockquote><p>8.23 国赛</p></blockquote><p>当时准备国赛，和队友熬了好多夜，苦不堪言。现在回忆起来，蛮感谢队友们一直坚持下去。（还有点怀念那段时光…orz</p><blockquote><p>10.1~10.7 同学叙旧</p></blockquote><p>国庆期间见了好几个高中同学，毕业后就很少见到了。国庆那会儿跑去找他们玩，一起瞎逛，聊天，互相吐槽，爆以前黑料等等，属于见了面就“嫌弃”…但，还是很亲切。</p><blockquote><p>12月– 万万没想到</p></blockquote><p>今年的生日赶巧和另外一个同学一起过，是大学里非常佩服的一个人，感觉很神奇！那天晚上很开心，帮我们一起过生日的女孩子事后跟我说，我晚上笑的很开心😂。</p><p>嗯，是很开心了！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今年也许是大学里最开心的一年，也是相对充实的一年。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="碎碎念" scheme="https://umm233.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+      <category term="随想" scheme="https://umm233.github.io/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>Image Compressor</title>
@@ -233,33 +255,6 @@
     
     
       <category term="小技巧" scheme="https://umm233.github.io/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python的sort函数</title>
-    <link href="https://umm233.github.io/p/8394e334/"/>
-    <id>https://umm233.github.io/p/8394e334/</id>
-    <published>2018-10-02T14:45:19.000Z</published>
-    <updated>2018-10-29T05:56:59.670Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>sort</code>函数小记</p><blockquote><p>list.sort(cmp=None, key=None, reverse=False)<br>l<em>   cmp – 可选参数, 如果指定了该参数会使用该参数的方法进行排序。<br>l</em>   key – 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。<br>l*   reverse – 排序规则，reverse = True 降序， reverse = False 升序（默认）。</p></blockquote><a id="more"></a><p>关于sort函数的坑是在做<code>Leetcode</code>的时候发现的，为了偷懒，坑了自己…</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [1,4,2,6,3,8]</span><br><span class="line">b = a.sort() # 错误的用法</span><br><span class="line">print(a) # 结果是[1,2,3,4,6,8]</span><br><span class="line">print(b) # None</span><br><span class="line">print(type(b)) # 结果是 &lt;class &apos;NoneType&apos;&gt;</span><br></pre></td></tr></table></figure><p>刚开始觉得没毛病，但是<code>b</code>没有取值，然后去查了一下，sort函数返回的就是<code>None</code>，<code>a.sort()</code>将<code>a</code>排序好后，不返回值，直接对<code>a</code>本身进行操作。</p><h5 id="参数说明参考-菜鸟教程"><a href="#参数说明参考-菜鸟教程" class="headerlink" title="参数说明参考 菜鸟教程"></a>参数说明参考 <a href="http://www.runoob.com/python/att-list-sort.html" rel="external nofollow noopener noreferrer" target="_blank">菜鸟教程</a></h5>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;sort&lt;/code&gt;函数小记&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;list.sort(cmp=None, key=None, reverse=False)&lt;br&gt;l&lt;em&gt;   cmp – 可选参数, 如果指定了该参数会使用该参数的方法进行排序。&lt;br&gt;l&lt;/em&gt;   key – 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。&lt;br&gt;l*   reverse – 排序规则，reverse = True 降序， reverse = False 升序（默认）。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="笔记" scheme="https://umm233.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Python" scheme="https://umm233.github.io/tags/Python/"/>
-    
-      <category term="踩坑" scheme="https://umm233.github.io/tags/%E8%B8%A9%E5%9D%91/"/>
     
   </entry>
   
