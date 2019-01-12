@@ -95,7 +95,7 @@
 <meta property="og:description" content="最近写作业要画各种各样的波形（eg.2DPSK），就很烦，有的地方总画错(真实原因是画的丑)然后就写了个程序画得整整齐齐来看，顺便加深理解。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://umm233.github.io/p/d5a52b94/2DPSK011010.png">
-<meta property="og:updated_time" content="2018-11-24T04:07:38.271Z">
+<meta property="og:updated_time" content="2019-01-12T14:31:10.484Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2DPSK波形">
 <meta name="twitter:description" content="最近写作业要画各种各样的波形（eg.2DPSK），就很烦，有的地方总画错(真实原因是画的丑)然后就写了个程序画得整整齐齐来看，顺便加深理解。">
@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  570
+                  569
                 </span>
               
 
@@ -423,8 +423,24 @@
 <h2 id="程序实现"><a href="#程序实现" class="headerlink" title="程序实现"></a>程序实现</h2><blockquote>
 <p>主要用到<code>numpy</code>和 <code>matplotlib</code></p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 预设用于检测的绝对码，Tb，fai0，fai1，后面可以作为参数输入</span><br><span class="line">mustCode = [0,1,1,0,1,0]</span><br><span class="line">Tb = 1.5*2*np.pi # 一个波形周期</span><br><span class="line">fai0 = 1.5*np.pi # 码字为0时波形的移动相位：270°</span><br><span class="line">fai1 = 0.5*np.pi # 码字为1时波形的移动相位：90°</span><br><span class="line"></span><br><span class="line">for i in range(len(mustCode)):</span><br><span class="line">    if mustCode[i] == 1:</span><br><span class="line">        delta.append(fai1)</span><br><span class="line">    else:</span><br><span class="line">        delta.append(fai0)</span><br><span class="line">    deltaAdd = deltaAdd + delta[i] # 累计每次的相位变化</span><br><span class="line">    x1 = np.linspace((i+1)*Tb, i*Tb+2*Tb, 100)</span><br><span class="line">    y1 = np.sin(x1 + deltaAdd)</span><br><span class="line">    plt.plot(x1,y1)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<pre><code>### 更新一下下，加一个判断，因为2DPSK有不同的情况存在。
+<pre><code># 预设用于检测的绝对码，Tb，fai0，fai1，后面可以作为参数输入
+mustCode = [0,1,1,0,1,0]
+Tb = 1.5*2*np.pi # 一个波形周期
+fai0 = 1.5*np.pi # 码字为0时波形的移动相位：270°
+fai1 = 0.5*np.pi # 码字为1时波形的移动相位：90°
+
+for i in range(len(mustCode)):
+    if mustCode[i] == 1:
+        delta.append(fai1)
+    else:
+        delta.append(fai0)
+    deltaAdd = deltaAdd + delta[i] # 累计每次的相位变化
+    x1 = np.linspace((i+1)*Tb, i*Tb+2*Tb, 100)
+    y1 = np.sin(x1 + deltaAdd)
+    plt.plot(x1,y1)
+plt.show()
+
+### 更新一下下，加一个判断，因为2DPSK有不同的情况存在。
     if forwordOrlast == &apos;1&apos;:
         deltaAdd = deltaAdd + delta[i] # 2DPSK之与前一波形末相位的相位差
     elif forwordOrlast == &apos;0&apos;:
@@ -435,7 +451,7 @@
 <p>程序公开在Github上：<a href="https://github.com/umm233/SeeNo/blob/master/2DPSKNEW.py" target="_blank" rel="noopener">2DPSK波形程序实现</a></p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>按思路写起来就是这样子，后面就是将那些预设的量用<code>input()</code>输入就好了。<br>还有就是图像上的优化，怎么弄起来好看一些…比如将横坐标用pi的倍数来表示，加上网格等等。</p>
 <p>自己动手，丰衣足食😜</p>
-<p>PS.今年还剩下 43 天<br>▓▓▓▓▓▓▓▓▓▓▓▓▓░░  88%</p>
+<p>PS.今年还剩下 43 天     ▓▓▓▓▓▓▓▓▓▓▓▓▓░░  88%</p>
 
       
     </div>
@@ -590,7 +606,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -612,7 +628,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -711,7 +727,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.2k</span>
+    <span title="Site words total count">9k</span>
   
 </div>
 
