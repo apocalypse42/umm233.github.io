@@ -73,7 +73,7 @@
 
 
 
-  <meta name="keywords" content="图像处理,">
+  <meta name="keywords" content="图像,压缩,">
 
 
 
@@ -87,14 +87,14 @@
 
 
 <meta name="description" content="经常会有关于图像压缩的需求，稍微整理及记录一下常用方法…">
-<meta name="keywords" content="图像处理">
+<meta name="keywords" content="图像,压缩">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Image Compressor">
 <meta property="og:url" content="https://umm233.github.io/p/c00bdf6b/index.html">
 <meta property="og:site_name" content="宇宙人的小怪屋">
 <meta property="og:description" content="经常会有关于图像压缩的需求，稍微整理及记录一下常用方法…">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-12T14:24:25.072Z">
+<meta property="og:updated_time" content="2019-01-19T09:20:50.832Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Image Compressor">
 <meta name="twitter:description" content="经常会有关于图像压缩的需求，稍微整理及记录一下常用方法…">
@@ -335,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
+                  <a href="/categories/图像处理/" itemprop="url" rel="index">
+                    <span itemprop="name">图像处理</span>
                   </a>
                 </span>
 
@@ -415,14 +415,14 @@
 <p>官网：<a href="https://www.imagemagick.org/script/index.php" rel="external nofollow noopener noreferrer" target="_blank">https://www.imagemagick.org/script/index.php</a><br>下载安装：<a href="https://www.imagemagick.org/script/download.php" rel="external nofollow noopener noreferrer" target="_blank">https://www.imagemagick.org/script/download.php</a></p>
 </blockquote>
 <p>在下载页面选择合适版本下载安装。<br>ps. Windows建议下载安装版，避免一些命令如<code>convert</code>等无法正常使用的情况。</p>
+<h3 id="ImageMagick使用"><a href="#ImageMagick使用" class="headerlink" title="ImageMagick使用"></a>ImageMagick使用</h3><p>仅记录常用的压缩使用，ImageMagick很强大，如果要写，一篇文章写不完的👀。</p>
+<p>压缩gif/jpg/png，原图品质降为75%左右(降太多会导致图像严重失真)，下面以gif格式为例。测试gif大小可以缩到原图的1/3~1/2。<br>ps.可以重复操作几次，但一般两次后大小就不会再减小了。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">convert</span> -quality <span class="number">75</span>% input.gif output.gif</span><br></pre></td></tr></table></figure>
 <h2 id="Pngyu"><a href="#Pngyu" class="headerlink" title="Pngyu"></a><a href="https://github.com/nukesaq88/Pngyu" target="_blank" rel="noopener">Pngyu</a></h2><ul>
 <li>可进行批量处理</li>
 <li>开源</li>
 </ul>
 <p>Github：<a href="https://github.com/nukesaq88/Pngyu" target="_blank" rel="noopener">https://github.com/nukesaq88/Pngyu</a></p>
-<h3 id="ImageMagick使用"><a href="#ImageMagick使用" class="headerlink" title="ImageMagick使用"></a>ImageMagick使用</h3><p>仅记录常用的压缩使用，ImageMagick很强大，如果要写，一篇文章写不完的👀。</p>
-<p>压缩gif/jpg/png，原图品质降为75%左右(降太多会导致图像严重失真)，下面以gif格式为例。测试gif大小可以缩到原图的1/3~1/2。<br>ps.可以重复操作几次，但一般两次后大小就不会再减小了。</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">convert</span> -quality <span class="number">75</span>% input.gif output.gif</span><br></pre></td></tr></table></figure>
 <h2 id="在线图片压缩"><a href="#在线图片压缩" class="headerlink" title="在线图片压缩"></a>在线图片压缩</h2><h3 id="Squoosh"><a href="#Squoosh" class="headerlink" title="Squoosh"></a><a href="https://squoosh.app/" rel="external nofollow noopener noreferrer" target="_blank">Squoosh</a></h3><ul>
 <li>由GoogleChromeLabs开发，开源</li>
 <li>等待网页加载完会显示<code>ready to work offline</code>，意思就是加载完后你可以离线使用！</li>
@@ -480,7 +480,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/图像处理/" rel="tag"># 图像处理</a>
+            <a href="/tags/图像/" rel="tag"># 图像</a>
+          
+            <a href="/tags/压缩/" rel="tag"># 压缩</a>
           
         </div>
       
@@ -613,7 +615,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -624,7 +626,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -686,7 +688,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ImageMagick"><span class="nav-number">1.</span> <span class="nav-text">ImageMagick</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ImageMagick简介"><span class="nav-number">1.1.</span> <span class="nav-text">ImageMagick简介</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pngyu"><span class="nav-number">2.</span> <span class="nav-text">Pngyu</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ImageMagick使用"><span class="nav-number">2.1.</span> <span class="nav-text">ImageMagick使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线图片压缩"><span class="nav-number">3.</span> <span class="nav-text">在线图片压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Squoosh"><span class="nav-number">3.1.</span> <span class="nav-text">Squoosh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iloveimg"><span class="nav-number">3.2.</span> <span class="nav-text">iloveimg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tinypng"><span class="nav-number">3.3.</span> <span class="nav-text">Tinypng</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ImageMagick"><span class="nav-number">1.</span> <span class="nav-text">ImageMagick</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ImageMagick简介"><span class="nav-number">1.1.</span> <span class="nav-text">ImageMagick简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ImageMagick使用"><span class="nav-number">1.2.</span> <span class="nav-text">ImageMagick使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pngyu"><span class="nav-number">2.</span> <span class="nav-text">Pngyu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线图片压缩"><span class="nav-number">3.</span> <span class="nav-text">在线图片压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Squoosh"><span class="nav-number">3.1.</span> <span class="nav-text">Squoosh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iloveimg"><span class="nav-number">3.2.</span> <span class="nav-text">iloveimg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tinypng"><span class="nav-number">3.3.</span> <span class="nav-text">Tinypng</span></a></li></ol></li></ol></div>
             
 
           </div>

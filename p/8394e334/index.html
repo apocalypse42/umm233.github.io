@@ -73,7 +73,7 @@
 
 
 
-  <meta name="keywords" content="Python,踩坑,">
+  <meta name="keywords" content="Python,">
 
 
 
@@ -87,14 +87,14 @@
 
 
 <meta name="description" content="sort函数小记  list.sort(cmp=None, key=None, reverse=False)l   cmp – 可选参数, 如果指定了该参数会使用该参数的方法进行排序。l   key – 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。l*   reverse – 排序规则，reverse = True 降序，">
-<meta name="keywords" content="Python,踩坑">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python的sort函数">
 <meta property="og:url" content="https://umm233.github.io/p/8394e334/index.html">
 <meta property="og:site_name" content="宇宙人的小怪屋">
 <meta property="og:description" content="sort函数小记  list.sort(cmp=None, key=None, reverse=False)l   cmp – 可选参数, 如果指定了该参数会使用该参数的方法进行排序。l   key – 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。l*   reverse – 排序规则，reverse = True 降序，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-29T05:56:59.670Z">
+<meta property="og:updated_time" content="2019-01-19T09:07:36.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python的sort函数">
 <meta name="twitter:description" content="sort函数小记  list.sort(cmp=None, key=None, reverse=False)l   cmp – 可选参数, 如果指定了该参数会使用该参数的方法进行排序。l   key – 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。l*   reverse – 排序规则，reverse = True 降序，">
@@ -335,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
+                  <a href="/categories/踩坑/" itemprop="url" rel="index">
+                    <span itemprop="name">踩坑</span>
                   </a>
                 </span>
 
@@ -416,7 +416,10 @@
 <p>关于sort函数的坑是在做<code>Leetcode</code>的时候发现的，为了偷懒，坑了自己…</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [1,4,2,6,3,8]</span><br><span class="line">b = a.sort() # 错误的用法</span><br><span class="line">print(a) # 结果是[1,2,3,4,6,8]</span><br><span class="line">print(b) # None</span><br><span class="line">print(type(b)) # 结果是 &lt;class &apos;NoneType&apos;&gt;</span><br></pre></td></tr></table></figure>
 <p>刚开始觉得没毛病，但是<code>b</code>没有取值，然后去查了一下，sort函数返回的就是<code>None</code>，<code>a.sort()</code>将<code>a</code>排序好后，不返回值，直接对<code>a</code>本身进行操作。</p>
-<h5 id="参数说明参考-菜鸟教程"><a href="#参数说明参考-菜鸟教程" class="headerlink" title="参数说明参考 菜鸟教程"></a>参数说明参考 <a href="http://www.runoob.com/python/att-list-sort.html" rel="external nofollow noopener noreferrer" target="_blank">菜鸟教程</a></h5>
+<blockquote>
+<p>参数说明参考 <a href="http://www.runoob.com/python/att-list-sort.html" rel="external nofollow noopener noreferrer" target="_blank">菜鸟教程</a></p>
+</blockquote>
+
       
     </div>
     
@@ -452,8 +455,6 @@
         <div class="post-tags">
           
             <a href="/tags/Python/" rel="tag"># Python</a>
-          
-            <a href="/tags/踩坑/" rel="tag"># 踩坑</a>
           
         </div>
       
@@ -548,17 +549,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -586,7 +578,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -597,7 +589,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -649,22 +641,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#参数说明参考-菜鸟教程"><span class="nav-number">1.</span> <span class="nav-text">参数说明参考 菜鸟教程</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

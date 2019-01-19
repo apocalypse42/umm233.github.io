@@ -73,7 +73,7 @@
 
 
 
-  <meta name="keywords" content="Python,踩坑,">
+  <meta name="keywords" content="Python,">
 
 
 
@@ -87,14 +87,14 @@
 
 
 <meta name="description" content="关于Python中的列表复制操作刚开始没注意坑一踩一个准">
-<meta name="keywords" content="Python,踩坑">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python的深浅拷贝">
 <meta property="og:url" content="https://umm233.github.io/p/562ac769/index.html">
 <meta property="og:site_name" content="宇宙人的小怪屋">
 <meta property="og:description" content="关于Python中的列表复制操作刚开始没注意坑一踩一个准">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-29T05:56:59.670Z">
+<meta property="og:updated_time" content="2019-01-19T09:07:21.209Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python的深浅拷贝">
 <meta name="twitter:description" content="关于Python中的列表复制操作刚开始没注意坑一踩一个准">
@@ -335,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
+                  <a href="/categories/踩坑/" itemprop="url" rel="index">
+                    <span itemprop="name">踩坑</span>
                   </a>
                 </span>
 
@@ -413,10 +413,10 @@
 <ul>
 <li>浅拷贝只是将另一个变量指向要复制的变量地址，并没有重新分配地址，所以就会出现“你变我也变”的情况：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [1,2]</span><br><span class="line">b = a</span><br><span class="line">print(id(a))</span><br><span class="line">print(id(b))</span><br><span class="line">a.append(5) </span><br><span class="line">print(b) # 结果是 [1,2,5]</span><br><span class="line"></span><br><span class="line"># 最后会发现 a 和 b 的地址是一样的</span><br><span class="line"># 在 a 的末尾加入5，b 也跟着变了，这就是坑(mmp -_-|||</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [1,2]</span><br><span class="line">b = a</span><br><span class="line">print(id(a))</span><br><span class="line">print(id(b))</span><br><span class="line">a.append(5)</span><br><span class="line">print(b) # 结果是 [1,2,5]</span><br><span class="line"></span><br><span class="line"># 最后会发现 a 和 b 的地址是一样的</span><br><span class="line"># 在 a 的末尾加入5，b 也跟着变了，这就是坑(mmp -_-|||</span><br></pre></td></tr></table></figure>
 <h2 id="–更新-这还是浅拷贝"><a href="#–更新-这还是浅拷贝" class="headerlink" title="–更新 这还是浅拷贝"></a>–更新 <strong>这还是浅拷贝</strong></h2><ul>
 <li>对于<del>深拷贝最简单的方法就是利用<code>copy()</code>函数或者<code>b = a[:]</code>实现：</del></li>
-<li>以下均为浅拷贝的情况： </li>
+<li>以下均为浅拷贝的情况：</li>
 </ul>
 <ul>
 <li>使用切片[:]操作</li>
@@ -425,7 +425,7 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [1,2]</span><br><span class="line">b = a.copy()</span><br><span class="line">print(id(a))</span><br><span class="line">print(id(b)) # 结果是 1739769111752</span><br><span class="line">a.append(5)  # 结果是 1739769111496</span><br><span class="line">print(a) # 结果是 [1,2,5]</span><br><span class="line">print(b) # 结果是 [1,2]</span><br><span class="line"></span><br><span class="line"># 这里 a,b 的地址不一样了，在a中添加元素没有对b起作用._.</span><br></pre></td></tr></table></figure>
 <p>！但是，如果列表中嵌套了列表，拷贝后的列表中嵌套的列表元素指针，指向原列表中嵌套列表的整体地址，而不是指向嵌套列表中元素的内存地址。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = [[1,2],3,4]</span><br><span class="line">s1 = s.copy()</span><br><span class="line">id(s)</span><br><span class="line">id(s1)</span><br><span class="line">id(s[0][1])</span><br><span class="line">id(s1[0][1])</span><br><span class="line">s.append(&quot;hello&quot;)</span><br><span class="line">print(&quot;s:&quot;,s) </span><br><span class="line">print(&quot;s1:&quot;,s1)   # s: [[1, 2], 3, 4, &apos;hello&apos;]  s1: [[1, 2], 3, 4]</span><br><span class="line">s1[0][1] = &quot;Holy Shit!&quot;</span><br><span class="line">print(&quot;s: &quot;,s)     # s: [[1, &apos;Holy Shit!&apos;], 3, 4, &apos;hello&apos;]</span><br><span class="line">print(&quot;s1:&quot;,s1)  # s1: [[1, &apos;Holy Shit!&apos;], 3,</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = [[1,2],3,4]</span><br><span class="line">s1 = s.copy()</span><br><span class="line">id(s)</span><br><span class="line">id(s1)</span><br><span class="line">id(s[0][1])</span><br><span class="line">id(s1[0][1])</span><br><span class="line">s.append(&quot;hello&quot;)</span><br><span class="line">print(&quot;s:&quot;,s)</span><br><span class="line">print(&quot;s1:&quot;,s1)   # s: [[1, 2], 3, 4, &apos;hello&apos;]  s1: [[1, 2], 3, 4]</span><br><span class="line">s1[0][1] = &quot;Holy Shit!&quot;</span><br><span class="line">print(&quot;s: &quot;,s)     # s: [[1, &apos;Holy Shit!&apos;], 3, 4, &apos;hello&apos;]</span><br><span class="line">print(&quot;s1:&quot;,s1)  # s1: [[1, &apos;Holy Shit!&apos;], 3,</span><br></pre></td></tr></table></figure>
 <p>在上面的测试中容易发现，在操作列表中的嵌套列表就会出现浅拷贝的问题。</p>
 <p>具体的可以参考: <a href="https://www.cnblogs.com/pyramid1001/p/5844905.html" rel="external nofollow noopener noreferrer" target="_blank">Python——列表深浅拷贝</a></p>
 <p>那么深拷贝的话：利用<code>copy</code>模块的<code>copy.deepcopy(list)</code></p>
@@ -466,8 +466,6 @@
         <div class="post-tags">
           
             <a href="/tags/Python/" rel="tag"># Python</a>
-          
-            <a href="/tags/踩坑/" rel="tag"># 踩坑</a>
           
         </div>
       
@@ -600,7 +598,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -611,7 +609,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

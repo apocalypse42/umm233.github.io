@@ -73,7 +73,7 @@
 
 
 
-  <meta name="keywords" content="Python,图像处理,">
+  <meta name="keywords" content="Python,图片拼接,">
 
 
 
@@ -87,7 +87,7 @@
 
 
 <meta name="description" content="捡起之前想做的图片拼接：刚学Python的时候一个图，将各种图拼起来做成特定的形状，觉得很酷然后刚开始各种百度图片拼接程序，未果。这两天闲下来就想动动手，想给做出来。然后经过一番挣扎，有点丑的做出来了😂效果图如下：(最好模板图片背景是白色的)">
-<meta name="keywords" content="Python,图像处理">
+<meta name="keywords" content="Python,图片拼接">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PIL实现图片拼接">
 <meta property="og:url" content="https://umm233.github.io/p/1e3f5113/index.html">
@@ -95,7 +95,7 @@
 <meta property="og:description" content="捡起之前想做的图片拼接：刚学Python的时候一个图，将各种图拼起来做成特定的形状，觉得很酷然后刚开始各种百度图片拼接程序，未果。这两天闲下来就想动动手，想给做出来。然后经过一番挣扎，有点丑的做出来了😂效果图如下：(最好模板图片背景是白色的)">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://umm233.github.io/p/1e3f5113/pintu.png">
-<meta property="og:updated_time" content="2019-01-17T09:58:32.853Z">
+<meta property="og:updated_time" content="2019-01-19T09:08:17.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PIL实现图片拼接">
 <meta name="twitter:description" content="捡起之前想做的图片拼接：刚学Python的时候一个图，将各种图拼起来做成特定的形状，觉得很酷然后刚开始各种百度图片拼接程序，未果。这两天闲下来就想动动手，想给做出来。然后经过一番挣扎，有点丑的做出来了😂效果图如下：(最好模板图片背景是白色的)">
@@ -337,8 +337,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
+                  <a href="/categories/图像处理/" itemprop="url" rel="index">
+                    <span itemprop="name">图像处理</span>
                   </a>
                 </span>
 
@@ -418,7 +418,7 @@
 <p>PS.思路就是这么简单粗暴</p>
 <h2 id="具体实现："><a href="#具体实现：" class="headerlink" title="具体实现："></a>具体实现：</h2><h3 id="1-读取图片基本信息及改变像素模式"><a href="#1-读取图片基本信息及改变像素模式" class="headerlink" title="1. 读取图片基本信息及改变像素模式"></a><strong>1. 读取图片基本信息及改变像素模式</strong></h3><pre><code>modelImg = Image.open(model_path) # 模板图片
 im1 = modelImg.resize((500,500)) # 重设modelImg的尺寸
-print(&quot;修改后模板图像尺寸为: &quot;,im1.size) 
+print(&quot;修改后模板图像尺寸为: &quot;,im1.size)
 width,height = im1.size # 模板图片尺寸
 </code></pre><blockquote>
 <p>刚开始对图像没有什么概念，后来发现一共有九种不同的像素模式，分别是 1，L，P，RGB，RGBA，CMYK，YCbCr，I，F。具体概念可以参考：<a href="https://blog.csdn.net/icamera0/article/details/50843172" target="_blank" rel="noopener">Python图像处理库PIL中图像格式转换（一）</a></p>
@@ -447,7 +447,7 @@ width,height = im1.size # 模板图片尺寸
 
     # 优化一下采集方式，不是每个点都要采集
     # 否则一张100x100的图片，拼接50x50的图片之后的大小会是5000x5000
-    for x in range(0, width, 10): 
+    for x in range(0, width, 10):
         for y in range(0, height, 10):
             pixel = im.getpixel((x,y)) # 读取像素点灰度值
             array.append(pixel)
@@ -506,7 +506,7 @@ width,height = im1.size # 模板图片尺寸
           
             <a href="/tags/Python/" rel="tag"># Python</a>
           
-            <a href="/tags/图像处理/" rel="tag"># 图像处理</a>
+            <a href="/tags/图片拼接/" rel="tag"># 图片拼接</a>
           
         </div>
       
@@ -639,7 +639,7 @@ width,height = im1.size # 模板图片尺寸
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -650,7 +650,7 @@ width,height = im1.size # 模板图片尺寸
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

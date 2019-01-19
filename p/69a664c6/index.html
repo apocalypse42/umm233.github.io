@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="宇宙人的小怪屋">
 <meta property="og:description" content="初学VHDL，练手写了一个异步十进制加法计数器，过程有许多细节上的错误，在此记录一下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-16T09:22:31.332Z">
+<meta property="og:updated_time" content="2019-01-19T09:06:15.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="异步十进制加法加法计数器(VHDL实现)">
 <meta name="twitter:description" content="初学VHDL，练手写了一个异步十进制加法计数器，过程有许多细节上的错误，在此记录一下。">
@@ -335,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
+                  <a href="/categories/EDA/" itemprop="url" rel="index">
+                    <span itemprop="name">EDA</span>
                   </a>
                 </span>
 
@@ -422,7 +422,7 @@
 </ul>
 </blockquote>
 <p>构建实体 <code>tenAdd</code>： <del>瞎起的</del></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">entity tenAdd is</span><br><span class="line">    port( clr, clk : in std_logic;</span><br><span class="line">          cnt10: out std_logic_vector (3 downto 0)); -- 设置一个四位矢量计数</span><br><span class="line">end tenAdd;</span><br></pre></td></tr></table></figure>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">entity</span> tenAdd <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">port</span>( clr, clk : <span class="keyword">in</span> <span class="built_in">std_logic</span>;</span><br><span class="line">          cnt10: <span class="keyword">out</span> <span class="built_in">std_logic_vector</span> (<span class="number">3</span> <span class="keyword">downto</span> <span class="number">0</span>)); <span class="comment">-- 设置一个四位矢量计数</span></span><br><span class="line"><span class="keyword">end</span> tenAdd;</span><br></pre></td></tr></table></figure>
 <p>条件判断实现计数器循环：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if (clr = &apos;1&apos;) then</span><br><span class="line">   count &lt;= &quot;0000&quot;; -- 0000 要用双引号括起来，单引号只能引单个字符</span><br><span class="line">elsif clk&apos;event and clk = &apos;1&apos; then -- clk上升沿触发计数</span><br><span class="line">  if (count &lt; &quot;1001&quot;) then</span><br><span class="line">    count &lt;= count + 1; -- 计数加1</span><br><span class="line">  else</span><br><span class="line">    count &lt;= &quot;0000&quot;; -- 计数到9之后回到0000</span><br><span class="line">  end if;</span><br><span class="line">end if;</span><br></pre></td></tr></table></figure>
 <p>– PS. 上面的<code>count</code>是在结构体中定义的变量，不需要在实体中提前定义。</p>
@@ -596,7 +596,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -607,7 +607,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
