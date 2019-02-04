@@ -2,15 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
   
 
 
@@ -18,12 +9,26 @@
 <head>
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="QiQcL1rgx3nVSeELtbVyOB7aKbJAvLV8vIspwOKzNTU">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
 
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -42,7 +47,7 @@
 
   
   
-  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -50,57 +55,38 @@
 
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="/css/main.css?v=7.0.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-o.ico?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-o.ico?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
 
 
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '7.0.0',
-    sidebar: {"position":"left","width":300,"display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
-    fancybox: true,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
+  <meta name="keywords" content="Python,爬虫,数据分析,">
 
 
 
 
-  <meta name="description" content="之前没怎么接触api，最近分析了一下关于GitHub用户的commit时间，初步得出关于该用户的commit时间规律等等。（ 事前查了一下，网上大部分关于GitHub上数据分析的文章推荐使用官方提供的api: GitHub Developer">
+
+  <link rel="alternate" href="/atom.xml" title="宇宙人的小怪屋" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="之前没怎么接触api，最近分析了一下关于GitHub用户的commit时间，初步得出关于该用户的commit时间规律等等。（ 事前查了一下，网上大部分关于GitHub上数据分析的文章推荐使用官方提供的api: GitHub Developer">
 <meta name="keywords" content="Python,爬虫,数据分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="github commit时间分析">
@@ -118,8 +104,29 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="宇宙人的小怪屋" type="application/atom+xml">
-
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
 
 
 
@@ -127,11 +134,7 @@
 
 
 
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
+
 
   <title>github commit时间分析 | 宇宙人的小怪屋</title>
   
@@ -142,35 +145,6 @@
 
 
 
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
 
 </head>
 
@@ -185,8 +159,21 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+      <div class="header-inner"><style>
+    .pace .pace-progress {
+        background: #023275; /*进度条颜色*/
+        height: 2px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #666666, 0 0 1px     #666666; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #666666;    /*上边框颜色*/
+        border-left-color: #666666;    /*左边框颜色*/
+    }
+</style>
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
@@ -196,12 +183,13 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-    
+      
+        <p class="site-subtitle"></p>
+      
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
+    <button>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -209,103 +197,65 @@
   </div>
 </div>
 
-
-
 <nav class="site-nav">
+  
+
   
     <ul id="menu" class="menu">
       
         
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
-    
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
       
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
-
-  </li>
         
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
-    
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
       
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
-
-  </li>
         
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-
-    
-    
-    
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
       
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
-
-  </li>
         
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
       
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
-
-  </li>
         
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
       
-    
 
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
-
-  </li>
-
-      
       
     </ul>
-  
-
   
 
   
@@ -313,23 +263,12 @@
 
 
 
-  
-
-
-
-</div>
+ </div>
     </header>
-
-    
-
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
-            
-
-          
           <div id="content" class="content">
             
 
@@ -342,8 +281,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -353,7 +290,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seeno">
-      <meta itemprop="description" content="Learn more ...">
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/first.png">
     </span>
 
@@ -366,51 +303,25 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">github commit时间分析
-
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">github commit时间分析</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-18 22:47:24" itemprop="dateCreated datePublished" datetime="2018-12-18T22:47:24+08:00">2018-12-18</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-18T22:47:24+08:00">
+                2018-12-18
+              </time>
             
 
             
-              
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-19 17:21:38" itemprop="dateModified" datetime="2019-01-19T17:21:38+08:00">2019-01-19</time>
-              
             
           </span>
 
@@ -423,10 +334,14 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/爬虫/" itemprop="url" rel="index"><span itemprop="name">爬虫</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/爬虫/" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
+                  </a>
+                </span>
 
                 
                 
@@ -436,26 +351,31 @@
 
           
             
-            
           
 
           
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
           
-            <div class="post-symbolscount">
+            <div class="post-wordcount">
               
-
-              
+                
                 <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">本文字数：</span>
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="本文字数">6.6k</span>
+                <span title="Words count in article">
+                  1.5k
+                </span>
               
 
               
@@ -467,9 +387,11 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="阅读时长">6 分钟</span>
+                <span title="Reading time">
+                  7 min
+                </span>
               
             </div>
           
@@ -489,18 +411,18 @@
       
 
       
-        <p>之前没怎么接触api，最近分析了一下关于GitHub用户的<code>commit</code>时间，初步得出关于该用户的<code>commit</code>时间规律等等。（ 事前查了一下，网上大部分关于GitHub上数据分析的文章推荐使用官方提供的api: <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My8=" title="https://developer.github.com/v3/">GitHub Developer<i class="fa fa-external-link"></i></span></p>
+        <p>之前没怎么接触api，最近分析了一下关于GitHub用户的<code>commit</code>时间，初步得出关于该用户的<code>commit</code>时间规律等等。（ 事前查了一下，网上大部分关于GitHub上数据分析的文章推荐使用官方提供的api: <a href="https://developer.github.com/v3/" rel="external nofollow noopener noreferrer" target="_blank">GitHub Developer</a></p>
 <a id="more"></a>
 <h2 id="API调用"><a href="#API调用" class="headerlink" title="API调用"></a>API调用</h2><p>对于Github上用户 所有提交的<code>commmit</code>，通过遍历其每个仓库的<code>commit</code>得到。</p>
 <h3 id="某用户所有的仓库"><a href="#某用户所有的仓库" class="headerlink" title="某用户所有的仓库"></a>某用户所有的仓库</h3><p>链接格式：<code>https://api.github.com/users/{username}/repos</code></p>
 <blockquote>
-<p>具体使用可参考：<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My9yZXBvcy8jbGlzdC11c2VyLXJlcG9zaXRvcmllcw==" title="https://developer.github.com/v3/repos/#list-user-repositories">List user repositories<i class="fa fa-external-link"></i></span></p>
+<p>具体使用可参考：<a href="https://developer.github.com/v3/repos/#list-user-repositories" rel="external nofollow noopener noreferrer" target="_blank">List user repositories</a></p>
 </blockquote>
 <h3 id="单个仓库的commits"><a href="#单个仓库的commits" class="headerlink" title="单个仓库的commits"></a>单个仓库的commits</h3><p>链接格式：<code>https://api.github.com/repos/{owner}/{repo}/commits</code></p>
 <p>注意：commits后面不能加<code>/</code>，因为加<code>/</code>后面要到<code>SHA</code>值，否则，会出现 <code>&quot;No commit found for SHA: &quot;</code>的错误。</p>
 <blockquote>
-<p>具体使用可参考：<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My9yZXBvcy9jb21taXRzLyNnZXQtYS1zaW5nbGUtY29tbWl0" title="https://developer.github.com/v3/repos/commits/#get-a-single-commit">get-a-single-commit<i class="fa fa-external-link"></i></span></p>
-<p>调用api后返回整整齐齐的json数据，在其中对于json数据操作就可以得到想要的信息。<br>完整api文档/教程可参考：<br><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My8=" title="https://developer.github.com/v3/">GitHub Developer v3 API文档<i class="fa fa-external-link"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My9ndWlkZXMvZ2V0dGluZy1zdGFydGVkLw==" title="https://developer.github.com/v3/guides/getting-started/">GitHub Developer v3 API教程<i class="fa fa-external-link"></i></span></p>
+<p>具体使用可参考：<a href="https://developer.github.com/v3/repos/commits/#get-a-single-commit" rel="external nofollow noopener noreferrer" target="_blank">get-a-single-commit</a></p>
+<p>调用api后返回整整齐齐的json数据，在其中对于json数据操作就可以得到想要的信息。<br>完整api文档/教程可参考：<br><a href="https://developer.github.com/v3/" rel="external nofollow noopener noreferrer" target="_blank">GitHub Developer v3 API文档</a><br><a href="https://developer.github.com/v3/guides/getting-started/" rel="external nofollow noopener noreferrer" target="_blank">GitHub Developer v3 API教程</a></p>
 </blockquote>
 <h2 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h2><h3 id="获取API返回内容"><a href="#获取API返回内容" class="headerlink" title="获取API返回内容"></a>获取API返回内容</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_data</span><span class="params">(url)</span>:</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1'</span>&#125;</span><br><span class="line">    html = requests.get(url, headers=headers) <span class="comment"># 发送请求</span></span><br><span class="line">    <span class="keyword">if</span> html.status_code == <span class="number">200</span>: <span class="comment"># 判断请求是否成功</span></span><br><span class="line">        <span class="comment"># print(html)</span></span><br><span class="line">        <span class="keyword">return</span> html.content <span class="comment"># 返回网页内容</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br></pre></td></tr></table></figure>
 <h3 id="获取某用户所有的repo-name。"><a href="#获取某用户所有的repo-name。" class="headerlink" title="获取某用户所有的repo name。"></a>获取某用户所有的repo name。</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_all_repo</span><span class="params">(name)</span>:</span> <span class="comment"># 某人所有的repo</span></span><br><span class="line">    url_repos = <span class="string">'https://api.github.com/users/&#123;name&#125;/repos'</span>.format(name=name)</span><br><span class="line">    html = get_data(url_repos)</span><br><span class="line"></span><br><span class="line">    json_data = json.loads(html)</span><br><span class="line">    <span class="comment"># json_data里储存的是html下的所有数据</span></span><br><span class="line">    all_repos = [] <span class="comment"># repos's name数据存放数组</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> json_data:</span><br><span class="line">            repo = item[<span class="string">'name'</span>]</span><br><span class="line">            all_repos.append(repo)</span><br><span class="line">        print(all_repos) <span class="comment"># 某用户的所有repo列表</span></span><br><span class="line">        print( <span class="string">"the %s totally has %d repos"</span> %(name,len(all_repos)) )</span><br><span class="line">        <span class="keyword">return</span> name,all_repos</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            print(e)</span><br></pre></td></tr></table></figure>
@@ -508,7 +430,7 @@
 <h2 id="代理ip"><a href="#代理ip" class="headerlink" title="代理ip"></a>代理ip</h2><p>下面那篇文章写的很详细了，以供记录参考。</p>
 <blockquote>
 <p>btw: 原来是写了加上代理ip去调用api，但是还是会被限制，可能打开方式不对。</p>
-<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xhbW1vbnBldGVyL2FydGljbGUvZGV0YWlscy81MjkxNzI2NA==" title="https://blog.csdn.net/lammonpeter/article/details/52917264">Python爬虫技巧—设置代理IP<i class="fa fa-external-link"></i></span><br>IP地址取自国内髙匿代理IP网站：<span class="exturl" data-url="aHR0cDovL3d3dy54aWNpZGFpbGkuY29tL25uLw==" title="http://www.xicidaili.com/nn/">http://www.xicidaili.com/nn/<i class="fa fa-external-link"></i></span></p>
+<p>参考：<a href="https://blog.csdn.net/lammonpeter/article/details/52917264" target="_blank" rel="noopener">Python爬虫技巧—设置代理IP</a><br>IP地址取自国内髙匿代理IP网站：<a href="http://www.xicidaili.com/nn/" rel="external nofollow noopener noreferrer" target="_blank">http://www.xicidaili.com/nn/</a></p>
 </blockquote>
 <h2 id="planB"><a href="#planB" class="headerlink" title="planB"></a>planB</h2><blockquote>
 <p>re分析Github commit页面获取所有GitHub commmit时间</p>
@@ -540,16 +462,13 @@
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>整体思路比较简单，也许Github比较善良(-:<br>所有commit时间数据 &lt; 所有repo的commit时间数据 &lt; 某个repo的所有commit时间数据 &lt; 单个repo某页commit时间数据</p>
 <p>完整程序见Github：</p>
 <ol>
-<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VtbTIzMy9Db2RlLU5vdGUvYmxvYi9tYXN0ZXIvR2l0aHViLWNvbW1pdC10aW1lLXNwaWRlci5weQ==" title="https://github.com/umm233/Code-Note/blob/master/Github-commit-time-spider.py">Github用户commit数据爬取<i class="fa fa-external-link"></i></span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VtbTIzMy9Db2RlLU5vdGUvYmxvYi9tYXN0ZXIvR2l0aHViLWNvbW1pdC1hbmFseXNpcy5weQ==" title="https://github.com/umm233/Code-Note/blob/master/Github-commit-analysis.py">Github用户commit数据分析<i class="fa fa-external-link"></i></span></li>
+<li><a href="https://github.com/umm233/Code-Note/blob/master/Github-commit-time-spider.py" target="_blank" rel="noopener">Github用户commit数据爬取</a></li>
+<li><a href="https://github.com/umm233/Code-Note/blob/master/Github-commit-analysis.py" target="_blank" rel="noopener">Github用户commit数据分析</a></li>
 </ol>
 <p>今年时间进度：▓▓▓▓▓▓▓▓▓▓▓▓▓▓░  99%</p>
 
       
     </div>
-
-    
-
     
     
     
@@ -557,10 +476,25 @@
     
 
     
-      
-    
-    
 
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Seeno
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://umm233.github.io/p/5c5365ec/" title="github commit时间分析">https://umm233.github.io/p/5c5365ec/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -577,6 +511,21 @@
       
 
       
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
       
       
 
@@ -612,12 +561,22 @@
   </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
           </div>
           
 
+
+          
+
+  
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
   
 
 
@@ -643,15 +602,15 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
+            Overview
           </li>
         </ul>
       
 
-      <div class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -661,108 +620,42 @@
               <p class="site-description motion-element" itemprop="description">Learn more ...</p>
           </div>
 
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">17</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
+          <nav class="site-state motion-element">
 
+            
+              <div class="site-state-item site-state-posts">
               
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">13</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
+                <a href="/archives/">
               
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
 
+            
               
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">18</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
               
-            </nav>
-          
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
 
           
             <div class="feed-link motion-element">
@@ -775,53 +668,46 @@
 
           
             <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VtbTIzMw==" title="GitHub &rarr; https://github.com/umm233"><i class="fa fa-fw fa-github"></i>GitHub</span>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <span class="exturl" data-url="bWFpbHRvOm15ZW1haWwtdW1tMjMzLnByb3Rvbm1haWwuY29t" title="E-Mail &rarr; mailto:myemail-umm233.protonmail.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</span>
-                </span>
-              
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/umm233" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:myemail-umm233.protonmail.com" target="_blank" title="E-Mail" rel="external nofollow noopener noreferrer">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
             </div>
           
 
           
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow noopener noreferrer">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+              </a>
+            </div>
+          
 
           
           
 
-          
-            
-          
           
 
         </div>
-      </div>
+      </section>
 
       
       <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-            
-            
+              
             
 
             
@@ -829,7 +715,7 @@
             
 
           </div>
-        </div>
+        </section>
       <!--/noindex-->
       
 
@@ -852,9 +738,11 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Seeno</span>
 
@@ -864,25 +752,19 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-      <span class="post-meta-item-text">站点总字数：</span>
+      <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="站点总字数">27k</span>
-  
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    
-      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    
-    <span title="站点阅读时长">24 分钟</span>
+    <span title="Site words total count">9.5k</span>
   
 </div>
 
 
-  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动 v3.7.1</div>
+  <div class="powered-by">
+  <i class="fa fa-user"></i><span id="busuanzi_container_site_uv">
+    <span id="busuanzi_value_site_uv"></span>
+  </span>
+  </div>
+
 
 
 
@@ -890,14 +772,14 @@
 
 
 
-  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Pisces</span> v7.0.0</div>
+  <i class="fa fa-eye"></i><span id="busuanzi_container_site_pv">
+    <span id="busuanzi_value_site_pv"></span>
+  </span>
 
 
 
 
         
-
-
 
 
 
@@ -911,15 +793,18 @@
     
 
     
-
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
     
 
-    
   </div>
 
   
 
-<script>
+<script type="text/javascript">
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -933,6 +818,99 @@
 
 
 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
 
 
 
@@ -949,58 +927,25 @@
 
 
 
-
-
-
   
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script src="/js/src/utils.js?v=7.0.0"></script>
-
-  <script src="/js/src/motion.js?v=7.0.0"></script>
-
-
-
-  
+    
+      <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+      <script type="text/javascript">
+        const gitalk = new Gitalk({
+          clientID: 'a2c3eb6ca31a914afb99',
+          clientSecret: '6ecb16e35320bb5ad89b75e887c3ded3156897aa',
+          repo: 'umm233.github.io',
+          owner: 'umm233',
+          admin: 'umm233'.split(','),
+          pagerDirection: 'first',
+          // facebook-like distraction free mode
+          distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+      </script>
+    
   
 
-
-  <script src="/js/src/affix.js?v=7.0.0"></script>
-
-  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
-
-
-
-  
-  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
-<script src="/js/src/post-details.js?v=7.0.0"></script>
-
-
-
-  
-
-
-  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
-
-
-
-  
-
-
-  
 
 
   
@@ -1016,103 +961,57 @@
   
 
   
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
 
   
-
   
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
 
-  
-
-  
-
-  
-
-  
-  <script src="/js/src/exturl.js?v=7.0.0"></script>
-
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
   <script>
-    $('.highlight').each(function(i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap');
-      $(e).after($wrap);
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-          return $(e).text();
-        }).toArray().join('\n');
-        var ta = document.createElement('textarea');
-        var range = document.createRange(); //For Chrome
-        var sel = window.getSelection(); //For Chrome
-        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-        ta.style.top = yPosition + 'px'; //Prevent page scroll
-        ta.style.position = 'absolute';
-        ta.style.opacity = '0';
-        ta.value = code;
-        ta.textContent = code; //For FireFox
-        ta.contentEditable = true;
-        ta.readOnly = false;
-        document.body.appendChild(ta);
-        range.selectNode(ta);
-        sel.removeAllRanges();
-        sel.addRange(range);
-        ta.setSelectionRange(0, code.length);
-        var result = document.execCommand('copy');
-        
-          if (result) $(this).text('复制成功');
-          else $(this).text('复制失败');
-        
-        ta.blur(); //For iOS
-        $(this).blur();
-      })).on('mouseleave', function(e) {
-        var $b = $(this).find('.copy-btn');
-        setTimeout(function() {
-          $b.text('复制');
-        }, 300);
-      }).append(e);
-    })
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "default";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "default";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
   </script>
 
+  
 
   
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.4"></script>
+
+
+
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
 
 </body>
 </html>
