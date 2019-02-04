@@ -28,6 +28,12 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
@@ -43,6 +49,11 @@
 
 
 
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
 
 
 
@@ -74,8 +85,8 @@
     root: '/',
     scheme: 'Pisces',
     version: '7.0.0',
-    sidebar: {"position":"left","width":300,"display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
+    sidebar: {"position":"left","width":300,"display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -485,7 +496,7 @@
         <p>初学VHDL，练手写了一个异步十进制加法计数器，过程有许多细节上的错误，在此记录一下。</p>
 <a id="more"></a>
 <blockquote>
-<p><strong>VHDL</strong>，全称<strong>超高速集成电路硬件描述语言</strong>（英语：<strong><a href="https://zh.wikipedia.org/wiki/VHSIC" title="VHSIC" rel="external nofollow noopener noreferrer" target="_blank">VHSIC</a> very high-speed hardware description language</strong>），在基于<a href="https://zh.wikipedia.org/wiki/%E8%A4%87%E9%9B%9C%E5%8F%AF%E7%A8%8B%E5%BC%8F%E9%82%8F%E8%BC%AF%E8%A3%9D%E7%BD%AE" title="复杂可编程逻辑器件" rel="external nofollow noopener noreferrer" target="_blank">复杂可编程逻辑器件</a>、<a href="https://zh.wikipedia.org/wiki/%E7%8E%B0%E5%9C%BA%E5%8F%AF%E7%BC%96%E7%A8%8B%E9%80%BB%E8%BE%91%E9%97%A8%E9%98%B5%E5%88%97" title="现场可编程逻辑门阵列" rel="external nofollow noopener noreferrer" target="_blank">现场可编程逻辑门阵列</a>和<a href="https://zh.wikipedia.org/wiki/%E7%89%B9%E6%AE%8A%E6%87%89%E7%94%A8%E7%A9%8D%E9%AB%94%E9%9B%BB%E8%B7%AF" title="专用集成电路" rel="external nofollow noopener noreferrer" target="_blank">专用集成电路</a>的<a href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF" title="数字电路" rel="external nofollow noopener noreferrer" target="_blank">数字系统</a> 设计中有着广泛的应用。（via 维基百科）</p>
+<p><strong>VHDL</strong>，全称<strong>超高速集成电路硬件描述语言</strong>（英语：<strong><span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvVkhTSUM=" title="VHSIC">VHSIC<i class="fa fa-external-link"></i></span> very high-speed hardware description language</strong>），在基于<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU4JUE0JTg3JUU5JTlCJTlDJUU1JThGJUFGJUU3JUE4JThCJUU1JUJDJThGJUU5JTgyJThGJUU4JUJDJUFGJUU4JUEzJTlEJUU3JUJEJUFF" title="复杂可编程逻辑器件">复杂可编程逻辑器件<i class="fa fa-external-link"></i></span>、<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU3JThFJUIwJUU1JTlDJUJBJUU1JThGJUFGJUU3JUJDJTk2JUU3JUE4JThCJUU5JTgwJUJCJUU4JUJFJTkxJUU5JTk3JUE4JUU5JTk4JUI1JUU1JTg4JTk3" title="现场可编程逻辑门阵列">现场可编程逻辑门阵列<i class="fa fa-external-link"></i></span>和<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU3JTg5JUI5JUU2JUFFJThBJUU2JTg3JTg5JUU3JTk0JUE4JUU3JUE5JThEJUU5JUFCJTk0JUU5JTlCJUJCJUU4JUI3JUFG" title="专用集成电路">专用集成电路<i class="fa fa-external-link"></i></span>的<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU2JTk1JUIwJUU1JUFEJTk3JUU3JTk0JUI1JUU4JUI3JUFG" title="数字电路">数字系统<i class="fa fa-external-link"></i></span> 设计中有着广泛的应用。（via 维基百科）</p>
 </blockquote>
 <blockquote>
 <ul>
@@ -510,7 +521,7 @@
 <blockquote>
 <p><code>&lt;=</code>: 用于信号赋值，延迟赋值  – <strong>信号赋初值的时候可以用 := </strong>）<br><code>:=</code>: 用于变量赋值，立即赋值<br>保存文件的时候文件名要和实体名一样，不一致会出现<code>Error: xxx undefined</code></p>
 </blockquote>
-<p>完整代码见github：<a href="https://github.com/umm233/Code-Note/blob/master/decimal-addition-counter.vhd" target="_blank" rel="noopener">异步十进制加法计数器</a></p>
+<p>完整代码见github：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VtbTIzMy9Db2RlLU5vdGUvYmxvYi9tYXN0ZXIvZGVjaW1hbC1hZGRpdGlvbi1jb3VudGVyLnZoZA==" title="https://github.com/umm233/Code-Note/blob/master/decimal-addition-counter.vhd">异步十进制加法计数器<i class="fa fa-external-link"></i></span></p>
 
       
     </div>
@@ -528,6 +539,29 @@
     
     
 
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Seeno</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://umm233.github.io/p/69a664c6/" title="异步十进制加法加法计数器(VHDL实现)">https://umm233.github.io/p/69a664c6/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -752,7 +786,38 @@
           
 
           
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VtbTIzMw==" title="GitHub &rarr; https://github.com/umm233"><i class="fa fa-fw fa-github"></i></span>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="bWFpbHRvOm15ZW1haWwtdW1tMjMzLnByb3Rvbm1haWwuY29t" title="E-Mail &rarr; mailto:myemail-umm233.protonmail.com"><i class="fa fa-fw fa-envelope"></i></span>
+                </span>
+              
+            </div>
+          
 
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+             </div>
           
 
           
@@ -768,6 +833,13 @@
 
       
 
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
       
 
     </div>
@@ -834,11 +906,6 @@
     </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
 
     
       <div id="needsharebutton-float">
@@ -872,6 +939,8 @@
 
 
 
+  
+
 
 
 
@@ -894,6 +963,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
@@ -1018,6 +1090,8 @@
   
 
   
+  <script src="/js/src/exturl.js?v=7.0.0"></script>
+
 
   
 

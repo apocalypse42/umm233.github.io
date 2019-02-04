@@ -28,6 +28,12 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
@@ -43,6 +49,11 @@
 
 
 
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
 
 
 
@@ -74,8 +85,8 @@
     root: '/',
     scheme: 'Pisces',
     version: '7.0.0',
-    sidebar: {"position":"left","width":300,"display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
+    sidebar: {"position":"left","width":300,"display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -498,7 +509,7 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sad = yday/allday # 一年进度 sad~</span><br><span class="line">scale = 15 # 进度条长度</span><br><span class="line">i = int(15*sad)</span><br><span class="line">passed = &apos;▓&apos; * i # 今年走过的%</span><br><span class="line">leave = &apos;░&apos; * (scale - i) # 今年剩下的%</span><br><span class="line">print(&quot;\r&#123;0&#125;&#123;1&#125; &#123;2:3.0f&#125;% \n&quot;.format(passed,leave,sad*100),end=&apos;&apos;)</span><br></pre></td></tr></table></figure>
 <p>▓▓▓▓▓▓▓▓▓▓▓▓░░░  84% </p>
-<p>至此一个进度条就出来了 <a href="https://github.com/umm233/SeeNo/blob/master/missday.py" target="_blank" rel="noopener">完整代码</a></p>
+<p>至此一个进度条就出来了 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VtbTIzMy9TZWVOby9ibG9iL21hc3Rlci9taXNzZGF5LnB5" title="https://github.com/umm233/SeeNo/blob/master/missday.py">完整代码<i class="fa fa-external-link"></i></span></p>
 <h2 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h2><p>今年只剩下59天了，还有很多东西想学好🙃🙃🙃，加把劲了~</p>
 
       
@@ -517,6 +528,29 @@
     
     
 
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Seeno</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://umm233.github.io/p/5a3f823d/" title="今年时间进度">https://umm233.github.io/p/5a3f823d/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -750,7 +784,38 @@
           
 
           
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VtbTIzMw==" title="GitHub &rarr; https://github.com/umm233"><i class="fa fa-fw fa-github"></i></span>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="bWFpbHRvOm15ZW1haWwtdW1tMjMzLnByb3Rvbm1haWwuY29t" title="E-Mail &rarr; mailto:myemail-umm233.protonmail.com"><i class="fa fa-fw fa-envelope"></i></span>
+                </span>
+              
+            </div>
+          
 
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+             </div>
           
 
           
@@ -783,6 +848,13 @@
       <!--/noindex-->
       
 
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
       
 
     </div>
@@ -849,11 +921,6 @@
     </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
 
     
       <div id="needsharebutton-float">
@@ -887,6 +954,8 @@
 
 
 
+  
+
 
 
 
@@ -909,6 +978,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
@@ -1033,6 +1105,8 @@
   
 
   
+  <script src="/js/src/exturl.js?v=7.0.0"></script>
+
 
   
 

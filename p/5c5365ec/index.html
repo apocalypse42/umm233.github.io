@@ -28,6 +28,12 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
@@ -43,6 +49,11 @@
 
 
 
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
 
 
 
@@ -74,8 +85,8 @@
     root: '/',
     scheme: 'Pisces',
     version: '7.0.0',
-    sidebar: {"position":"left","width":300,"display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
+    sidebar: {"position":"left","width":300,"display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -485,18 +496,18 @@
       
 
       
-        <p>之前没怎么接触api，最近分析了一下关于GitHub用户的<code>commit</code>时间，初步得出关于该用户的<code>commit</code>时间规律等等。（ 事前查了一下，网上大部分关于GitHub上数据分析的文章推荐使用官方提供的api: <a href="https://developer.github.com/v3/" rel="external nofollow noopener noreferrer" target="_blank">GitHub Developer</a></p>
+        <p>之前没怎么接触api，最近分析了一下关于GitHub用户的<code>commit</code>时间，初步得出关于该用户的<code>commit</code>时间规律等等。（ 事前查了一下，网上大部分关于GitHub上数据分析的文章推荐使用官方提供的api: <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My8=" title="https://developer.github.com/v3/">GitHub Developer<i class="fa fa-external-link"></i></span></p>
 <a id="more"></a>
 <h2 id="API调用"><a href="#API调用" class="headerlink" title="API调用"></a>API调用</h2><p>对于Github上用户 所有提交的<code>commmit</code>，通过遍历其每个仓库的<code>commit</code>得到。</p>
 <h3 id="某用户所有的仓库"><a href="#某用户所有的仓库" class="headerlink" title="某用户所有的仓库"></a>某用户所有的仓库</h3><p>链接格式：<code>https://api.github.com/users/{username}/repos</code></p>
 <blockquote>
-<p>具体使用可参考：<a href="https://developer.github.com/v3/repos/#list-user-repositories" rel="external nofollow noopener noreferrer" target="_blank">List user repositories</a></p>
+<p>具体使用可参考：<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My9yZXBvcy8jbGlzdC11c2VyLXJlcG9zaXRvcmllcw==" title="https://developer.github.com/v3/repos/#list-user-repositories">List user repositories<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <h3 id="单个仓库的commits"><a href="#单个仓库的commits" class="headerlink" title="单个仓库的commits"></a>单个仓库的commits</h3><p>链接格式：<code>https://api.github.com/repos/{owner}/{repo}/commits</code></p>
 <p>注意：commits后面不能加<code>/</code>，因为加<code>/</code>后面要到<code>SHA</code>值，否则，会出现 <code>&quot;No commit found for SHA: &quot;</code>的错误。</p>
 <blockquote>
-<p>具体使用可参考：<a href="https://developer.github.com/v3/repos/commits/#get-a-single-commit" rel="external nofollow noopener noreferrer" target="_blank">get-a-single-commit</a></p>
-<p>调用api后返回整整齐齐的json数据，在其中对于json数据操作就可以得到想要的信息。<br>完整api文档/教程可参考：<br><a href="https://developer.github.com/v3/" rel="external nofollow noopener noreferrer" target="_blank">GitHub Developer v3 API文档</a><br><a href="https://developer.github.com/v3/guides/getting-started/" rel="external nofollow noopener noreferrer" target="_blank">GitHub Developer v3 API教程</a></p>
+<p>具体使用可参考：<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My9yZXBvcy9jb21taXRzLyNnZXQtYS1zaW5nbGUtY29tbWl0" title="https://developer.github.com/v3/repos/commits/#get-a-single-commit">get-a-single-commit<i class="fa fa-external-link"></i></span></p>
+<p>调用api后返回整整齐齐的json数据，在其中对于json数据操作就可以得到想要的信息。<br>完整api文档/教程可参考：<br><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My8=" title="https://developer.github.com/v3/">GitHub Developer v3 API文档<i class="fa fa-external-link"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My9ndWlkZXMvZ2V0dGluZy1zdGFydGVkLw==" title="https://developer.github.com/v3/guides/getting-started/">GitHub Developer v3 API教程<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <h2 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h2><h3 id="获取API返回内容"><a href="#获取API返回内容" class="headerlink" title="获取API返回内容"></a>获取API返回内容</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_data</span><span class="params">(url)</span>:</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1'</span>&#125;</span><br><span class="line">    html = requests.get(url, headers=headers) <span class="comment"># 发送请求</span></span><br><span class="line">    <span class="keyword">if</span> html.status_code == <span class="number">200</span>: <span class="comment"># 判断请求是否成功</span></span><br><span class="line">        <span class="comment"># print(html)</span></span><br><span class="line">        <span class="keyword">return</span> html.content <span class="comment"># 返回网页内容</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br></pre></td></tr></table></figure>
 <h3 id="获取某用户所有的repo-name。"><a href="#获取某用户所有的repo-name。" class="headerlink" title="获取某用户所有的repo name。"></a>获取某用户所有的repo name。</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_all_repo</span><span class="params">(name)</span>:</span> <span class="comment"># 某人所有的repo</span></span><br><span class="line">    url_repos = <span class="string">'https://api.github.com/users/&#123;name&#125;/repos'</span>.format(name=name)</span><br><span class="line">    html = get_data(url_repos)</span><br><span class="line"></span><br><span class="line">    json_data = json.loads(html)</span><br><span class="line">    <span class="comment"># json_data里储存的是html下的所有数据</span></span><br><span class="line">    all_repos = [] <span class="comment"># repos's name数据存放数组</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> json_data:</span><br><span class="line">            repo = item[<span class="string">'name'</span>]</span><br><span class="line">            all_repos.append(repo)</span><br><span class="line">        print(all_repos) <span class="comment"># 某用户的所有repo列表</span></span><br><span class="line">        print( <span class="string">"the %s totally has %d repos"</span> %(name,len(all_repos)) )</span><br><span class="line">        <span class="keyword">return</span> name,all_repos</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            print(e)</span><br></pre></td></tr></table></figure>
@@ -504,7 +515,7 @@
 <h2 id="代理ip"><a href="#代理ip" class="headerlink" title="代理ip"></a>代理ip</h2><p>下面那篇文章写的很详细了，以供记录参考。</p>
 <blockquote>
 <p>btw: 原来是写了加上代理ip去调用api，但是还是会被限制，可能打开方式不对。</p>
-<p>参考：<a href="https://blog.csdn.net/lammonpeter/article/details/52917264" target="_blank" rel="noopener">Python爬虫技巧—设置代理IP</a><br>IP地址取自国内髙匿代理IP网站：<a href="http://www.xicidaili.com/nn/" rel="external nofollow noopener noreferrer" target="_blank">http://www.xicidaili.com/nn/</a></p>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xhbW1vbnBldGVyL2FydGljbGUvZGV0YWlscy81MjkxNzI2NA==" title="https://blog.csdn.net/lammonpeter/article/details/52917264">Python爬虫技巧—设置代理IP<i class="fa fa-external-link"></i></span><br>IP地址取自国内髙匿代理IP网站：<span class="exturl" data-url="aHR0cDovL3d3dy54aWNpZGFpbGkuY29tL25uLw==" title="http://www.xicidaili.com/nn/">http://www.xicidaili.com/nn/<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <h2 id="planB"><a href="#planB" class="headerlink" title="planB"></a>planB</h2><blockquote>
 <p>re分析Github commit页面获取所有GitHub commmit时间</p>
@@ -536,8 +547,8 @@
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>整体思路比较简单，也许Github比较善良(-:<br>所有commit时间数据 &lt; 所有repo的commit时间数据 &lt; 某个repo的所有commit时间数据 &lt; 单个repo某页commit时间数据</p>
 <p>完整程序见Github：</p>
 <ol>
-<li><a href="https://github.com/umm233/Code-Note/blob/master/Github-commit-time-spider.py" target="_blank" rel="noopener">Github用户commit数据爬取</a></li>
-<li><a href="https://github.com/umm233/Code-Note/blob/master/Github-commit-analysis.py" target="_blank" rel="noopener">Github用户commit数据分析</a></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VtbTIzMy9Db2RlLU5vdGUvYmxvYi9tYXN0ZXIvR2l0aHViLWNvbW1pdC10aW1lLXNwaWRlci5weQ==" title="https://github.com/umm233/Code-Note/blob/master/Github-commit-time-spider.py">Github用户commit数据爬取<i class="fa fa-external-link"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VtbTIzMy9Db2RlLU5vdGUvYmxvYi9tYXN0ZXIvR2l0aHViLWNvbW1pdC1hbmFseXNpcy5weQ==" title="https://github.com/umm233/Code-Note/blob/master/Github-commit-analysis.py">Github用户commit数据分析<i class="fa fa-external-link"></i></span></li>
 </ol>
 <p>今年时间进度：▓▓▓▓▓▓▓▓▓▓▓▓▓▓░  99%</p>
 
@@ -557,6 +568,29 @@
     
     
 
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Seeno</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://umm233.github.io/p/5c5365ec/" title="github commit时间分析">https://umm233.github.io/p/5c5365ec/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -794,7 +828,38 @@
           
 
           
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VtbTIzMw==" title="GitHub &rarr; https://github.com/umm233"><i class="fa fa-fw fa-github"></i></span>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <span class="exturl" data-url="bWFpbHRvOm15ZW1haWwtdW1tMjMzLnByb3Rvbm1haWwuY29t" title="E-Mail &rarr; mailto:myemail-umm233.protonmail.com"><i class="fa fa-fw fa-envelope"></i></span>
+                </span>
+              
+            </div>
+          
 
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+             </div>
           
 
           
@@ -827,6 +892,13 @@
       <!--/noindex-->
       
 
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
       
 
     </div>
@@ -893,11 +965,6 @@
     </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
 
     
       <div id="needsharebutton-float">
@@ -931,6 +998,8 @@
 
 
 
+  
+
 
 
 
@@ -953,6 +1022,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
@@ -1077,6 +1149,8 @@
   
 
   
+  <script src="/js/src/exturl.js?v=7.0.0"></script>
+
 
   
 
