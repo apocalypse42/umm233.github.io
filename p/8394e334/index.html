@@ -513,7 +513,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [1,4,2,6,3,8]</span><br><span class="line">b = a.sort() # 错误的用法</span><br><span class="line">print(a) # 结果是[1,2,3,4,6,8]</span><br><span class="line">print(b) # None</span><br><span class="line">print(type(b)) # 结果是 &lt;class &apos;NoneType&apos;&gt;</span><br></pre></td></tr></table></figure>
 <p>刚开始觉得没毛病，但是<code>b</code>没有取值，然后去查了一下，sort函数返回的就是<code>None</code>，<code>a.sort()</code>将<code>a</code>排序好后，不返回值，直接对<code>a</code>本身进行操作。</p>
 <blockquote>
-<p>参数说明参考 <a href="http://www.runoob.com/python/att-list-sort.html" rel="external nofollow noopener noreferrer" target="_blank">菜鸟教程</a></p>
+<p>参数说明参考 <span class="exturl" data-url="aHR0cDovL3d3dy5ydW5vb2IuY29tL3B5dGhvbi9hdHQtbGlzdC1zb3J0Lmh0bWw=" title="http://www.runoob.com/python/att-list-sort.html">菜鸟教程<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 
       

@@ -507,12 +507,12 @@
         <p>最近学习信息论，上课讲的概念晦涩，课后自己领悟 <del>老师催眠/无奈</del></p>
 <p>对于唯一可译码，看概念一直绕圈圈，后来看一眼流程图，实践一下明了许多。而后参考网上的算法（Java/C++），自己用Python写了一遍，方便写作业…</p>
 <a id="more"></a>
-<p>算法参考 <a href="https://blog.csdn.net/u010536377/article/details/44862493" target="_blank" rel="noopener"> [信息论]唯一可译码的判决算法实现（UDC）</a></p>
+<p>算法参考 <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA1MzYzNzcvYXJ0aWNsZS9kZXRhaWxzLzQ0ODYyNDkz" title="https://blog.csdn.net/u010536377/article/details/44862493"> [信息论]唯一可译码的判决算法实现（UDC）<i class="fa fa-external-link"></i></span></p>
 <p>算法实现如下：</p>
 <blockquote>
 <p>1． 输入原始数据，并用ArrayList()类存储起来；<br>2． 在使用规则之前，先判断是否奇异，如果奇异，将没有进行后续判断的必要，如果非奇异，进入第3步；否则结束程序，输出结果（奇异）；<br>3． 第一次寻找，调用自己设定的seek（array），在初始数据中找到符合条件的尾随后缀，然后进入第4步；<br>4． 通过第一次寻找，可以得到一个arr数组，如果该数组为空，那么就没有必要再进行下去，已经证明找不到更多的尾随后缀了，直接进入第6步；否则进入第5步；<br>5． 通过第一次的寻找，已经得到基本的arr,但是arr是用于判断的，所以首先克隆arr到arrclone中，并且将arr清空，调用seek（array，arrclone）,再将arrclone的字符串和原始数据进行对比，再次得到arr,如果arr为空，进入第6步，否则循环第5步；<br>6． 得到了S，若S为空，则证明不存在尾随后缀，则为即时码，输出结果；若不为空，将原始数据array和S进行对比，若有相同的字符串，则不是唯一可译码，反之，是唯一可译码。</p>
 </blockquote>
-<p>具体代码见github：<a href="https://github.com/umm233/Code-Note/blob/master/Unique-code.py" target="_blank" rel="noopener">唯一可译码Python实现</a></p>
+<p>具体代码见github：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VtbTIzMy9Db2RlLU5vdGUvYmxvYi9tYXN0ZXIvVW5pcXVlLWNvZGUucHk=" title="https://github.com/umm233/Code-Note/blob/master/Unique-code.py">唯一可译码Python实现<i class="fa fa-external-link"></i></span></p>
 
       
     </div>
