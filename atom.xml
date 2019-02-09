@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://umm233.github.io/"/>
-  <updated>2019-02-05T12:05:41.828Z</updated>
+  <updated>2019-02-09T13:15:28.345Z</updated>
   <id>https://umm233.github.io/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Blog back up</title>
+    <link href="https://umm233.github.io/p/cbef7cfa/"/>
+    <id>https://umm233.github.io/p/cbef7cfa/</id>
+    <published>2019-02-09T13:15:28.000Z</published>
+    <updated>2019-02-09T13:15:28.345Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Update NexT</title>
@@ -232,30 +246,6 @@
       <category term="Python" scheme="https://umm233.github.io/tags/Python/"/>
     
       <category term="图片拼接" scheme="https://umm233.github.io/tags/%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python实现2DPSK</title>
-    <link href="https://umm233.github.io/p/d5a52b94/"/>
-    <id>https://umm233.github.io/p/d5a52b94/</id>
-    <published>2018-11-18T12:26:44.000Z</published>
-    <updated>2019-01-19T09:10:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近写作业要画各种各样的波形（eg.2DPSK），就很烦，有的地方总画错(<del>真实原因是画的丑</del>)<br>然后就写了个程序画得整整齐齐来看，顺便加深理解。</p><a id="more"></a><blockquote><p>2DPSK简称为二进制差分相移键控，它不是利用载波相位的绝对数值传送数字信息，而是用前后码元的相对载波相位值传送数字信息。所谓相对载波相位是指本码与前一码元初相之差。——引自百度百科的定义</p></blockquote><h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>1.根据其定义，相位变化是由输入的码元(0/1)决定的（默认初始参考相位为0）<br>2.用一个数组delta将每次变化的相位记录下来，用deltaAdd累加每次的变化量形成最终的相位<br>3.细节处理：</p><blockquote><p>要考虑到每个周期产生的波形数量，其可通过下面这个公式计算出。</p></blockquote><p>$$<br>T_B = f_c/R_b<br>$$</p><h2 id="程序实现"><a href="#程序实现" class="headerlink" title="程序实现"></a>程序实现</h2><blockquote><p>主要用到<code>numpy</code>和 <code>matplotlib</code></p></blockquote><pre><code># 预设用于检测的绝对码，Tb，fai0，fai1，后面可以作为参数输入mustCode = [0,1,1,0,1,0]Tb = 1.5*2*np.pi # 一个波形周期fai0 = 1.5*np.pi # 码字为0时波形的移动相位：270°fai1 = 0.5*np.pi # 码字为1时波形的移动相位：90°for i in range(len(mustCode)):    if mustCode[i] == 1:        delta.append(fai1)    else:        delta.append(fai0)    deltaAdd = deltaAdd + delta[i] # 累计每次的相位变化    x1 = np.linspace((i+1)*Tb, i*Tb+2*Tb, 100)    y1 = np.sin(x1 + deltaAdd)    plt.plot(x1,y1)plt.show()### 更新一下下，加一个判断，因为2DPSK有不同的情况存在。    if forwordOrlast == &apos;1&apos;:        deltaAdd = deltaAdd + delta[i] # 2DPSK之与前一波形末相位的相位差    elif forwordOrlast == &apos;0&apos;:        deltaAdd = deltaAdd + delta[i] - Tb # 2DPSK之与前一波形初相位的相位差    else:        print(&quot;input data is wrong&quot;)</code></pre><h2 id="结果截图"><a href="#结果截图" class="headerlink" title="结果截图"></a>结果截图</h2><img src="/p/d5a52b94/2DPSK011010.png" title="2DPSK-011010"><p>程序公开在Github上：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VtbTIzMy9Db2RlLU5vdGUvYmxvYi9tYXN0ZXIvMkRQU0sucHk=" title="https://github.com/umm233/Code-Note/blob/master/2DPSK.py">2DPSK波形程序实现<i class="fa fa-external-link"></i></span></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>按思路写起来就是这样子，后面就是将那些预设的量用<code>input()</code>输入就好了。<br>还有就是图像上的优化，怎么弄起来好看一些…比如将横坐标用pi的倍数来表示，加上网格等等。</p><p>自己动手，丰衣足食😜</p><p>PS.今年还剩下 43 天     ▓▓▓▓▓▓▓▓▓▓▓▓▓░░  88%</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近写作业要画各种各样的波形（eg.2DPSK），就很烦，有的地方总画错(&lt;del&gt;真实原因是画的丑&lt;/del&gt;)&lt;br&gt;然后就写了个程序画得整整齐齐来看，顺便加深理解。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="通信原理" scheme="https://umm233.github.io/categories/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"/>
-    
-    
-      <category term="Python" scheme="https://umm233.github.io/tags/Python/"/>
-    
-      <category term="2DPSK" scheme="https://umm233.github.io/tags/2DPSK/"/>
     
   </entry>
   
