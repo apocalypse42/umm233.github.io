@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://umm.js.org/"/>
-  <updated>2019-02-09T16:29:33.335Z</updated>
+  <updated>2019-02-28T07:44:48.948Z</updated>
   <id>https://umm.js.org/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GIF Compression</title>
+    <link href="https://umm.js.org/p/e9fa3cd1/"/>
+    <id>https://umm.js.org/p/e9fa3cd1/</id>
+    <published>2019-02-27T13:27:58.000Z</published>
+    <updated>2019-02-28T07:44:48.948Z</updated>
+    
+    <content type="html"><![CDATA[<p>日常看番看剧，遇到一些场景就喜欢录制gif保存下来，但每次制作出来都会出现gif过大的问题…<br>至于解决，稍微记录下…<del>(因为有的时候记不住，划掉划掉)</del></p><a id="more"></a><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>导致gif过大常见的原因大致以下几种：</p><ol><li>尺寸过大</li><li>帧率过大</li><li>图片的颜色</li><li>gif的时长</li></ol><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>主要从尺寸以及图片颜色上入手，至于帧率过大/gif过长则可以通过<code>ScreenToGif</code>这个软件适当删除一些重复的帧数等等。</p><h3 id="iloveimg"><a href="#iloveimg" class="headerlink" title="iloveimg"></a><span class="exturl" data-url="aHR0cHM6Ly93d3cuaWxvdmVpbWcuY29tL3poLWNuL2NvbXByZXNzLWltYWdlL2NvbXByZXNzLWdpZg==" title="https://www.iloveimg.com/zh-cn/compress-image/compress-gif">iloveimg<i class="fa fa-external-link"></i></span></h3><p>在线GIF压缩工具，上传图片，帮你压缩完后下载回来，简单粗暴。<br>效果还行，umm…就是有的时候上传速度感人罢了…</p><h3 id="ImageMagick"><a href="#ImageMagick" class="headerlink" title="ImageMagick"></a>ImageMagick</h3><p>项目地址及说明参考：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0ltYWdlTWFnaWNrL0ltYWdlTWFnaWNr" title="https://github.com/ImageMagick/ImageMagick">https://github.com/ImageMagick/ImageMagick<i class="fa fa-external-link"></i></span></p><ol><li>降低GIF图像品质</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert -quality 75% input.gif output.gif</span><br></pre></td></tr></table></figure><p>参数说明：</p><p><code>-quality 75%</code> 原图品质降为 75% 左右 (降太多可能会导致图像品质下降严重)<br>ps.umm有的时候效果并不明显</p><ol start="2"><li>缩小GIF尺寸</li></ol><p>减小GIF的图像尺寸应该是最简单粗暴的缩小GIF体积的方法。</p><ul><li>自定义尺寸大小</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert -resize 800x600 input.gif output.gif</span><br></pre></td></tr></table></figure><ul><li>原图像宽高缩小为原来的一半</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert -sample 50%x50% input.gif output.gif</span><br></pre></td></tr></table></figure><ol start="3"><li>设置压缩比</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert test.gif -fuzz 15% -layers Optimize result.gif</span><br></pre></td></tr></table></figure><p>参数说明：</p><p><code>-fuzz</code>设置压缩率，压缩率不宜设置得太高，一半在5%~15%，具体根据图片压缩后的效果进行修改。</p><h3 id="Gifsicle"><a href="#Gifsicle" class="headerlink" title="Gifsicle"></a>Gifsicle</h3><p>项目地址：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tvaGxlci9naWZzaWNsZQ==" title="https://github.com/kohler/gifsicle">https://github.com/kohler/gifsicle<i class="fa fa-external-link"></i></span><br>使用参考：<span class="exturl" data-url="aHR0cDovL3d3dy5sY2RmLm9yZy9naWZzaWNsZS9tYW4uaHRtbA==" title="http://www.lcdf.org/gifsicle/man.html">http://www.lcdf.org/gifsicle/man.html<i class="fa fa-external-link"></i></span></p><ol><li>根据图像自动优化</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gifsicle -O3 input.gif -o output.gif</span><br></pre></td></tr></table></figure><p>参数说明:</p><p><strong>-O</strong>[<em>level</em>]</p><ul><li><code>-O1</code> 仅存储每个图像的更改部分。 这是默认值。</li><li><code>-O2</code> 使用透明度进一步缩小文件。</li><li><code>-O3</code> 尝试几种优化方法（通常较慢，有时更好的结果）。</li></ul><ol start="2"><li>缩小图像尺寸</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gifsicle -i input.gif --scale 0.5 -o output.gif</span><br><span class="line">gifsicle input.gif --resize 300x200 -o output.gif</span><br></pre></td></tr></table></figure><p>参数说明：</p><ul><li><code>--scale 0.5</code> 指的是缩小图像宽高为原来的一半</li><li><code>resize 300x200</code> 自定义图片伸缩尺寸</li></ul><ol start="3"><li>减少图片颜色</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gifsicle -O3 input.gif -o output.gif --colors num</span><br></pre></td></tr></table></figure><p>参数说明：</p><p><code>--color num</code>: 将每个输出GIF中不同颜色的数量减少到num或更少。 num必须介于2到256之间。这可用于缩小输出GIF或消除任何本地颜色表。num越小，图片质量损失度越大。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;日常看番看剧，遇到一些场景就喜欢录制gif保存下来，但每次制作出来都会出现gif过大的问题…&lt;br&gt;至于解决，稍微记录下…&lt;del&gt;(因为有的时候记不住，划掉划掉)&lt;/del&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="图像处理" scheme="https://umm.js.org/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+    
+      <category term="Image" scheme="https://umm.js.org/tags/Image/"/>
+    
+      <category term="Compress" scheme="https://umm.js.org/tags/Compress/"/>
+    
+  </entry>
   
   <entry>
     <title>git中关于CRLF的Warning</title>
@@ -109,9 +133,9 @@
       <category term="Hexo" scheme="https://umm.js.org/categories/Hexo/"/>
     
     
-      <category term="Note" scheme="https://umm.js.org/tags/Note/"/>
-    
       <category term="Hexo" scheme="https://umm.js.org/tags/Hexo/"/>
+    
+      <category term="Note" scheme="https://umm.js.org/tags/Note/"/>
     
       <category term="Writing" scheme="https://umm.js.org/tags/Writing/"/>
     
@@ -232,33 +256,6 @@
       <category term="Software" scheme="https://umm.js.org/tags/Software/"/>
     
       <category term="ML" scheme="https://umm.js.org/tags/ML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>拼图优化</title>
-    <link href="https://umm.js.org/p/6f136742/"/>
-    <id>https://umm.js.org/p/6f136742/</id>
-    <published>2018-11-29T07:21:36.000Z</published>
-    <updated>2019-02-10T11:39:54.096Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前情"><a href="#前情" class="headerlink" title="前情"></a>前情</h2><p>之前粗糙写了一个实现根据模板形状拼图的程序，最明显的缺点就是，拼出来形状，但是丢失了原有图片的颜色。<br>然后“基于搜索引擎“优化了一下。主要参考</p><blockquote><p>主要是发现了 <code>Image</code>  库里的 <code>blend</code> 函数 和 <code>composite</code>函数。</p></blockquote><a id="more"></a><h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><ul><li>方法一（推荐）</li></ul><blockquote><p><code>blend</code>函数简介<br>定义：Image.blend(image1,image2, alpha) ⇒ image<br>含义：使用给定的两张图像及透明度变量alpha，插值出一张新的图像。这两张图像必须有一样的尺寸和模式。<br>合成公式为：out = image1 _(1.0 - alpha) + image2 _ alpha</p></blockquote><pre><code>im1 = Image.open(&quot;Image1.png&quot;)im2 = Image.open(&quot;Image2.png&quot;)im = Image.blend(im1,im2,0.618)im.save(&quot;pin-pic.png&quot;)</code></pre><blockquote><p>这里0.618是黄金比例值，<del>偷懒随便选的</del></p></blockquote><p>关于参数设置，简单来说，如果变量alpha为0.0，将返回第一张图像的拷贝。如果变量alpha为1.0，将返回第二张图像的拷贝。对变量alpha的值没有限制。<br>这里的话:</p><blockquote><p>如果设置为 0，那么显示<code>Image1.png</code><br>如果设置为 1，那么显示<code>Image2.png</code></p></blockquote><p>效果图：</p><img src="/p/6f136742/tmdu1-12-0.618.png"><ul><li>方法二（不太好看🙃）</li></ul><blockquote><p><code>Composite</code>函数简介<br>定义：Image.composite(image1,image2, mask) ⇒ image<br>含义：使用给定的两张图像及mask图像作为透明度，插值出一张新的图像。变量mask图像的模式可以为“1”，“L”或者“RGBA”。所有图像必须有相同的尺寸。</p></blockquote><pre><code>im1 = Image.open(&quot;Image1.png&quot;)im2 = Image.open(&quot;Image2.png&quot;)# 因为下面要对图像的RGB三通道进行分割，所以这里将格式转换为RGBim1 = im1.convert(&quot;RGB&quot;)im2 = im2.convert(&quot;RGB&quot;)r,g,b = im1.split() # 通道分离print(g.mode)im = Image.composite(im1,im2,g)im.save(&quot;pin-pic.jpg&quot;)b.save(&quot;image-b.jpg&quot;)</code></pre><p>效果图:</p><img src="/p/6f136742/tmdu2-12-b1.png"><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><code>Image</code>库，博大精深…我只取一粟😂<br>写起来只有这一点点，但是实际测试了很多，之前将图片格式转为RGBA，尝试修改alpha通道，没有效果，不知道那个地方不对，然后测试了许多图片透明化的方法，最后看到一篇文章介绍了<code>Image</code>库的一些具体函数，找到以上两个函数解决。对自己来说，由于对<code>Image</code>库还不够熟悉，兜兜转转，又回到<code>Image</code> …<del>悲伤的故事</del></p><p>不存在的Flag：有空把各部分的函数结构还有固定参数修改一下，做的精细一点，多注意下细节优化和交互体验等等。<del>挖坑</del></p><p>PS.今年时间进度提醒</p><p>今年还剩下 29 天     ▓▓▓▓▓▓▓▓▓▓▓▓▓░░  92%</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vY2hpbWVpd2FuZ2xpYW5nL3AvNzEzMDQzNC5odG1sJnF1b3Q7" title="https://www.cnblogs.com/chimeiwangliang/p/7130434.html&quot;">第一篇 Python图片处理模块PIL（pillow）<i class="fa fa-external-link"></i></span></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前情&quot;&gt;&lt;a href=&quot;#前情&quot; class=&quot;headerlink&quot; title=&quot;前情&quot;&gt;&lt;/a&gt;前情&lt;/h2&gt;&lt;p&gt;之前粗糙写了一个实现根据模板形状拼图的程序，最明显的缺点就是，拼出来形状，但是丢失了原有图片的颜色。&lt;br&gt;然后“基于搜索引擎“优化了一下。主要参考&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;主要是发现了 &lt;code&gt;Image&lt;/code&gt;  库里的 &lt;code&gt;blend&lt;/code&gt; 函数 和 &lt;code&gt;composite&lt;/code&gt;函数。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="图像处理" scheme="https://umm.js.org/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
-    
-    
-      <category term="Python" scheme="https://umm.js.org/tags/Python/"/>
-    
-      <category term="Image" scheme="https://umm.js.org/tags/Image/"/>
     
   </entry>
   
