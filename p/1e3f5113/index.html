@@ -121,7 +121,7 @@
 <meta property="og:description" content="捡起之前想做的图片拼接：刚学Python的时候一个图，将各种图拼起来做成特定的形状，觉得很酷然后刚开始各种百度图片拼接程序，未果。这两天闲下来就想动动手，想给做出来。然后经过一番挣扎，有点丑的做出来了😂效果图如下：(最好模板图片背景是白色的)">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://umm.js.org/p/1e3f5113/pintu.png">
-<meta property="og:updated_time" content="2019-02-10T11:40:02.370Z">
+<meta property="og:updated_time" content="2019-03-08T13:16:40.309Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PIL实现图片拼接">
 <meta name="twitter:description" content="捡起之前想做的图片拼接：刚学Python的时候一个图，将各种图拼起来做成特定的形状，觉得很酷然后刚开始各种百度图片拼接程序，未果。这两天闲下来就想动动手，想给做出来。然后经过一番挣扎，有点丑的做出来了😂效果图如下：(最好模板图片背景是白色的)">
@@ -514,28 +514,8 @@ width,height = im1.size # 模板图片尺寸
 </code></pre><h3 id="2-读取模板图片像素值存入数组"><a href="#2-读取模板图片像素值存入数组" class="headerlink" title="2. 读取模板图片像素值存入数组"></a><strong>2. 读取模板图片像素值存入数组</strong></h3><blockquote>
 <p>这一步在改变模式后就很容易实现了。</p>
 </blockquote>
-<pre><code>def openModel(model_path):
-    modelImg = Image.open(model_path)
-    im1 = modelImg.resize((500,500)) # 重设模板图片的尺寸，为了避免最后成图顺序出错
-    print(&quot;修改图像尺寸为: &quot;,im1.size)
-    width,height = im1.size # 修改后的图片尺寸
-
-    # 修改图像模式为:
-    im = im1.convert(&quot;L&quot;)
-    print(&quot;修改图像模式为: &quot;,im.mode)
-    # 读取像素值
-    array = [] # 存放像素值的列表
-
-    # 优化一下采集方式，不是每个点都要采集
-    # 否则一张100x100的图片，拼接50x50的图片之后的大小会是5000x5000
-    for x in range(0, width, 10):
-        for y in range(0, height, 10):
-            pixel = im.getpixel((x,y)) # 读取像素点灰度值
-            array.append(pixel)
-    # print(array)
-    # print(len(array))
-    return array
-</code></pre><h3 id="3-图片拼接"><a href="#3-图片拼接" class="headerlink" title="3. 图片拼接"></a><strong>3. 图片拼接</strong></h3><p>之前的步骤弄好之后，开始拼接，<code>if</code>语句根据设置的阈值简单判断一下，哪些点是要用图片替代的，然后转换成新图相应的坐标，将图片拼接上去就完成了。时间关系，许多地方就没有考虑太仔细，没去做优化。<del>要考试复习，对我现在就是在浪🙃</del></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">openModel</span><span class="params">(model_path)</span>:</span></span><br><span class="line">    modelImg = Image.open(model_path)</span><br><span class="line">    im1 = modelImg.resize((<span class="number">500</span>,<span class="number">500</span>)) <span class="comment"># 重设模板图片的尺寸，为了避免最后成图顺序出错</span></span><br><span class="line">    print(<span class="string">"修改图像尺寸为: "</span>,im1.size)</span><br><span class="line">    width,height = im1.size <span class="comment"># 修改后的图片尺寸</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 修改图像模式为:</span></span><br><span class="line">    im = im1.convert(<span class="string">"L"</span>)</span><br><span class="line">    print(<span class="string">"修改图像模式为: "</span>,im.mode)</span><br><span class="line">    <span class="comment"># 读取像素值</span></span><br><span class="line">    array = [] <span class="comment"># 存放像素值的列表</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 优化一下采集方式，不是每个点都要采集</span></span><br><span class="line">    <span class="comment"># 否则一张100x100的图片，拼接50x50的图片之后的大小会是5000x5000</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, width, <span class="number">10</span>):</span><br><span class="line">        <span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">0</span>, height, <span class="number">10</span>):</span><br><span class="line">            pixel = im.getpixel((x,y)) <span class="comment"># 读取像素点灰度值</span></span><br><span class="line">            array.append(pixel)</span><br><span class="line">    <span class="comment"># print(array)</span></span><br><span class="line">    <span class="comment"># print(len(array))</span></span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
+<h3 id="3-图片拼接"><a href="#3-图片拼接" class="headerlink" title="3. 图片拼接"></a><strong>3. 图片拼接</strong></h3><p>之前的步骤弄好之后，开始拼接，<code>if</code>语句根据设置的阈值简单判断一下，哪些点是要用图片替代的，然后转换成新图相应的坐标，将图片拼接上去就完成了。时间关系，许多地方就没有考虑太仔细，没去做优化。<del>要考试复习，对我现在就是在浪🙃</del></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    model_path = getImgPath(<span class="number">0</span>)[<span class="number">1</span>]</span><br><span class="line">    print(model_path)</span><br><span class="line">    <span class="comment"># 新建画布</span></span><br><span class="line">    imnew = Image.new(<span class="string">"RGB"</span>, (<span class="number">2500</span>,<span class="number">2500</span>),<span class="string">"#FFFFFF"</span>)</span><br><span class="line">    piclen = <span class="number">1654</span> <span class="comment"># 文件夹下拼接图片数量</span></span><br><span class="line">    array = openModel(model_path) <span class="comment"># 模板像素点数组</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(array)):</span><br><span class="line">        <span class="keyword">if</span>(i &lt; piclen):</span><br><span class="line">            picI = i</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            picI = i<span class="number">-1000</span> <span class="comment"># 这里是图不够了😂</span></span><br><span class="line">        pasteImg = getImgPath(picI)[<span class="number">0</span>] <span class="comment"># 第picI张图片</span></span><br><span class="line">        imgpaste = Image.open(pasteImg).resize((<span class="number">50</span>,<span class="number">50</span>)) <span class="comment"># 统一用于拼接图片的尺寸</span></span><br><span class="line">        <span class="comment"># imgpaste = Image.open(modelImg).resize((50,50))</span></span><br><span class="line">        <span class="comment"># 行 Row 列 Column</span></span><br><span class="line">        row, column = i/<span class="number">50</span>,i%<span class="number">50</span> <span class="comment"># 行列值，相当于图片在新图中的坐标</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="number">10</span> &lt; array[i] &lt; <span class="number">245</span>):</span><br><span class="line">            imnew.paste(imgpaste,(int(row*<span class="number">50</span>), int(column*<span class="number">50</span>)))</span><br><span class="line">            print(<span class="string">"正在拼接第 %d 张图，还剩下 %d 张"</span> %(i,len(array)-i))</span><br><span class="line">            <span class="comment"># print((int(row*50), int(column*50)))</span></span><br><span class="line">    imnew.show()</span><br></pre></td></tr></table></figure>
 <img src="/p/1e3f5113/pintu.png" title="拼图结果">
 <h3 id="待优化"><a href="#待优化" class="headerlink" title="待优化"></a>待优化</h3><ol>
@@ -545,7 +525,7 @@ width,height = im1.size # 模板图片尺寸
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这次呢做出了想要的目标效果，但是很多地方没有异常处理，用老师的话说就是程序不够“壮”(健壮性)</p>
 <p>在思路方面以前最开始没做出出来就是以为那时候想法不对：只想着在原图上将图片直接替换像素点，然后搜索资料的发现也被带偏。后来换个方法，不在原图操作，那我自己重新画一张图出来不就好了 (√)。</p>
 <p>除了思路之外，中间过程的一些地方，文件路径什么的，还是瞎(shi)操(jian)作(jin)<br>处理图像先对图像的基本情况稍作了解，后面会少走许多弯路。</p>
-<p>程序公开在Github上：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VtbTIzMy9TZWVOby9ibG9iL21hc3Rlci9waW5hZGRmaWxlLnB5" title="https://github.com/umm233/SeeNo/blob/master/pinaddfile.py">图片拼接<i class="fa fa-external-link"></i></span></p>
+<p>程序公开在Github上：<a href="https://umm.js.org/article-code/Puzzle1.0.py">图片拼接</a></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ljYW1lcmEwL2FydGljbGUvZGV0YWlscy81MDg0MzE3Mg==" title="https://blog.csdn.net/icamera0/article/details/50843172">Python图像处理库PIL中图像格式转换（一）<i class="fa fa-external-link"></i></span></li>
 <li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ljYW1lcmEwL2FydGljbGUvZGV0YWlscy81MDcwNjYxNQ==" title="https://blog.csdn.net/icamera0/article/details/50706615">Python图像处理库PIL的Image模块介绍（四）<i class="fa fa-external-link"></i></span></li>
