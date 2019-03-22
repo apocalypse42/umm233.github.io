@@ -120,12 +120,15 @@
 <meta property="og:site_name" content="Seeno">
 <meta property="og:description" content="折腾一下PS的美化——oh my posh">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://umm.js.org/p/d67c16f7/1.png">
+<meta property="og:image" content="https://umm.js.org/p/d67c16f7/2.png">
 <meta property="og:image" content="https://umm.js.org/p/d67c16f7/result.png">
-<meta property="og:updated_time" content="2019-03-22T10:15:35.939Z">
+<meta property="og:image" content="https://umm.js.org/p/d67c16f7/result_cmder.png">
+<meta property="og:updated_time" content="2019-03-22T11:12:25.550Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="oh-my-posh">
 <meta name="twitter:description" content="折腾一下PS的美化——oh my posh">
-<meta name="twitter:image" content="https://umm.js.org/p/d67c16f7/result.png">
+<meta name="twitter:image" content="https://umm.js.org/p/d67c16f7/1.png">
 
 
 
@@ -439,7 +442,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.6k</span>
+                <span title="本文字数">1.8k</span>
               
 
               
@@ -453,7 +456,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -498,6 +501,8 @@
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install posh-git</span><br></pre></td></tr></table></figure>
 <h2 id="安装-oh-my-posh"><a href="#安装-oh-my-posh" class="headerlink" title="安装 oh my posh"></a>安装 oh my posh</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install oh-my-posh</span><br></pre></td></tr></table></figure>
 <p>但是在没有设置<code>更纱字体 Team SC</code>之前，我的powershell的命令提示符会出现很奇怪的箭头（向上弯），估计是有一些字体不匹配，不能很好地显示出来。看着别扭，把更纱字体加到注册表中，以便修改powershell中的字体配置。</p>
+<img src="/p/d67c16f7/1.png" title="修改字体前">
+<img src="/p/d67c16f7/2.png" title="修改字体后">
 <h3 id="字体配置"><a href="#字体配置" class="headerlink" title="字体配置"></a>字体配置</h3><ol>
 <li>安装<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JlNWludmlzL1NhcmFzYS1Hb3RoaWM=" title="https://github.com/be5invis/Sarasa-Gothic">更纱字体<i class="fa fa-external-link"></i></span></li>
 <li>修改注册表，在<code>HKEY_LOCAL_MACHINE &gt;&gt; SOFTWARE &gt;&gt; Microsoft &gt;&gt; Windows NT &gt;&gt; CurrentVersion &gt;&gt; Console &gt;&gt; TrueTypeFont</code>中添加一个字符串项目，内容为<code>Sarasa Term SC</code></li>
@@ -509,7 +514,11 @@
 <p>ps. 如果导入配置文件，但字体无法正常加载可以手动修改powershell的属性，设置字体为<code>Sarasa Team SC</code></p>
 <p>另外，可以在PowerShell 配置文件中设置字体以及启动加载项：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 输入<span class="variable">$Profile</span>得到PowerShell默认配置文件的位置</span><br><span class="line">&gt; <span class="variable">$Profile</span></span><br><span class="line">C:\Users\用户名\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. 查看下路径下是否存在该文件</span><br><span class="line">&gt; <span class="built_in">Test-path</span> <span class="variable">$profile</span></span><br><span class="line">返回True ，表示存在</span><br><span class="line">返回False，则需要自己创建：</span><br><span class="line">&gt; <span class="built_in">New-item</span> –type file –force <span class="variable">$profile</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. 修改配置文件</span><br><span class="line">&gt; Notepad <span class="variable">$profile</span></span><br><span class="line">写入：</span><br><span class="line"><span class="built_in">Import-Module</span> oh-my-posh</span><br><span class="line">Set-Theme Agnoster</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. 重启powershell查看变化</span><br></pre></td></tr></table></figure>
-<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><img src="/p/d67c16f7/result.png" title="效果图">
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><img src="/p/d67c16f7/result.png" title="powershell效果图">
+<h2 id="配合cmder使用"><a href="#配合cmder使用" class="headerlink" title="配合cmder使用"></a>配合cmder使用</h2><p>除了设置powershell为默认环境外，以及修改字体为<code>Sarasa Term SC</code>，还需要在<code>cmder\vendor\profile.ps1</code>末尾加上:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Import-Module</span> oh-my-posh</span><br><span class="line">Set-Theme Agnoster</span><br></pre></td></tr></table></figure>
+<p>效果图：</p>
+<img src="/p/d67c16f7/result_cmder.png" title="powershell效果图">
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><span class="exturl" data-url="aHR0cHM6Ly93d3cuaXN6eS5jYy8yMDE4LzA1LzA2L2JlYXV0aWZ5LXBvd2Vyc2hlbGwv" title="https://www.iszy.cc/2018/05/06/beautify-powershell/">Powershell 美化 ——oh-my-posh<i class="fa fa-external-link"></i></span></li>
 <li><span class="exturl" data-url="aHR0cHM6Ly9zcGVuY2Vyd29vLmNvbS9wb3N0cy8yMDE5LzAxLzEyL3Njb29wLmh0bWw=" title="https://spencerwoo.com/posts/2019/01/12/scoop.html">「一行代码」搞定软件安装卸载，用 Scoop 管理你的 Windows 软件<i class="fa fa-external-link"></i></span></li>
@@ -833,7 +842,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-scoop"><span class="nav-number">1.</span> <span class="nav-text">安装 scoop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-concfg"><span class="nav-number">2.</span> <span class="nav-text">安装 concfg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-posh-git"><span class="nav-number">3.</span> <span class="nav-text">安装 posh-git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-oh-my-posh"><span class="nav-number">4.</span> <span class="nav-text">安装 oh my posh</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字体配置"><span class="nav-number">4.1.</span> <span class="nav-text">字体配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置主题"><span class="nav-number">4.2.</span> <span class="nav-text">设置主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用配置"><span class="nav-number">4.3.</span> <span class="nav-text">应用配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图"><span class="nav-number">4.4.</span> <span class="nav-text">效果图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-scoop"><span class="nav-number">1.</span> <span class="nav-text">安装 scoop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-concfg"><span class="nav-number">2.</span> <span class="nav-text">安装 concfg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-posh-git"><span class="nav-number">3.</span> <span class="nav-text">安装 posh-git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-oh-my-posh"><span class="nav-number">4.</span> <span class="nav-text">安装 oh my posh</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字体配置"><span class="nav-number">4.1.</span> <span class="nav-text">字体配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置主题"><span class="nav-number">4.2.</span> <span class="nav-text">设置主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用配置"><span class="nav-number">4.3.</span> <span class="nav-text">应用配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图"><span class="nav-number">4.4.</span> <span class="nav-text">效果图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配合cmder使用"><span class="nav-number">5.</span> <span class="nav-text">配合cmder使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -872,7 +881,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">34k</span>
+    <span title="站点总字数">35k</span>
   
 
   
