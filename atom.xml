@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://umm.js.org/"/>
-  <updated>2019-03-22T09:45:21.788Z</updated>
+  <updated>2019-03-22T09:45:21.792Z</updated>
   <id>https://umm.js.org/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://umm.js.org/cjtjvtna3000vpc781q8elnlf/0/"/>
-    <id>https://umm.js.org/cjtjvtna3000vpc781q8elnlf/0/</id>
-    <published>2019-03-22T08:59:43.276Z</published>
-    <updated>2019-03-22T09:45:21.788Z</updated>
-    
-    <content type="html"><![CDATA[{"cursor_size":"small","command_history_length":100,"num_history_buffers":4,"command_history_no_duplication":false,"quick_edit":true,"insert_mode":true,"load_console_IME":true,"font_face":"Sarasa Term SC","font_true_type":true,"font_size":"0x18","font_weight":0,"screen_buffer_size":"80x3000","window_size":"80x20","fullscreen":false,"popup_colors":"cyan,white","screen_colors":"white,black","black":"#1E1E1E","dark_blue":"#2472C8","dark_green":"#0DBC79","dark_cyan":"#11A8CD","dark_red":"#CD3131","dark_magenta":"#BC3FBC","dark_yellow":"#E5E510","gray":"#E5E5E5","dark_gray":"#666666","blue":"#3B8EEA","green":"#23D18B","cyan":"#29B8DB","red":"#F14C4C","magenta":"#D670D6","yellow":"#F5F543","white":"#E5E5E5"}]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        {&quot;cursor_size&quot;:&quot;small&quot;,&quot;command_history_length&quot;:100,&quot;num_history_buffers&quot;:4,&quot;command_history_no_duplication&quot;:false,&quot;quick_edit&quot;:true,&quot;insert
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>oh-my-posh</title>
@@ -253,6 +232,30 @@
     
     
       <category term="Note" scheme="https://umm.js.org/tags/Note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Image Compressor</title>
+    <link href="https://umm.js.org/p/c00bdf6b/"/>
+    <id>https://umm.js.org/p/c00bdf6b/</id>
+    <published>2018-12-28T08:35:55.000Z</published>
+    <updated>2019-02-10T11:39:43.580Z</updated>
+    
+    <content type="html"><![CDATA[<p>经常会有关于图像压缩的需求，稍微整理及记录一下常用方法…</p><a id="more"></a><h2 id="ImageMagick"><a href="#ImageMagick" class="headerlink" title="ImageMagick"></a>ImageMagick</h2><h3 id="ImageMagick简介"><a href="#ImageMagick简介" class="headerlink" title="ImageMagick简介"></a>ImageMagick简介</h3><blockquote><p>ImageMagick是一个用于查看、编辑位图文件以及进行图像格式转换的开放源代码软件套装。它可以读取、编辑超过100种图象格式。——<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvSW1hZ2VNYWdpY2s=" title="https://zh.wikipedia.org/wiki/ImageMagick">维基百科<i class="fa fa-external-link"></i></span></p><p>官网：<span class="exturl" data-url="aHR0cHM6Ly93d3cuaW1hZ2VtYWdpY2sub3JnL3NjcmlwdC9pbmRleC5waHA=" title="https://www.imagemagick.org/script/index.php">https://www.imagemagick.org/script/index.php<i class="fa fa-external-link"></i></span><br>下载安装：<span class="exturl" data-url="aHR0cHM6Ly93d3cuaW1hZ2VtYWdpY2sub3JnL3NjcmlwdC9kb3dubG9hZC5waHA=" title="https://www.imagemagick.org/script/download.php">https://www.imagemagick.org/script/download.php<i class="fa fa-external-link"></i></span></p></blockquote><p>在下载页面选择合适版本下载安装。<br>ps. Windows建议下载安装版，避免一些命令如<code>convert</code>等无法正常使用的情况。</p><h3 id="ImageMagick使用"><a href="#ImageMagick使用" class="headerlink" title="ImageMagick使用"></a>ImageMagick使用</h3><p>仅记录常用的压缩使用，ImageMagick很强大，如果要写，一篇文章写不完的👀。</p><p>压缩gif/jpg/png，原图品质降为75%左右(降太多会导致图像严重失真)，下面以gif格式为例。测试gif大小可以缩到原图的1/3~1/2。<br>ps.可以重复操作几次，但一般两次后大小就不会再减小了。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">convert</span> -quality <span class="number">75</span>% input.gif output.gif</span><br></pre></td></tr></table></figure><h2 id="Pngyu"><a href="#Pngyu" class="headerlink" title="Pngyu"></a><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL251a2VzYXE4OC9Qbmd5dQ==" title="https://github.com/nukesaq88/Pngyu">Pngyu<i class="fa fa-external-link"></i></span></h2><ul><li>可进行批量处理</li><li>开源</li></ul><p>Github：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL251a2VzYXE4OC9Qbmd5dQ==" title="https://github.com/nukesaq88/Pngyu">https://github.com/nukesaq88/Pngyu<i class="fa fa-external-link"></i></span></p><h2 id="在线图片压缩"><a href="#在线图片压缩" class="headerlink" title="在线图片压缩"></a>在线图片压缩</h2><h3 id="Squoosh"><a href="#Squoosh" class="headerlink" title="Squoosh"></a><span class="exturl" data-url="aHR0cHM6Ly9zcXVvb3NoLmFwcC8=" title="https://squoosh.app/">Squoosh<i class="fa fa-external-link"></i></span></h3><ul><li>由GoogleChromeLabs开发，开源</li><li>等待网页加载完会显示<code>ready to work offline</code>，意思就是加载完后你可以离线使用！</li><li>不限制压缩图片大小</li></ul><blockquote><p><span class="exturl" data-url="aHR0cHM6Ly9zcXVvb3NoLmFwcA==" title="https://squoosh.app">Squoosh<i class="fa fa-external-link"></i></span> is an image compression web app that allows you to dive into the advanced options provided by various image compressors.</p></blockquote><p>GitHub：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0dvb2dsZUNocm9tZUxhYnMvc3F1b29zaA==" title="https://github.com/GoogleChromeLabs/squoosh">https://github.com/GoogleChromeLabs/squoosh<i class="fa fa-external-link"></i></span></p><h3 id="iloveimg"><a href="#iloveimg" class="headerlink" title="iloveimg"></a><span class="exturl" data-url="aHR0cHM6Ly93d3cuaWxvdmVpbWcuY29tL3poLWNuL2NvbXByZXNzLWltYWdl" title="https://www.iloveimg.com/zh-cn/compress-image">iloveimg<i class="fa fa-external-link"></i></span></h3><ul><li>不限制图片大小（这个很棒!）</li><li>压缩后大小，质量都还不错</li><li>支持批量压缩（不过要等好一会，压缩完会提示下载）</li></ul><h3 id="Tinypng"><a href="#Tinypng" class="headerlink" title="Tinypng"></a><span class="exturl" data-url="aHR0cHM6Ly90aW55cG5nLmNvbS8=" title="https://tinypng.com/">Tinypng<i class="fa fa-external-link"></i></span></h3><ul><li>仅支持<code>png</code>、<code>jpg</code>格式</li><li>支持批量操作20张图片，每张最大不超过5MB</li></ul><blockquote><p>Up to 20 images, max 5 MB each</p></blockquote><p>btw: ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░  99%<br>      ——今年时间进度(皮一下</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;经常会有关于图像压缩的需求，稍微整理及记录一下常用方法…&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="图像处理" scheme="https://umm.js.org/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+    
+      <category term="Image" scheme="https://umm.js.org/tags/Image/"/>
+    
+      <category term="Compress" scheme="https://umm.js.org/tags/Compress/"/>
     
   </entry>
   
