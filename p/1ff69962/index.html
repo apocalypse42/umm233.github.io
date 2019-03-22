@@ -112,18 +112,20 @@
 
 
 
-  <meta name="description" content="关于Python中的列表复制操作刚开始没注意坑一踩一个准">
-<meta name="keywords" content="Note,Python">
+  <meta name="description" content="经常有许多信息分散在好几个Excel文件中，这时候人为进行查找整合就显得特别累。">
+<meta name="keywords" content="You Are the Apple of My Eyes.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python的深浅拷贝">
-<meta property="og:url" content="https://umm.js.org/p/562ac769/index.html">
+<meta property="og:title" content="简单整合Excel信息">
+<meta property="og:url" content="https://umm.js.org/p/1ff69962/index.html">
 <meta property="og:site_name" content="Seeno">
-<meta property="og:description" content="关于Python中的列表复制操作刚开始没注意坑一踩一个准">
+<meta property="og:description" content="经常有许多信息分散在好几个Excel文件中，这时候人为进行查找整合就显得特别累。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-10T11:49:16.880Z">
+<meta property="og:image" content="https://umm.js.org/p/undefined/test.png">
+<meta property="og:updated_time" content="2019-03-22T06:52:52.978Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python的深浅拷贝">
-<meta name="twitter:description" content="关于Python中的列表复制操作刚开始没注意坑一踩一个准">
+<meta name="twitter:title" content="简单整合Excel信息">
+<meta name="twitter:description" content="经常有许多信息分散在好几个Excel文件中，这时候人为进行查找整合就显得特别累。">
+<meta name="twitter:image" content="https://umm.js.org/p/undefined/test.png">
 
 
 
@@ -132,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="https://umm.js.org/p/562ac769/">
+  <link rel="canonical" href="https://umm.js.org/p/1ff69962/">
 
 
 
@@ -142,7 +144,7 @@
   };
 </script>
 
-  <title>Python的深浅拷贝 | Seeno</title>
+  <title>简单整合Excel信息 | Seeno</title>
   
 
 
@@ -358,7 +360,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://umm.js.org/p/562ac769/">
+    <link itemprop="mainEntityOfPage" href="https://umm.js.org/p/1ff69962/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seeno">
@@ -375,7 +377,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python的深浅拷贝
+          <h1 class="post-title" itemprop="name headline">简单整合Excel信息
 
               
             
@@ -401,30 +403,12 @@
                 
               
 
-              <time title="创建时间：2018-10-02 22:00:19" itemprop="dateCreated datePublished" datetime="2018-10-02T22:00:19+08:00">2018-10-02</time>
+              <time title="创建时间：2019-03-22 13:30:43" itemprop="dateCreated datePublished" datetime="2019-03-22T13:30:43+08:00">2019-03-22</time>
             
 
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -455,7 +439,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.1k</span>
+                <span title="本文字数">1.5k</span>
               
 
               
@@ -489,28 +473,37 @@
       
 
       
-        <p>关于Python中的列表复制操作<br><del>刚开始没注意坑一踩一个准</del></p>
+        <p>经常有许多信息分散在好几个Excel文件中，这时候人为进行查找整合就显得特别累。</p>
 <a id="more"></a>
-<ul>
-<li>浅拷贝只是将另一个变量指向要复制的变量地址，并没有重新分配地址，所以就会出现“你变我也变”的情况：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [1,2]</span><br><span class="line">b = a</span><br><span class="line">print(id(a))</span><br><span class="line">print(id(b))</span><br><span class="line">a.append(5)</span><br><span class="line">print(b) # 结果是 [1,2,5]</span><br><span class="line"></span><br><span class="line"># 最后会发现 a 和 b 的地址是一样的</span><br><span class="line"># 在 a 的末尾加入5，b 也跟着变了，这就是坑(mmp -_-|||</span><br></pre></td></tr></table></figure>
-<h2 id="–更新-这还是浅拷贝"><a href="#–更新-这还是浅拷贝" class="headerlink" title="–更新 这还是浅拷贝"></a>–更新 <strong>这还是浅拷贝</strong></h2><ul>
-<li>对于<del>深拷贝最简单的方法就是利用<code>copy()</code>函数或者<code>b = a[:]</code>实现：</del></li>
-<li>以下均为浅拷贝的情况：</li>
-</ul>
-<ul>
-<li>使用切片[:]操作</li>
-<li>使用工厂函数（如list/dir/set）</li>
-<li>使用copy模块中的copy()函数</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [1,2]</span><br><span class="line">b = a.copy()</span><br><span class="line">print(id(a))</span><br><span class="line">print(id(b)) # 结果是 1739769111752</span><br><span class="line">a.append(5)  # 结果是 1739769111496</span><br><span class="line">print(a) # 结果是 [1,2,5]</span><br><span class="line">print(b) # 结果是 [1,2]</span><br><span class="line"></span><br><span class="line"># 这里 a,b 的地址不一样了，在a中添加元素没有对b起作用._.</span><br></pre></td></tr></table></figure>
-<p>！但是，如果列表中嵌套了列表，拷贝后的列表中嵌套的列表元素指针，指向原列表中嵌套列表的整体地址，而不是指向嵌套列表中元素的内存地址。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = [[1,2],3,4]</span><br><span class="line">s1 = s.copy()</span><br><span class="line">id(s)</span><br><span class="line">id(s1)</span><br><span class="line">id(s[0][1])</span><br><span class="line">id(s1[0][1])</span><br><span class="line">s.append(&quot;hello&quot;)</span><br><span class="line">print(&quot;s:&quot;,s)</span><br><span class="line">print(&quot;s1:&quot;,s1)   # s: [[1, 2], 3, 4, &apos;hello&apos;]  s1: [[1, 2], 3, 4]</span><br><span class="line">s1[0][1] = &quot;Holy Shit!&quot;</span><br><span class="line">print(&quot;s: &quot;,s)     # s: [[1, &apos;Holy Shit!&apos;], 3, 4, &apos;hello&apos;]</span><br><span class="line">print(&quot;s1:&quot;,s1)  # s1: [[1, &apos;Holy Shit!&apos;], 3,</span><br></pre></td></tr></table></figure>
-<p>在上面的测试中容易发现，在操作列表中的嵌套列表就会出现浅拷贝的问题。</p>
-<p>具体的可以参考: <span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vcHlyYW1pZDEwMDEvcC81ODQ0OTA1Lmh0bWw=" title="https://www.cnblogs.com/pyramid1001/p/5844905.html">Python——列表深浅拷贝<i class="fa fa-external-link"></i></span></p>
-<p>那么深拷贝的话：利用<code>copy</code>模块的<code>copy.deepcopy(list)</code></p>
-<p>具体可以看看 <span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vd2lsYmVyMjAxMy9wLzQ2NDUzNTMuaHRtbA==" title="https://www.cnblogs.com/wilber2013/p/4645353.html">图解Python深拷贝和浅拷贝<i class="fa fa-external-link"></i></span></p>
+<h2 id="Openpyxl"><a href="#Openpyxl" class="headerlink" title="Openpyxl"></a>Openpyxl</h2><p>在知乎上看了一下<span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8yMzk5ODA4Mw==" title="https://zhuanlan.zhihu.com/p/23998083">Python-Excel 模块哪家强？<i class="fa fa-external-link"></i></span>，对于只是简单操作excel，还是<code>openpyxl</code>比较小巧方便，功能也比较全。</p>
+<p>但只支持<code>.xlsx</code>格式，对于<code>.xls</code>格式的文件，不多的话，手动转换一下就好（另存为）。<br>参考文档：<span class="exturl" data-url="aHR0cHM6Ly9vcGVucHl4bC5yZWFkdGhlZG9jcy5pby9lbi9zdGFibGUvaW5kZXguaHRtbA==" title="https://openpyxl.readthedocs.io/en/stable/index.html">OpenPyXl<i class="fa fa-external-link"></i></span></p>
+<blockquote>
+<p>简单易用，功能广泛，单元格格式/图片/表格/公式/筛选/批注/文件保护等等功能应有尽有，图表功能是其一大亮点，缺点是对 VBA 支持的不够好。</p>
+</blockquote>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><blockquote>
+<p>Example:<br>在<code>ex1.xlsx</code>中sheet1的E列和H列分别是导师姓名以及所带多个学生的姓名（1对多）<br>在<code>ex2.xlsx</code>中shhet1的B列和F列分别是学生姓名以及待填的导师姓名（1对1）<br>现在要把学生所对应导师姓名对应填好</p>
+</blockquote>
+<img src="/p/undefined/test.png" title="图解">
+<p>如果只有5个人，那么查找，复制，粘贴就解决了，但是如果是50个人，那么效率就太低了…<br>解决这个问题，就是在<code>ex1</code>中查找到学生对应的导师姓名，然后写入<code>ex2</code>中，保存就好了。</p>
+<ol>
+<li><p>读取指定sheet内容</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> openpyxl <span class="keyword">import</span> load_workbook</span><br><span class="line"></span><br><span class="line">wb = load_workbook(<span class="string">'ex1.xlsx'</span>) <span class="comment"># 加载xlsx内容</span></span><br><span class="line">sheet = wb.get_sheet_by_name(<span class="string">'sheet1'</span>) <span class="comment"># 找到需要操作的sheet</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>找到学生对应导师姓名</p>
+</li>
+</ol>
+<p>因为导师和学生的姓名在同一行，通过<code>findTea</code>遍历各行找到该学生对应的导师姓名<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findTea</span><span class="params">(sheet, stuname)</span>:</span></span><br><span class="line">    teaNames = list(sheet[<span class="string">'E'</span>])</span><br><span class="line">    stuNames = list(sheet[<span class="string">'H'</span>])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">26</span>):</span><br><span class="line">        <span class="keyword">if</span> stuname <span class="keyword">in</span> stuNames[i].value:</span><br><span class="line">            <span class="comment"># print(teaNames[i].value)</span></span><br><span class="line">            <span class="keyword">return</span> teaNames[i].value</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>将信息写入<code>ex2</code>对应位置并保存</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">35</span>):</span><br><span class="line">    stuname = stuNames2[i].value</span><br><span class="line">    teaname = findTea(sheet, stuname)</span><br><span class="line">    teaNames2[i].value = teaname</span><br></pre></td></tr></table></figure>
+<p>保存修改后的excel (做了那么多，不保存对于没有😥)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wb1.save(&apos;ex2.xlsx&apos;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="随想"><a href="#随想" class="headerlink" title="随想"></a>随想</h2><p>最近看到一个repo，作者的REMDME，我的想法大概也是吧。编程可以用于解决许多日常繁琐的问题，同时，最让我着迷的是，编程的创造，可以有无限可能，只要你想得到，基本上有办法实现。</p>
+<p>Awosome!</p>
+<blockquote><p>I do not consider myself a programmer. I create these little programs as experiments to play with the language, or to solve problems for myself. I would gladly accept pointers from others to improve, simplify, or make the code more efficient.</p>
+<footer><strong>geekcomputers</strong><cite><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dlZWtjb21wdXRlcnMvUHl0aG9u" title="https://github.com/geekcomputers/Python">README<i class="fa fa-external-link"></i></span></cite></footer></blockquote>
+<blockquote>
+</blockquote>
 
       
     </div>
@@ -544,7 +537,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://umm.js.org/p/562ac769/" title="Python的深浅拷贝">https://umm.js.org/p/562ac769/</a>
+    <a href="https://umm.js.org/p/1ff69962/" title="简单整合Excel信息">https://umm.js.org/p/1ff69962/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
@@ -554,14 +547,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Note/" rel="tag"># Note</a>
-          
-            <a href="/tags/Python/" rel="tag"># Python</a>
-          
-        </div>
       
 
       
@@ -592,8 +577,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/p/69a664c6/" rel="next" title="异步十进制加法加法计数器(VHDL实现)">
-                <i class="fa fa-chevron-left"></i> 异步十进制加法加法计数器(VHDL实现)
+              <a href="/p/e9fa3cd1/" rel="next" title="GIF Compression">
+                <i class="fa fa-chevron-left"></i> GIF Compression
               </a>
             
           </div>
@@ -601,10 +586,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/p/8394e334/" rel="prev" title="Python的sort函数">
-                Python的sort函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -828,7 +809,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#–更新-这还是浅拷贝"><span class="nav-number">1.</span> <span class="nav-text">–更新 这还是浅拷贝</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Openpyxl"><span class="nav-number">1.</span> <span class="nav-text">Openpyxl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">2.</span> <span class="nav-text">应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随想"><span class="nav-number">3.</span> <span class="nav-text">随想</span></a></li></ol></div>
             
 
           </div>
