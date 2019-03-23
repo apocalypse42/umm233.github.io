@@ -299,6 +299,23 @@
         
         
           
+          <li class="menu-item menu-item-daily">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/Pigeon-Daily" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-dove"></i> <br>daily</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-about">
 
     
@@ -365,7 +382,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seeno">
-      <meta itemprop="description" content="Learn more ...">
+      <meta itemprop="description" content="Learn more...">
       <meta itemprop="image" content="/images/first.png">
     </span>
 
@@ -519,7 +536,7 @@
 <h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>如果之前使用<code>--save</code>安装过<code>hexo-git-backup</code>，要先删除已安装插件<code>hexo-git-backup</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm remove hexo-git-backup</span><br><span class="line">npm install hexo-git-backup --save</span><br></pre></td></tr></table></figure></p>
 <h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>在站点配置文件<code>_config.yml</code>中添加如下设置，可参考<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NvbmV5Y29kZS9oZXhvLWdpdC1iYWNrdXAvYmxvYi9tYXN0ZXIvUkVBRE1FLm1k" title="https://github.com/coneycode/hexo-git-backup/blob/master/README.md">README<i class="fa fa-external-link"></i></span></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">backup:</span><br><span class="line">    type: git</span><br><span class="line">    repository:</span><br><span class="line">       github: git@github.com:xxx/xxx.git,branchName</span><br><span class="line">       gitcafe: git@github.com:xxx/xxx.git,branchName</span><br></pre></td></tr></table></figure>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo backup </span><br><span class="line">或者 hexo b</span><br></pre></td></tr></table></figure>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">hexo</span> <span class="keyword">backup </span></span><br><span class="line">或者 hexo <span class="keyword">b</span></span><br></pre></td></tr></table></figure>
 <h3 id="可选项"><a href="#可选项" class="headerlink" title="可选项"></a>可选项</h3><ol>
 <li>备份主题：<code>theme: your theme name</code></li>
 <li>commit message: <code>message: update xxx</code></li>
@@ -703,7 +720,7 @@
               <img class="site-author-image" itemprop="image" src="/images/first.png" alt="Seeno">
             
               <p class="site-author-name" itemprop="name">Seeno</p>
-              <p class="site-description motion-element" itemprop="description">Learn more ...</p>
+              <p class="site-description motion-element" itemprop="description">Learn more...</p>
           </div>
 
           
@@ -904,7 +921,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">35k</span>
+    <span title="站点总字数">34k</span>
   
 
   
@@ -959,12 +976,6 @@
 
     
 
-    
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
     
 
     
@@ -1119,18 +1130,6 @@
       
       new needShareButton('#needsharebutton-postbottom', pbOptions);
     
-    
-      flOptions = {};
-      
-        flOptions.iconStyle = "default";
-      
-        flOptions.boxForm = "horizontal";
-      
-        flOptions.position = "middleRight";
-      
-        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Reddit,GoogleBookmarks,Tumblr";
-      
-      new needShareButton('#needsharebutton-float', flOptions);
     
   </script>
 

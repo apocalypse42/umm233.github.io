@@ -113,7 +113,7 @@
 
 
   <meta name="description" content="关于Hexo写作的一些笔记。">
-<meta name="keywords" content="Hexo,Note,Writing">
+<meta name="keywords" content="Note,Hexo,Writing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo writing">
 <meta property="og:url" content="https://umm.js.org/p/cb3898/index.html">
@@ -299,6 +299,23 @@
         
         
           
+          <li class="menu-item menu-item-daily">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/Pigeon-Daily" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-dove"></i> <br>daily</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-about">
 
     
@@ -365,7 +382,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seeno">
-      <meta itemprop="description" content="Learn more ...">
+      <meta itemprop="description" content="Learn more...">
       <meta itemprop="image" content="/images/first.png">
     </span>
 
@@ -506,24 +523,24 @@
 <li>短代码段 `blah`<br>效果：  <code>blah</code></li>
 <li>多行代码段<br>```<br>blah<br>blah<br>blah<br>```</li>
 </ul>
-<p>效果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">blah</span><br><span class="line">blah</span><br><span class="line">blah</span><br></pre></td></tr></table></figure></p>
+<p>效果如下：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">blah</span></span><br><span class="line"><span class="keyword">blah</span></span><br><span class="line"><span class="keyword">blah</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="特殊语法-内置标签"><a href="#特殊语法-内置标签" class="headerlink" title="特殊语法(内置标签)"></a>特殊语法(内置标签)</h2><blockquote>
 <p>「标签」(Tag Plugin) 是 Hexo 提供的一种快速生成特定内容的方式。</p>
 </blockquote>
-<h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img filename picname %&#125;</span><br><span class="line">eg.&#123;% asset_img test.png test %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">asset_img</span> filename picname %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">eg.</span><span class="template-tag">&#123;% <span class="name">asset_img</span> test.png test %&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure>
 <p>效果如下:<br><img src="/p/cb3898/test.png" title="test"></p>
-<h3 id="代码段"><a href="#代码段" class="headerlink" title="代码段"></a>代码段</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% code 附加说明 link title %&#125;</span><br><span class="line">code blah blah</span><br><span class="line">&#123;% endcode %&#125;</span><br><span class="line"></span><br><span class="line">eg</span><br><span class="line">&#123;% code 此为附加说明 https://hexo.io/zh-cn/docs/tag-plugins#%E4%BB%A3%E7%A0%81%E5%9D%97 标签插件（Tag Plugins）%&#125;</span><br><span class="line">code code blah blah</span><br><span class="line">&#123;% endcode %&#125;</span><br></pre></td></tr></table></figure>
-<p>效果如下:<br><figure class="highlight plain"><figcaption><span>此为附加说明</span><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3MvdGFnLXBsdWdpbnMjJUU0JUJCJUEzJUU3JUEwJTgxJUU1JTlEJTk3" title="https://hexo.io/zh-cn/docs/tag-plugins#%E4%BB%A3%E7%A0%81%E5%9D%97">标签插件（Tag Plugins）<i class="fa fa-external-link"></i></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code code blah blah</span><br></pre></td></tr></table></figure></p>
-<h3 id="引用（别名：quote）"><a href="#引用（别名：quote）" class="headerlink" title="引用（别名：quote）"></a>引用（别名：quote）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% quote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endquote %&#125;</span><br><span class="line"></span><br><span class="line">eg. 引用书上的句子</span><br><span class="line">&#123;% blockquote David Levithan, Wide Awake %&#125;</span><br><span class="line">Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br><span class="line"></span><br><span class="line">eg. 引用文本加链接</span><br><span class="line">&#123;% quote 沃斯基·索德 https://music.163.com/#/mv?id=29689 A Thousand Years %&#125;</span><br><span class="line">It is a test. Link is a MV.</span><br><span class="line">&#123;% endquote %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码段"><a href="#代码段" class="headerlink" title="代码段"></a>代码段</h3><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% code 附加说明 link title %&#125;</span><br><span class="line">code blah blah</span><br><span class="line">&#123;% endcode %&#125;</span><br><span class="line"></span><br><span class="line">eg</span><br><span class="line">&#123;% code 此为附加说明 https://hexo.io/zh-cn/docs/tag-plugins#<span class="meta">%E4</span><span class="meta">%BB</span><span class="meta">%A3</span><span class="meta">%E7</span><span class="meta">%A0</span><span class="meta">%81</span><span class="meta">%E5</span><span class="meta">%9D</span><span class="meta">%97</span> 标签插件（Tag Plugins）%&#125;</span><br><span class="line">code code blah blah</span><br><span class="line">&#123;% endcode %&#125;</span><br></pre></td></tr></table></figure>
+<p>效果如下:<br><figure class="highlight stylus"><figcaption><span>此为附加说明</span><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3MvdGFnLXBsdWdpbnMjJUU0JUJCJUEzJUU3JUEwJTgxJUU1JTlEJTk3" title="https://hexo.io/zh-cn/docs/tag-plugins#%E4%BB%A3%E7%A0%81%E5%9D%97">标签插件（Tag Plugins）<i class="fa fa-external-link"></i></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">code</span> <span class="selector-tag">code</span> blah blah</span><br></pre></td></tr></table></figure></p>
+<h3 id="引用（别名：quote）"><a href="#引用（别名：quote）" class="headerlink" title="引用（别名：quote）"></a>引用（别名：quote）</h3><figure class="highlight twig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">blockquote</span> [author[, <span class="name">source</span>]] [link] [source_link_title] %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">content</span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">endblockquote</span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">quote</span> [author[, <span class="name">source</span>]] [link] [source_link_title] %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">content</span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">endquote</span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">eg. 引用书上的句子</span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">blockquote</span> David Levithan, Wide Awake %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">endblockquote</span> %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">eg. 引用文本加链接</span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">quote</span> 沃斯基·索德 https://music.163.com/#/mv?id=29689 A Thousand Years %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">It is a test. Link is a MV.</span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">endquote</span> %&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure>
 <p>效果如下:<br>eg. 引用书上的句子<br><blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
 <footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote></p>
 <p>eg. 引用文本加链接<br><blockquote><p>It is a test. Link is a MV.</p>
 <footer><strong>沃斯基·索德</strong><cite><span class="exturl" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvbXY/aWQ9Mjk2ODk=" title="https://music.163.com/#/mv?id=29689">A Thousand Years<i class="fa fa-external-link"></i></span></cite></footer></blockquote></p>
-<h3 id="居中引用"><a href="#居中引用" class="headerlink" title="居中引用"></a>居中引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% cq %&#125; </span><br><span class="line">blah blah blah </span><br><span class="line">——沃斯基·索德</span><br><span class="line">&#123;% endcq %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="居中引用"><a href="#居中引用" class="headerlink" title="居中引用"></a>居中引用</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">cq</span> %&#125;</span><span class="xml"> </span></span><br><span class="line"><span class="xml">blah blah blah </span></span><br><span class="line"><span class="xml">——沃斯基·索德</span></span><br><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">endcq</span> %&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <blockquote class="blockquote-center"><p>blah blah blah<br>——沃斯基·索德</p>
 </blockquote>
-<h3 id="Bootstrap-Callout"><a href="#Bootstrap-Callout" class="headerlink" title="Bootstrap Callout"></a>Bootstrap Callout</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note class_name %&#125; </span><br><span class="line">Content (md partial supported) </span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">class name:</span><br><span class="line">*   `default`</span><br><span class="line">*   `primary`</span><br><span class="line">*   `success`</span><br><span class="line">*   `info`</span><br><span class="line">*   `warning`</span><br><span class="line">*   `danger`</span><br></pre></td></tr></table></figure>
+<h3 id="Bootstrap-Callout"><a href="#Bootstrap-Callout" class="headerlink" title="Bootstrap Callout"></a>Bootstrap Callout</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note class_name %&#125; </span><br><span class="line">Content (md partial supported) </span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> name:</span><br><span class="line">*   `default`</span><br><span class="line">*   `primary`</span><br><span class="line">*   `success`</span><br><span class="line">*   `info`</span><br><span class="line">*   `warning`</span><br><span class="line">*   `danger`</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <ol>
 <li>primary</li>
@@ -538,12 +555,12 @@
             <p>Content (md partial supported) </p>
           </div>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h3><p><code>&lt;u&gt;blah&lt;/u&gt;</code> -&gt; <u>blah</u></p>
-<h3 id="跳转页面"><a href="#跳转页面" class="headerlink" title="跳转页面"></a>跳转页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[使用Markdown语法增加的跳转到“前言”的链接](#Markdown语法)</span><br></pre></td></tr></table></figure>
+<h3 id="跳转页面"><a href="#跳转页面" class="headerlink" title="跳转页面"></a>跳转页面</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">使用Markdown语法增加的跳转到“前言”的链接</span>](<span class="link">#Markdown语法</span>)</span><br></pre></td></tr></table></figure>
 <p>效果：<a href="#Markdown语法">跳转到文章”Markdown语法”标题处</a></p>
-<h3 id="Read-More"><a href="#Read-More" class="headerlink" title="Read More"></a>Read More</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="文字链接"><a href="#文字链接" class="headerlink" title="文字链接"></a>文字链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[title](link)</span><br><span class="line"></span><br><span class="line">eg.</span><br><span class="line">`[Hexo官方教程](https://hexo.io/zh-cn/docs/tag-plugins)`</span><br></pre></td></tr></table></figure>
+<h3 id="Read-More"><a href="#Read-More" class="headerlink" title="Read More"></a>Read More</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--more--&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="文字链接"><a href="#文字链接" class="headerlink" title="文字链接"></a>文字链接</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">title</span>](<span class="link">link</span>)</span><br><span class="line"></span><br><span class="line">eg.</span><br><span class="line"><span class="code">`[Hexo官方教程](https://hexo.io/zh-cn/docs/tag-plugins)`</span></span><br></pre></td></tr></table></figure>
 <p>效果如下:<br><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3MvdGFnLXBsdWdpbnM=" title="https://hexo.io/zh-cn/docs/tag-plugins">Hexo官方教程<i class="fa fa-external-link"></i></span></p>
-<h3 id="嵌入Youtube视频"><a href="#嵌入Youtube视频" class="headerlink" title="嵌入Youtube视频"></a>嵌入Youtube视频</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% youtube video_id %&#125;</span><br><span class="line">eg. &#123;% youtube rtOvBOTyX00 %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="嵌入Youtube视频"><a href="#嵌入Youtube视频" class="headerlink" title="嵌入Youtube视频"></a>嵌入Youtube视频</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">youtube</span> video_id %&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">eg. </span><span class="template-tag">&#123;% <span class="name">youtube</span> rtOvBOTyX00 %&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure>
 <p>效果如下:<br><div class="video-container"><iframe src="//www.youtube.com/embed/rtOvBOTyX00" frameborder="0" allowfullscreen></iframe></div></p>
 <p>效果图:<br><img src="/p/cb3898/youtube-pic.png" title="看不到视频看效果图"></p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>以上这些对于日常写作基本够用，后面需要什么再学，再记录，持续更新。</p>
@@ -595,9 +612,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-          
             <a href="/tags/Note/" rel="tag"># Note</a>
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
           
             <a href="/tags/Writing/" rel="tag"># Writing</a>
           
@@ -710,7 +727,7 @@
               <img class="site-author-image" itemprop="image" src="/images/first.png" alt="Seeno">
             
               <p class="site-author-name" itemprop="name">Seeno</p>
-              <p class="site-description motion-element" itemprop="description">Learn more ...</p>
+              <p class="site-description motion-element" itemprop="description">Learn more...</p>
           </div>
 
           
@@ -911,7 +928,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">35k</span>
+    <span title="站点总字数">34k</span>
   
 
   
@@ -966,12 +983,6 @@
 
     
 
-    
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
     
 
     
@@ -1126,18 +1137,6 @@
       
       new needShareButton('#needsharebutton-postbottom', pbOptions);
     
-    
-      flOptions = {};
-      
-        flOptions.iconStyle = "default";
-      
-        flOptions.boxForm = "horizontal";
-      
-        flOptions.position = "middleRight";
-      
-        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Reddit,GoogleBookmarks,Tumblr";
-      
-      new needShareButton('#needsharebutton-float', flOptions);
     
   </script>
 

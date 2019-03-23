@@ -296,6 +296,23 @@
         
         
           
+          <li class="menu-item menu-item-daily">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/Pigeon-Daily" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-dove"></i> <br>daily</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-about">
 
     
@@ -362,7 +379,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seeno">
-      <meta itemprop="description" content="Learn more ...">
+      <meta itemprop="description" content="Learn more...">
       <meta itemprop="image" content="/images/first.png">
     </span>
 
@@ -504,7 +521,7 @@
 <ol>
 <li>降低GIF图像品质</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert -quality 75% input.gif output.gif</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert -quality <span class="number">75%</span> <span class="selector-tag">input</span><span class="selector-class">.gif</span> output.gif</span><br></pre></td></tr></table></figure>
 <p>参数说明：</p>
 <p><code>-quality 75%</code> 原图品质降为 75% 左右 (降太多可能会导致图像品质下降严重)<br>ps.umm有的时候效果并不明显</p>
 <ol start="2">
@@ -514,22 +531,22 @@
 <ul>
 <li>自定义尺寸大小</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert -resize 800x600 input.gif output.gif</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">convert</span> <span class="selector-tag">-resize</span> 800<span class="selector-tag">x600</span> <span class="selector-tag">input</span><span class="selector-class">.gif</span> <span class="selector-tag">output</span><span class="selector-class">.gif</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>原图像宽高缩小为原来的一半</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert -sample 50%x50% input.gif output.gif</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">convert</span> <span class="selector-tag">-sample</span> 50%<span class="selector-tag">x50</span>% <span class="selector-tag">input</span><span class="selector-class">.gif</span> <span class="selector-tag">output</span><span class="selector-class">.gif</span></span><br></pre></td></tr></table></figure>
 <ol start="3">
 <li>设置压缩比</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert test.gif -fuzz 15% -layers Optimize result.gif</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">convert</span> <span class="selector-tag">test</span><span class="selector-class">.gif</span> <span class="selector-tag">-fuzz</span> 15% <span class="selector-tag">-layers</span> <span class="selector-tag">Optimize</span> <span class="selector-tag">result</span><span class="selector-class">.gif</span></span><br></pre></td></tr></table></figure>
 <p>参数说明：</p>
 <p><code>-fuzz</code>设置压缩率，压缩率不宜设置得太高，一半在5%~15%，具体根据图片压缩后的效果进行修改。</p>
 <h3 id="Gifsicle"><a href="#Gifsicle" class="headerlink" title="Gifsicle"></a>Gifsicle</h3><p>项目地址：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tvaGxlci9naWZzaWNsZQ==" title="https://github.com/kohler/gifsicle">https://github.com/kohler/gifsicle<i class="fa fa-external-link"></i></span><br>使用参考：<span class="exturl" data-url="aHR0cDovL3d3dy5sY2RmLm9yZy9naWZzaWNsZS9tYW4uaHRtbA==" title="http://www.lcdf.org/gifsicle/man.html">http://www.lcdf.org/gifsicle/man.html<i class="fa fa-external-link"></i></span></p>
 <ol>
 <li>根据图像自动优化</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gifsicle -O3 input.gif -o output.gif</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gifsicle -O3 <span class="selector-tag">input</span><span class="selector-class">.gif</span> -o output.gif</span><br></pre></td></tr></table></figure>
 <p>参数说明:</p>
 <p><strong>-O</strong>[<em>level</em>]</p>
 <ul>
@@ -540,7 +557,7 @@
 <ol start="2">
 <li>缩小图像尺寸</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gifsicle -i input.gif --scale 0.5 -o output.gif</span><br><span class="line">gifsicle input.gif --resize 300x200 -o output.gif</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">gifsicle</span> <span class="selector-tag">-i</span> <span class="selector-tag">input</span><span class="selector-class">.gif</span> <span class="selector-tag">--scale</span> 0<span class="selector-class">.5</span> <span class="selector-tag">-o</span> <span class="selector-tag">output</span><span class="selector-class">.gif</span></span><br><span class="line"><span class="selector-tag">gifsicle</span> <span class="selector-tag">input</span><span class="selector-class">.gif</span> <span class="selector-tag">--resize</span> 300<span class="selector-tag">x200</span> <span class="selector-tag">-o</span> <span class="selector-tag">output</span><span class="selector-class">.gif</span></span><br></pre></td></tr></table></figure>
 <p>参数说明：</p>
 <ul>
 <li><code>--scale 0.5</code> 指的是缩小图像宽高为原来的一半</li>
@@ -549,7 +566,7 @@
 <ol start="3">
 <li>减少图片颜色</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gifsicle -O3 input.gif -o output.gif --colors num</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gifsicle -O3 <span class="selector-tag">input</span><span class="selector-class">.gif</span> -o output<span class="selector-class">.gif</span> --colors num</span><br></pre></td></tr></table></figure>
 <p>参数说明：</p>
 <p><code>--color num</code>: 将每个输出GIF中不同颜色的数量减少到num或更少。 num必须介于2到256之间。这可用于缩小输出GIF或消除任何本地颜色表。num越小，图片质量损失度越大。</p>
 
@@ -711,7 +728,7 @@
               <img class="site-author-image" itemprop="image" src="/images/first.png" alt="Seeno">
             
               <p class="site-author-name" itemprop="name">Seeno</p>
-              <p class="site-description motion-element" itemprop="description">Learn more ...</p>
+              <p class="site-description motion-element" itemprop="description">Learn more...</p>
           </div>
 
           
@@ -912,7 +929,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">35k</span>
+    <span title="站点总字数">34k</span>
   
 
   
@@ -967,12 +984,6 @@
 
     
 
-    
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
     
 
     
@@ -1127,18 +1138,6 @@
       
       new needShareButton('#needsharebutton-postbottom', pbOptions);
     
-    
-      flOptions = {};
-      
-        flOptions.iconStyle = "default";
-      
-        flOptions.boxForm = "horizontal";
-      
-        flOptions.position = "middleRight";
-      
-        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Reddit,GoogleBookmarks,Tumblr";
-      
-      new needShareButton('#needsharebutton-float', flOptions);
     
   </script>
 

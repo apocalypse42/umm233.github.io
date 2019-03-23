@@ -296,6 +296,23 @@
         
         
           
+          <li class="menu-item menu-item-daily">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/Pigeon-Daily" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-dove"></i> <br>daily</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-about">
 
     
@@ -362,7 +379,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seeno">
-      <meta itemprop="description" content="Learn more ...">
+      <meta itemprop="description" content="Learn more...">
       <meta itemprop="image" content="/images/first.png">
     </span>
 
@@ -455,7 +472,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">494</span>
+                <span title="本文字数">484</span>
               
 
               
@@ -495,7 +512,7 @@
 <p>list.sort(cmp=None, key=None, reverse=False)<br>l<em>   cmp – 可选参数, 如果指定了该参数会使用该参数的方法进行排序。<br>l</em>   key – 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。<br>l*   reverse – 排序规则，reverse = True 降序， reverse = False 升序（默认）。</p>
 </blockquote>
 <p>关于sort函数的坑是在做<code>Leetcode</code>的时候发现的，为了偷懒，坑了自己…</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [1,4,2,6,3,8]</span><br><span class="line">b = a.sort() # 错误的用法</span><br><span class="line">print(a) # 结果是[1,2,3,4,6,8]</span><br><span class="line">print(b) # None</span><br><span class="line">print(type(b)) # 结果是 &lt;class &apos;NoneType&apos;&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">8</span>]</span><br><span class="line">b = a.sort() # 错误的用法</span><br><span class="line">print(a) # 结果是[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>]</span><br><span class="line">print(b) # None</span><br><span class="line">print(type(b)) # 结果是 &lt;class 'NoneType'&gt;</span><br></pre></td></tr></table></figure>
 <p>刚开始觉得没毛病，但是<code>b</code>没有取值，然后去查了一下，sort函数返回的就是<code>None</code>，<code>a.sort()</code>将<code>a</code>排序好后，不返回值，直接对<code>a</code>本身进行操作。</p>
 <blockquote>
 <p>参数说明参考 <span class="exturl" data-url="aHR0cDovL3d3dy5ydW5vb2IuY29tL3B5dGhvbi9hdHQtbGlzdC1zb3J0Lmh0bWw=" title="http://www.runoob.com/python/att-list-sort.html">菜鸟教程<i class="fa fa-external-link"></i></span></p>
@@ -650,7 +667,7 @@
               <img class="site-author-image" itemprop="image" src="/images/first.png" alt="Seeno">
             
               <p class="site-author-name" itemprop="name">Seeno</p>
-              <p class="site-description motion-element" itemprop="description">Learn more ...</p>
+              <p class="site-description motion-element" itemprop="description">Learn more...</p>
           </div>
 
           
@@ -834,7 +851,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">35k</span>
+    <span title="站点总字数">34k</span>
   
 
   
@@ -889,12 +906,6 @@
 
     
 
-    
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
     
 
     
@@ -1049,18 +1060,6 @@
       
       new needShareButton('#needsharebutton-postbottom', pbOptions);
     
-    
-      flOptions = {};
-      
-        flOptions.iconStyle = "default";
-      
-        flOptions.boxForm = "horizontal";
-      
-        flOptions.position = "middleRight";
-      
-        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Reddit,GoogleBookmarks,Tumblr";
-      
-      new needShareButton('#needsharebutton-float', flOptions);
     
   </script>
 

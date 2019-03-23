@@ -296,6 +296,23 @@
         
         
           
+          <li class="menu-item menu-item-daily">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/Pigeon-Daily" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-dove"></i> <br>daily</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-about">
 
     
@@ -362,7 +379,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seeno">
-      <meta itemprop="description" content="Learn more ...">
+      <meta itemprop="description" content="Learn more...">
       <meta itemprop="image" content="/images/first.png">
     </span>
 
@@ -455,7 +472,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1k</span>
+                <span title="本文字数">979</span>
               
 
               
@@ -495,15 +512,15 @@
 <h2 id="判断平闰年"><a href="#判断平闰年" class="headerlink" title="判断平闰年"></a>判断平闰年</h2><blockquote>
 <p>根据平闰年的概念定义进行判断</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def judgeYear(year):</span><br><span class="line">    if (year%4 == 0) &amp; (year%100 != 0):</span><br><span class="line">        allday = 366</span><br><span class="line">    elif year%400 == 0:</span><br><span class="line">        allday = 366</span><br><span class="line">    else:</span><br><span class="line">        allday = 365</span><br><span class="line">    return allday</span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def judgeYear(<span class="built_in">year</span>):</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">year</span>%<span class="number">4</span> == <span class="number">0</span>) &amp; (<span class="built_in">year</span>%<span class="number">100</span> != <span class="number">0</span>):</span><br><span class="line">        allday = <span class="number">366</span></span><br><span class="line">    elif <span class="built_in">year</span>%<span class="number">400</span> == <span class="number">0</span>:</span><br><span class="line">        allday = <span class="number">366</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        allday = <span class="number">365</span></span><br><span class="line"><span class="built_in">    return</span> allday</span><br></pre></td></tr></table></figure>
 <h2 id="time库"><a href="#time库" class="headerlink" title="time库"></a>time库</h2><blockquote>
 <p>这是一个很基础的，也很常用的库<br><code>time.localtime()</code>返回的是一个类(class)<br> 返回的是time.struct_time(tm_year=2018, tm_mon=11, tm_mday=2, tm_hour=23, tm_min=24, tm_sec=46, tm_wday=4, tm_yday=306, tm_isdst=0)<br>尝试print你就知道每个变量的含义了，其实看名字也一目了然……<br>那这个程序里，我要的只是，“今天是一年中的第几天”，即<code>tm_yday</code><br>调用的话就是 <code>time.localtime().tm_yday</code></p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">localt = time.localtime()</span><br><span class="line"># print(localt)</span><br><span class="line">allday = judgeYear(localt.tm_year)</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">localt</span> = time.localtime()</span><br><span class="line"><span class="comment"># print(localt)</span></span><br><span class="line"><span class="attr">allday</span> = judgeYear(localt.tm_year)</span><br></pre></td></tr></table></figure>
 <h2 id="进度条"><a href="#进度条" class="headerlink" title="进度条"></a>进度条</h2><blockquote>
 <p>进度条想设计成什么样看个人，也可以用turtle画一个，也蛮简单的<br>这里用的是文本进度条<br>简单粗暴，字符相加，就成一家</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sad = yday/allday # 一年进度 sad~</span><br><span class="line">scale = 15 # 进度条长度</span><br><span class="line">i = int(15*sad)</span><br><span class="line">passed = &apos;▓&apos; * i # 今年走过的%</span><br><span class="line">leave = &apos;░&apos; * (scale - i) # 今年剩下的%</span><br><span class="line">print(&quot;\r&#123;0&#125;&#123;1&#125; &#123;2:3.0f&#125;% \n&quot;.format(passed,leave,sad*100),end=&apos;&apos;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sad = yday/allday <span class="comment"># 一年进度 sad~</span></span><br><span class="line">scale = 15 <span class="comment"># 进度条长度</span></span><br><span class="line">i = int(15*sad)</span><br><span class="line">passed = '▓' * i <span class="comment"># 今年走过的%</span></span><br><span class="line">leave = '░' * (scale - i) <span class="comment"># 今年剩下的%</span></span><br><span class="line">print(<span class="string">"\r&#123;0&#125;&#123;1&#125; &#123;2:3.0f&#125;% \n"</span>.format(passed,leave,sad*100),end='')</span><br></pre></td></tr></table></figure>
 <p>▓▓▓▓▓▓▓▓▓▓▓▓░░░  84% </p>
 <p>至此一个进度条就出来了 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3VtbTIzMy91bW0yMzMuZ2l0aHViLmlvL2Jsb2IvbWFzdGVyL2FydGljbGUtY29kZS9taXNzZGF5LnB5" title="https://github.com/umm233/umm233.github.io/blob/master/article-code/missday.py">完整程序<i class="fa fa-external-link"></i></span></p>
 <h2 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h2><p>今年只剩下59天了，还有很多东西想学好🙃🙃🙃，加把劲了~</p>
@@ -664,7 +681,7 @@
               <img class="site-author-image" itemprop="image" src="/images/first.png" alt="Seeno">
             
               <p class="site-author-name" itemprop="name">Seeno</p>
-              <p class="site-description motion-element" itemprop="description">Learn more ...</p>
+              <p class="site-description motion-element" itemprop="description">Learn more...</p>
           </div>
 
           
@@ -865,7 +882,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">35k</span>
+    <span title="站点总字数">34k</span>
   
 
   
@@ -920,12 +937,6 @@
 
     
 
-    
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
     
 
     
@@ -1080,18 +1091,6 @@
       
       new needShareButton('#needsharebutton-postbottom', pbOptions);
     
-    
-      flOptions = {};
-      
-        flOptions.iconStyle = "default";
-      
-        flOptions.boxForm = "horizontal";
-      
-        flOptions.position = "middleRight";
-      
-        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Reddit,GoogleBookmarks,Tumblr";
-      
-      new needShareButton('#needsharebutton-float', flOptions);
     
   </script>
 

@@ -296,6 +296,23 @@
         
         
           
+          <li class="menu-item menu-item-daily">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/Pigeon-Daily" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-dove"></i> <br>daily</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-about">
 
     
@@ -362,7 +379,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seeno">
-      <meta itemprop="description" content="Learn more ...">
+      <meta itemprop="description" content="Learn more...">
       <meta itemprop="image" content="/images/first.png">
     </span>
 
@@ -500,7 +517,7 @@
 </ul>
 <h2 id="关闭warning显示"><a href="#关闭warning显示" class="headerlink" title="关闭warning显示"></a>关闭warning显示</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf false</span><br></pre></td></tr></table></figure>
 <p>参数说明：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">false表示取消自动转换功能。适合纯Windows</span><br><span class="line">true表示提交代码时把CRLF转换成LF，导出时LF转换成CRLF。适合多平台协作</span><br><span class="line">input表示提交时把CRLF转换成LF，导出时不转换。适合纯Linux或Mac</span><br></pre></td></tr></table></figure>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">false表示取消自动转换功能。适合纯Windows</span><br><span class="line">true表示提交代码时把<span class="keyword">CRLF</span>转换成<span class="keyword">LF</span>，导出时<span class="keyword">LF</span>转换成<span class="keyword">CRLF</span>。适合多平台协作</span><br><span class="line">input表示提交时把<span class="keyword">CRLF</span>转换成<span class="keyword">LF</span>，导出时不转换。适合纯Linux或Mac</span><br></pre></td></tr></table></figure>
 <p>以前懒得改，后面越看越难受，干脆改一下，没有出现几十行warning··· ···</p>
 <p>舒服了！</p>
 
@@ -662,7 +679,7 @@
               <img class="site-author-image" itemprop="image" src="/images/first.png" alt="Seeno">
             
               <p class="site-author-name" itemprop="name">Seeno</p>
-              <p class="site-description motion-element" itemprop="description">Learn more ...</p>
+              <p class="site-description motion-element" itemprop="description">Learn more...</p>
           </div>
 
           
@@ -863,7 +880,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">35k</span>
+    <span title="站点总字数">34k</span>
   
 
   
@@ -918,12 +935,6 @@
 
     
 
-    
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
     
 
     
@@ -1078,18 +1089,6 @@
       
       new needShareButton('#needsharebutton-postbottom', pbOptions);
     
-    
-      flOptions = {};
-      
-        flOptions.iconStyle = "default";
-      
-        flOptions.boxForm = "horizontal";
-      
-        flOptions.position = "middleRight";
-      
-        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Reddit,GoogleBookmarks,Tumblr";
-      
-      new needShareButton('#needsharebutton-float', flOptions);
     
   </script>
 

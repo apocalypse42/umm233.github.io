@@ -298,6 +298,23 @@
         
         
           
+          <li class="menu-item menu-item-daily">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/Pigeon-Daily" rel="section"><i class="menu-item-icon fa fa-fw fa-fas fa-dove"></i> <br>daily</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-about">
 
     
@@ -364,7 +381,7 @@
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seeno">
-      <meta itemprop="description" content="Learn more ...">
+      <meta itemprop="description" content="Learn more...">
       <meta itemprop="image" content="/images/first.png">
     </span>
 
@@ -515,7 +532,7 @@
 <li>将信息写入<code>ex2</code>对应位置并保存</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">35</span>):</span><br><span class="line">    stuname = stuNames2[i].value</span><br><span class="line">    teaname = findTea(sheet, stuname)</span><br><span class="line">    teaNames2[i].value = teaname</span><br></pre></td></tr></table></figure>
-<p>保存修改后的excel (做了那么多，不保存对于没有😥)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wb1.save(&apos;ex2.xlsx&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>保存修改后的excel (做了那么多，不保存对于没有😥)<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">wb1</span><span class="selector-class">.save</span>(<span class="string">'ex2.xlsx'</span>)</span><br></pre></td></tr></table></figure></p>
 <h2 id="随想"><a href="#随想" class="headerlink" title="随想"></a>随想</h2><p>最近看到一个repo，作者的REMDME，我的想法大概也是吧。编程可以用于解决许多日常繁琐的问题，同时，最让我着迷的是，编程的创造，可以有无限可能，只要你想得到，基本上有办法实现。</p>
 <p>Awosome!</p>
 <blockquote><p>I do not consider myself a programmer. I create these little programs as experiments to play with the language, or to solve problems for myself. I would gladly accept pointers from others to improve, simplify, or make the code more efficient.</p>
@@ -681,7 +698,7 @@
               <img class="site-author-image" itemprop="image" src="/images/first.png" alt="Seeno">
             
               <p class="site-author-name" itemprop="name">Seeno</p>
-              <p class="site-description motion-element" itemprop="description">Learn more ...</p>
+              <p class="site-description motion-element" itemprop="description">Learn more...</p>
           </div>
 
           
@@ -882,7 +899,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">35k</span>
+    <span title="站点总字数">34k</span>
   
 
   
@@ -937,12 +954,6 @@
 
     
 
-    
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
     
 
     
@@ -1097,18 +1108,6 @@
       
       new needShareButton('#needsharebutton-postbottom', pbOptions);
     
-    
-      flOptions = {};
-      
-        flOptions.iconStyle = "default";
-      
-        flOptions.boxForm = "horizontal";
-      
-        flOptions.position = "middleRight";
-      
-        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Reddit,GoogleBookmarks,Tumblr";
-      
-      new needShareButton('#needsharebutton-float', flOptions);
     
   </script>
 
