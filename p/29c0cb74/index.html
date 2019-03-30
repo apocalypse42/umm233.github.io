@@ -114,23 +114,23 @@
 
 
 
-  <meta name="description" content="折腾一下PS的美化——oh my posh">
-<meta name="keywords" content="Software,Windows,PowerShell">
+  <meta name="description" content="Cisco Packet Tracer模拟配置交换机">
+<meta name="keywords" content="Note,Network">
 <meta property="og:type" content="article">
-<meta property="og:title" content="oh my posh">
-<meta property="og:url" content="https://umm.js.org/p/d67c16f7/index.html">
+<meta property="og:title" content="交换机基本配置使用">
+<meta property="og:url" content="https://umm.js.org/p/29c0cb74/index.html">
 <meta property="og:site_name" content="Seeno">
-<meta property="og:description" content="折腾一下PS的美化——oh my posh">
+<meta property="og:description" content="Cisco Packet Tracer模拟配置交换机">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://umm.js.org/p/d67c16f7/1.png">
-<meta property="og:image" content="https://umm.js.org/p/d67c16f7/2.png">
-<meta property="og:image" content="https://umm.js.org/p/d67c16f7/result.png">
-<meta property="og:image" content="https://umm.js.org/p/d67c16f7/result_cmder.png">
-<meta property="og:updated_time" content="2019-03-23T14:37:36.351Z">
+<meta property="og:image" content="https://umm.js.org/p/29c0cb74/set-console-password.png">
+<meta property="og:image" content="https://umm.js.org/p/29c0cb74/switchport-access-vlan.png">
+<meta property="og:image" content="https://umm.js.org/p/29c0cb74/configure-shortcut.png">
+<meta property="og:image" content="https://umm.js.org/p/29c0cb74/success-access.png">
+<meta property="og:updated_time" content="2019-03-30T11:11:23.268Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="oh my posh">
-<meta name="twitter:description" content="折腾一下PS的美化——oh my posh">
-<meta name="twitter:image" content="https://umm.js.org/p/d67c16f7/1.png">
+<meta name="twitter:title" content="交换机基本配置使用">
+<meta name="twitter:description" content="Cisco Packet Tracer模拟配置交换机">
+<meta name="twitter:image" content="https://umm.js.org/p/29c0cb74/set-console-password.png">
 
 
 
@@ -139,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="https://umm.js.org/p/d67c16f7/">
+  <link rel="canonical" href="https://umm.js.org/p/29c0cb74/">
 
 
 
@@ -149,7 +149,7 @@
   };
 </script>
 
-  <title>oh my posh | Seeno</title>
+  <title>交换机基本配置使用 | Seeno</title>
   
 
 
@@ -384,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://umm.js.org/p/d67c16f7/">
+    <link itemprop="mainEntityOfPage" href="https://umm.js.org/p/29c0cb74/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Seeno">
@@ -401,7 +401,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">oh my posh
+          <h1 class="post-title" itemprop="name headline">交换机基本配置使用
 
               
             
@@ -427,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2019-03-22 16:04:11" itemprop="dateCreated datePublished" datetime="2019-03-22T16:04:11+08:00">2019-03-22</time>
+              <time title="创建时间：2019-03-30 17:15:24" itemprop="dateCreated datePublished" datetime="2019-03-30T17:15:24+08:00">2019-03-30</time>
             
 
             
@@ -445,7 +445,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/PowerShell/" itemprop="url" rel="index"><span itemprop="name">PowerShell</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/网络管理/" itemprop="url" rel="index"><span itemprop="name">网络管理</span></a></span>
 
                 
                 
@@ -481,7 +481,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.8k</span>
+                <span title="本文字数">2k</span>
               
 
               
@@ -515,53 +515,79 @@
       
 
       
-        <p>折腾一下PS的美化——oh my posh</p>
+        <p>Cisco Packet Tracer模拟配置交换机</p>
 <a id="more"></a>
-<h2 id="安装-scoop"><a href="#安装-scoop" class="headerlink" title="安装 scoop"></a>安装 scoop</h2><p>可参考<span class="exturl" data-url="aHR0cHM6Ly9zcGVuY2Vyd29vLmNvbS8=" title="https://spencerwoo.com/">@Spencer Woo<i class="fa fa-external-link"></i></span>的<span class="exturl" data-url="aHR0cHM6Ly9zcGVuY2Vyd29vLmNvbS9wb3N0cy8yMDE5LzAxLzEyL3Njb29wLmh0bWwjc2Nvb3AtJUU3JTlBJTg0JUU1JUFFJTg5JUU4JUEzJTg1JUU5JTg1JThEJUU3JUJEJUFF" title="https://spencerwoo.com/posts/2019/01/12/scoop.html#scoop-%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE">这篇文章<i class="fa fa-external-link"></i></span>，介绍了关于scoop的安装以，配置及使用</p>
-<p>主要步骤：(使用powershell进行以下操作)</p>
-<ol>
-<li>允许本地脚本执行</li>
+<h2 id="交换机内常用操作"><a href="#交换机内常用操作" class="headerlink" title="交换机内常用操作"></a>交换机内常用操作</h2><p>刚打开交换机，默认进入普通模式(用户模式)<br>命令提示符显示<code>Switch&gt;</code></p>
+<ul>
+<li><code>?</code>的使用<br>eg. 输入<code>?</code>可显示当前模式下所有可执行命令，以及命令介绍，对于命令也可以显示缺少的参数，如<code>conf ?</code>显示可以在后面输入<code>terminal</code>或者<code>&lt;cr&gt;</code>(回车)，如下就进入了配置模式</li>
+</ul>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Switch<span class="comment">#configure ?</span></span><br><span class="line">  terminal  Configure <span class="built_in">from</span> <span class="keyword">the</span> terminal</span><br><span class="line">  &lt;<span class="literal">cr</span>&gt;</span><br><span class="line">Switch<span class="comment">#configure terminal ?</span></span><br><span class="line">  &lt;<span class="literal">cr</span>&gt;</span><br><span class="line">Switch<span class="comment">#configure terminal </span></span><br><span class="line">Enter configuration commands, <span class="literal">one</span> per <span class="built_in">line</span>.  End <span class="keyword">with</span> CNTL/Z.</span><br><span class="line">Switch(config)<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>在无歧义情况下，命令可缺省<br>eg. 输入<code>en</code>，在该模式下可执行命令中只有<code>enable</code>是<code>en</code>开头，这时候输入<code>en</code>即可代表<code>enable</code>而不出现错误。</p>
+</li>
+<li><p><code>Tab</code> 补全命令</p>
+</li>
+</ul>
+<h2 id="交换机进入全局配置模式"><a href="#交换机进入全局配置模式" class="headerlink" title="交换机进入全局配置模式"></a>交换机进入全局配置模式</h2><p>交换机主要的配置都在配置模式下进行，而在特权模式下查看运行及配置后的信息进行调试。</p>
+<ul>
+<li><p><code>enable</code><br>输入<code>enable</code>进入特权模式<br>命令提示符显示<code>Switch#</code><br>可查看交换机运行和配置信息等<br>ps.可简写为<code>en</code></p>
+</li>
+<li><p><code>configure terminal</code><br>进入特权模式后，输入<code>configure terminal</code>进入全局配置模式<br>命令提示符显示<code>Switch(config)#</code><br>可对交换机进行全局配置，如配置密码，设置vlan，接口配置等等<br>ps.可简写为<code>conf t</code></p>
+</li>
+</ul>
+<h2 id="交换机控制台创建密码"><a href="#交换机控制台创建密码" class="headerlink" title="交换机控制台创建密码"></a>交换机控制台创建密码</h2><p>设置密码，使得在使用交换机命令行进入特权模式时需要输入密码。</p>
+<ol start="0">
+<li><code>enable</code> 进入特权模式</li>
+<li><code>config t</code> 进入全局配置模式</li>
+<li><code>enable secret xxx</code> 设置加密密码</li>
 </ol>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set-executionpolicy</span> remotesigned -scope currentuser</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>安装 Scoop</li>
+<p>ps. <code>enable password xxx</code> 设置明文密码（不推荐） </p>
+<p>在特权模式下，<code>show run</code> 可查看当前配置的信息：<br><img src="/p/29c0cb74/set-console-password.png" title="set console password"></p>
+<h2 id="交换机特定接口分配vlan"><a href="#交换机特定接口分配vlan" class="headerlink" title="交换机特定接口分配vlan"></a>交换机特定接口分配vlan</h2><ol start="0">
+<li><code>enable</code> 进入特权模式</li>
+<li><code>config t</code> 进入全局配置模式</li>
+<li><code>interface f0/1</code> 进入接口配置 <code>Switch(config-if)#</code></li>
+<li><code>switch access vlan 2</code> 分配<code>vlan 2</code>给该接口</li>
 </ol>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iex (<span class="built_in">new-object</span> net.webclient).downloadstring(<span class="string">'https://get.scoop.sh'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="安装-concfg"><a href="#安装-concfg" class="headerlink" title="安装 concfg"></a>安装 concfg</h2><p><code>concfg</code>可以用来导入和导出 Windows 控制台的设置<br>可通过Scoop进行安装，会自动配置好环境变量</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install concfg</span><br></pre></td></tr></table></figure>
-<h2 id="安装-posh-git"><a href="#安装-posh-git" class="headerlink" title="安装 posh-git"></a>安装 posh-git</h2><p><code>posh-git</code> 是 <code>oh-my-posh</code> 的依赖，在 <code>scoop</code> 的 <code>extras</code> 包中。</p>
-<ol>
-<li>添加名为 <code>extras</code> 的 <code>bucket</code></li>
+<p>在特权模式下，<code>show run</code> 可查看当前配置的信息：<br><img src="/p/29c0cb74/switchport-access-vlan.png" title="switchport access vlan"></p>
+<h2 id="设置交换机特定vlan的IP地址"><a href="#设置交换机特定vlan的IP地址" class="headerlink" title="设置交换机特定vlan的IP地址"></a>设置交换机特定vlan的IP地址</h2><ol start="0">
+<li><code>enable</code> 进入特权模式</li>
+<li><code>config t</code> 进入全局配置模式</li>
+<li><code>interface vlan 2</code> 进入配置<code>vlan 2</code></li>
+<li><code>ip address 192.168.1.1 255.255.255.0</code> 设置交换机<code>vlan 2</code>的ip地址为<code>192.168.1.1</code>，子网掩码为<code>255.255.255.0</code></li>
 </ol>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket add extras</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>安装 <code>posh-git</code></li>
+<h2 id="远程连接交换机"><a href="#远程连接交换机" class="headerlink" title="远程连接交换机"></a>远程连接交换机</h2><h3 id="进入配置模式下"><a href="#进入配置模式下" class="headerlink" title="进入配置模式下"></a>进入配置模式下</h3><ol start="0">
+<li><code>enable</code> 进入特权模式</li>
+<li><code>config t</code> 进入全局配置模式</li>
 </ol>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install posh-git</span><br></pre></td></tr></table></figure>
-<h2 id="安装-oh-my-posh"><a href="#安装-oh-my-posh" class="headerlink" title="安装 oh my posh"></a>安装 oh my posh</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install oh-my-posh</span><br></pre></td></tr></table></figure>
-<p>但是在没有设置<code>更纱字体 Team SC</code>之前，我的powershell的命令提示符会出现很奇怪的箭头（向上弯），估计是有一些字体不匹配，不能很好地显示出来。看着别扭，把更纱字体加到注册表中，以便修改powershell中的字体配置。</p>
-<img src="/p/d67c16f7/1.png" title="修改字体前">
-<img src="/p/d67c16f7/2.png" title="修改字体后">
-<h3 id="字体配置"><a href="#字体配置" class="headerlink" title="字体配置"></a>字体配置</h3><ol>
-<li>安装<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JlNWludmlzL1NhcmFzYS1Hb3RoaWM=" title="https://github.com/be5invis/Sarasa-Gothic">更纱字体<i class="fa fa-external-link"></i></span></li>
-<li>修改注册表，在<code>HKEY_LOCAL_MACHINE &gt;&gt; SOFTWARE &gt;&gt; Microsoft &gt;&gt; Windows NT &gt;&gt; CurrentVersion &gt;&gt; Console &gt;&gt; TrueTypeFont</code>中添加一个字符串项目，内容为<code>Sarasa Term SC</code></li>
+<blockquote>
+<p><em>接下来的配置，均在全局配置模式<code>Switch(config)#</code>下进行，进入接口配置模式<code>Switch(config-if)#</code>，可通过 <code>exit</code>退出，回到全局配置模式 <code>Switch(config)#</code></em></p>
+</blockquote>
+<h3 id="设置交换机vlan的IP地址"><a href="#设置交换机vlan的IP地址" class="headerlink" title="设置交换机vlan的IP地址"></a>设置交换机vlan的IP地址</h3><ol>
+<li><code>interface vlan 2</code> 进入配置<code>vlan 2</code> （由于<code>vlan 1</code>是默认的，初始化的时候，所有接口都在<code>vlan 1</code>下，所以这里使用<code>vlan 2</code>进行远程连接）</li>
+<li><code>ip address 192.168.1.1 255.255.255.0</code> 设置交换机<code>vlan 2</code>的ip地址为<code>192.168.1.1</code>，子网掩码为<code>255.255.255.0</code></li>
+<li><code>no shutdown</code> 启用<code>vlan 2</code><br>ps.鼠标悬浮在交换机上，可查看接口状态，以及vlan状态，<code>up</code>表示开启/正在使用，<code>down</code>表示关闭/未使用</li>
 </ol>
-<h3 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-Theme Agnoster</span><br></pre></td></tr></table></figure>
-<h3 id="应用配置"><a href="#应用配置" class="headerlink" title="应用配置"></a>应用配置</h3><p>新建一个 <code>config.json</code> 文件，键入如下内容，根据个人需要自行修改，我的是<a href="https://umm.js.org/download/oh_my_posh/oh_my_posh_cfg.json">oh_my_posh_cfg.json</a></p>
-<p>这里用的是<code>.json</code>文件，之前看了很多教程，用的是<code>.cfg</code>文件，然后我用的时候出现了<code>concfg: ERROR: couldn&#39;t load settings from xxx.cfg</code>这样的错误。</p>
-<p>然后，我查了一下看到有人用<code>.json</code>文件在其他地方进行配置，我就试了一下，感人~<br>出现 <code>Console settings were imported from &#39;xxx.json&#39;</code>就说明导入配置成功。</p>
-<p>ps. 如果导入配置文件，但字体无法正常加载可以手动修改powershell的属性，设置字体为<code>Sarasa Team SC</code></p>
-<p>另外，可以在PowerShell 配置文件中设置字体以及启动加载项：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 输入<span class="variable">$Profile</span>得到PowerShell默认配置文件的位置</span><br><span class="line">&gt; <span class="variable">$Profile</span></span><br><span class="line">C:\Users\用户名\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. 查看下路径下是否存在该文件</span><br><span class="line">&gt; <span class="built_in">Test-path</span> <span class="variable">$profile</span></span><br><span class="line">返回True ，表示存在</span><br><span class="line">返回False，则需要自己创建：</span><br><span class="line">&gt; <span class="built_in">New-item</span> –type file –force <span class="variable">$profile</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. 修改配置文件</span><br><span class="line">&gt; Notepad <span class="variable">$profile</span></span><br><span class="line">写入：</span><br><span class="line"><span class="built_in">Import-Module</span> oh-my-posh</span><br><span class="line">Set-Theme Agnoster</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. 重启powershell查看变化</span><br></pre></td></tr></table></figure>
-<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><img src="/p/d67c16f7/result.png" title="powershell效果图">
-<h2 id="配合cmder使用"><a href="#配合cmder使用" class="headerlink" title="配合cmder使用"></a>配合cmder使用</h2><p>除了设置powershell为默认环境外，以及修改字体为<code>Sarasa Term SC</code>，还需要在<code>cmder\vendor\profile.ps1</code>末尾加上:</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Import-Module</span> oh-my-posh</span><br><span class="line">Set-Theme Agnoster</span><br></pre></td></tr></table></figure>
-<p>效果图：</p>
-<img src="/p/d67c16f7/result_cmder.png" title="powershell效果图">
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuaXN6eS5jYy8yMDE4LzA1LzA2L2JlYXV0aWZ5LXBvd2Vyc2hlbGwv" title="https://www.iszy.cc/2018/05/06/beautify-powershell/">Powershell 美化 ——oh-my-posh<i class="fa fa-external-link"></i></span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9zcGVuY2Vyd29vLmNvbS9wb3N0cy8yMDE5LzAxLzEyL3Njb29wLmh0bWw=" title="https://spencerwoo.com/posts/2019/01/12/scoop.html">「一行代码」搞定软件安装卸载，用 Scoop 管理你的 Windows 软件<i class="fa fa-external-link"></i></span></li>
+<h3 id="交换机特定接口分配vlan-1"><a href="#交换机特定接口分配vlan-1" class="headerlink" title="交换机特定接口分配vlan"></a>交换机特定接口分配vlan</h3><ol>
+<li><code>interface f0/1</code> 进入接口配置 <code>Switch(config-if)#</code></li>
+<li><code>switch access vlan 2</code> 分配<code>vlan 2</code>给该接口</li>
 </ol>
+<h3 id="配置远程登录"><a href="#配置远程登录" class="headerlink" title="配置远程登录"></a>配置远程登录</h3><ol>
+<li><code>line vty 0 4</code> 设置同时允许5个虚拟终端登陆</li>
+<li><code>password 123456</code> 设置登录密码，如不设置，PC则无法使用<code>telnet</code>命令进行远程登录</li>
+<li><code>login</code> 使密码设置生效</li>
+</ol>
+<p><code>show run</code>部分配置结果<br><img src="/p/29c0cb74/configure-shortcut.png" title="配置部分截图"></p>
+<h3 id="设置PC登录交换机"><a href="#设置PC登录交换机" class="headerlink" title="设置PC登录交换机"></a>设置PC登录交换机</h3><ul>
+<li>设置PC的IP地址</li>
+</ul>
+<p>PC要能登录交换机，其IP地址需要和交换机vlan地址在同一个子网上才可以访问，连接，所以设置PC的IP为<code>192.168.1.2</code>，子网掩码为<code>255.255.255.0</code>，网关设为交换机IP<code>192.168.1.1</code></p>
+<ul>
+<li><code>telnet</code>登录</li>
+</ul>
+<p><code>telnet 交换机IP</code>即可访问交换机，输入事先设定的密码<code>123456</code>即可登录操作交换机。</p>
+<img src="/p/29c0cb74/success-access.png" title="远程登录成功">
+<p>emm有问题可以在评论里交流 (逃…</p>
 
       
     </div>
@@ -595,7 +621,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://umm.js.org/p/d67c16f7/" title="oh my posh">https://umm.js.org/p/d67c16f7/</a>
+    <a href="https://umm.js.org/p/29c0cb74/" title="交换机基本配置使用">https://umm.js.org/p/29c0cb74/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
@@ -608,11 +634,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Software/" rel="tag"># Software</a>
+            <a href="/tags/Note/" rel="tag"># Note</a>
           
-            <a href="/tags/Windows/" rel="tag"># Windows</a>
-          
-            <a href="/tags/PowerShell/" rel="tag"># PowerShell</a>
+            <a href="/tags/Network/" rel="tag"># Network</a>
           
         </div>
       
@@ -645,8 +669,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/p/1ff69962/" rel="next" title="简单整合Excel信息">
-                <i class="fa fa-chevron-left"></i> 简单整合Excel信息
+              <a href="/dove-daily/aa5cf34e/" rel="next" title="Dove Daily第1期">
+                <i class="fa fa-chevron-left"></i> Dove Daily第1期
               </a>
             
           </div>
@@ -654,10 +678,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/dove-daily/aa5cf34e/" rel="prev" title="Dove Daily第1期">
-                Dove Daily第1期 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -895,7 +915,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-scoop"><span class="nav-number">1.</span> <span class="nav-text">安装 scoop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-concfg"><span class="nav-number">2.</span> <span class="nav-text">安装 concfg</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-posh-git"><span class="nav-number">3.</span> <span class="nav-text">安装 posh-git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-oh-my-posh"><span class="nav-number">4.</span> <span class="nav-text">安装 oh my posh</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字体配置"><span class="nav-number">4.1.</span> <span class="nav-text">字体配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置主题"><span class="nav-number">4.2.</span> <span class="nav-text">设置主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用配置"><span class="nav-number">4.3.</span> <span class="nav-text">应用配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图"><span class="nav-number">4.4.</span> <span class="nav-text">效果图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配合cmder使用"><span class="nav-number">5.</span> <span class="nav-text">配合cmder使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#交换机内常用操作"><span class="nav-number">1.</span> <span class="nav-text">交换机内常用操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交换机进入全局配置模式"><span class="nav-number">2.</span> <span class="nav-text">交换机进入全局配置模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交换机控制台创建密码"><span class="nav-number">3.</span> <span class="nav-text">交换机控制台创建密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交换机特定接口分配vlan"><span class="nav-number">4.</span> <span class="nav-text">交换机特定接口分配vlan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置交换机特定vlan的IP地址"><span class="nav-number">5.</span> <span class="nav-text">设置交换机特定vlan的IP地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程连接交换机"><span class="nav-number">6.</span> <span class="nav-text">远程连接交换机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进入配置模式下"><span class="nav-number">6.1.</span> <span class="nav-text">进入配置模式下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置交换机vlan的IP地址"><span class="nav-number">6.2.</span> <span class="nav-text">设置交换机vlan的IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交换机特定接口分配vlan-1"><span class="nav-number">6.3.</span> <span class="nav-text">交换机特定接口分配vlan</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置远程登录"><span class="nav-number">6.4.</span> <span class="nav-text">配置远程登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置PC登录交换机"><span class="nav-number">6.5.</span> <span class="nav-text">设置PC登录交换机</span></a></li></ol></li></ol></div>
             
 
           </div>
