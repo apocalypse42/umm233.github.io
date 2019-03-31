@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://umm.js.org/"/>
+  <link href="https://umm.github.com/"/>
   <updated>2019-03-30T11:53:27.710Z</updated>
-  <id>https://umm.js.org/</id>
+  <id>https://umm.github.com/</id>
   
   <author>
     <name>Seeno</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>交换机基本配置使用</title>
-    <link href="https://umm.js.org/p/29c0cb74/"/>
-    <id>https://umm.js.org/p/29c0cb74/</id>
+    <link href="https://umm.github.com/p/29c0cb74/"/>
+    <id>https://umm.github.com/p/29c0cb74/</id>
     <published>2019-03-30T09:15:24.000Z</published>
     <updated>2019-03-30T11:53:27.710Z</updated>
     
@@ -31,19 +31,19 @@
     
     </summary>
     
-      <category term="网络管理" scheme="https://umm.js.org/categories/%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/"/>
+      <category term="网络管理" scheme="https://umm.github.com/categories/%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/"/>
     
     
-      <category term="Note" scheme="https://umm.js.org/tags/Note/"/>
+      <category term="Note" scheme="https://umm.github.com/tags/Note/"/>
     
-      <category term="Network" scheme="https://umm.js.org/tags/Network/"/>
+      <category term="Network" scheme="https://umm.github.com/tags/Network/"/>
     
   </entry>
   
   <entry>
     <title>Dove Daily第1期</title>
-    <link href="https://umm.js.org/dove-daily/aa5cf34e/"/>
-    <id>https://umm.js.org/dove-daily/aa5cf34e/</id>
+    <link href="https://umm.github.com/dove-daily/aa5cf34e/"/>
+    <id>https://umm.github.com/dove-daily/aa5cf34e/</id>
     <published>2019-03-23T10:55:59.000Z</published>
     <updated>2019-03-25T07:35:30.831Z</updated>
     
@@ -55,21 +55,21 @@
     
     </summary>
     
-      <category term="Dove Daily" scheme="https://umm.js.org/categories/Dove-Daily/"/>
+      <category term="Dove Daily" scheme="https://umm.github.com/categories/Dove-Daily/"/>
     
     
-      <category term="Dove Daily" scheme="https://umm.js.org/tags/Dove-Daily/"/>
+      <category term="Dove Daily" scheme="https://umm.github.com/tags/Dove-Daily/"/>
     
   </entry>
   
   <entry>
     <title>oh my posh</title>
-    <link href="https://umm.js.org/p/d67c16f7/"/>
-    <id>https://umm.js.org/p/d67c16f7/</id>
+    <link href="https://umm.github.com/p/d67c16f7/"/>
+    <id>https://umm.github.com/p/d67c16f7/</id>
     <published>2019-03-22T08:04:11.000Z</published>
     <updated>2019-03-23T14:37:36.351Z</updated>
     
-    <content type="html"><![CDATA[<p>折腾一下PS的美化——oh my posh</p><a id="more"></a><h2 id="安装-scoop"><a href="#安装-scoop" class="headerlink" title="安装 scoop"></a>安装 scoop</h2><p>可参考<span class="exturl" data-url="aHR0cHM6Ly9zcGVuY2Vyd29vLmNvbS8=" title="https://spencerwoo.com/">@Spencer Woo<i class="fa fa-external-link"></i></span>的<span class="exturl" data-url="aHR0cHM6Ly9zcGVuY2Vyd29vLmNvbS9wb3N0cy8yMDE5LzAxLzEyL3Njb29wLmh0bWwjc2Nvb3AtJUU3JTlBJTg0JUU1JUFFJTg5JUU4JUEzJTg1JUU5JTg1JThEJUU3JUJEJUFF" title="https://spencerwoo.com/posts/2019/01/12/scoop.html#scoop-%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE">这篇文章<i class="fa fa-external-link"></i></span>，介绍了关于scoop的安装以，配置及使用</p><p>主要步骤：(使用powershell进行以下操作)</p><ol><li>允许本地脚本执行</li></ol><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set-executionpolicy</span> remotesigned -scope currentuser</span><br></pre></td></tr></table></figure><ol start="2"><li>安装 Scoop</li></ol><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iex (<span class="built_in">new-object</span> net.webclient).downloadstring(<span class="string">'https://get.scoop.sh'</span>)</span><br></pre></td></tr></table></figure><h2 id="安装-concfg"><a href="#安装-concfg" class="headerlink" title="安装 concfg"></a>安装 concfg</h2><p><code>concfg</code>可以用来导入和导出 Windows 控制台的设置<br>可通过Scoop进行安装，会自动配置好环境变量</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install concfg</span><br></pre></td></tr></table></figure><h2 id="安装-posh-git"><a href="#安装-posh-git" class="headerlink" title="安装 posh-git"></a>安装 posh-git</h2><p><code>posh-git</code> 是 <code>oh-my-posh</code> 的依赖，在 <code>scoop</code> 的 <code>extras</code> 包中。</p><ol><li>添加名为 <code>extras</code> 的 <code>bucket</code></li></ol><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket add extras</span><br></pre></td></tr></table></figure><ol start="2"><li>安装 <code>posh-git</code></li></ol><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install posh-git</span><br></pre></td></tr></table></figure><h2 id="安装-oh-my-posh"><a href="#安装-oh-my-posh" class="headerlink" title="安装 oh my posh"></a>安装 oh my posh</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install oh-my-posh</span><br></pre></td></tr></table></figure><p>但是在没有设置<code>更纱字体 Team SC</code>之前，我的powershell的命令提示符会出现很奇怪的箭头（向上弯），估计是有一些字体不匹配，不能很好地显示出来。看着别扭，把更纱字体加到注册表中，以便修改powershell中的字体配置。</p><img src="/p/d67c16f7/1.png" title="修改字体前"><img src="/p/d67c16f7/2.png" title="修改字体后"><h3 id="字体配置"><a href="#字体配置" class="headerlink" title="字体配置"></a>字体配置</h3><ol><li>安装<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JlNWludmlzL1NhcmFzYS1Hb3RoaWM=" title="https://github.com/be5invis/Sarasa-Gothic">更纱字体<i class="fa fa-external-link"></i></span></li><li>修改注册表，在<code>HKEY_LOCAL_MACHINE &gt;&gt; SOFTWARE &gt;&gt; Microsoft &gt;&gt; Windows NT &gt;&gt; CurrentVersion &gt;&gt; Console &gt;&gt; TrueTypeFont</code>中添加一个字符串项目，内容为<code>Sarasa Term SC</code></li></ol><h3 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-Theme Agnoster</span><br></pre></td></tr></table></figure><h3 id="应用配置"><a href="#应用配置" class="headerlink" title="应用配置"></a>应用配置</h3><p>新建一个 <code>config.json</code> 文件，键入如下内容，根据个人需要自行修改，我的是<a href="https://umm.js.org/download/oh_my_posh/oh_my_posh_cfg.json">oh_my_posh_cfg.json</a></p><p>这里用的是<code>.json</code>文件，之前看了很多教程，用的是<code>.cfg</code>文件，然后我用的时候出现了<code>concfg: ERROR: couldn&#39;t load settings from xxx.cfg</code>这样的错误。</p><p>然后，我查了一下看到有人用<code>.json</code>文件在其他地方进行配置，我就试了一下，感人~<br>出现 <code>Console settings were imported from &#39;xxx.json&#39;</code>就说明导入配置成功。</p><p>ps. 如果导入配置文件，但字体无法正常加载可以手动修改powershell的属性，设置字体为<code>Sarasa Team SC</code></p><p>另外，可以在PowerShell 配置文件中设置字体以及启动加载项：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 输入<span class="variable">$Profile</span>得到PowerShell默认配置文件的位置</span><br><span class="line">&gt; <span class="variable">$Profile</span></span><br><span class="line">C:\Users\用户名\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. 查看下路径下是否存在该文件</span><br><span class="line">&gt; <span class="built_in">Test-path</span> <span class="variable">$profile</span></span><br><span class="line">返回True ，表示存在</span><br><span class="line">返回False，则需要自己创建：</span><br><span class="line">&gt; <span class="built_in">New-item</span> –type file –force <span class="variable">$profile</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. 修改配置文件</span><br><span class="line">&gt; Notepad <span class="variable">$profile</span></span><br><span class="line">写入：</span><br><span class="line"><span class="built_in">Import-Module</span> oh-my-posh</span><br><span class="line">Set-Theme Agnoster</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. 重启powershell查看变化</span><br></pre></td></tr></table></figure><h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><img src="/p/d67c16f7/result.png" title="powershell效果图"><h2 id="配合cmder使用"><a href="#配合cmder使用" class="headerlink" title="配合cmder使用"></a>配合cmder使用</h2><p>除了设置powershell为默认环境外，以及修改字体为<code>Sarasa Term SC</code>，还需要在<code>cmder\vendor\profile.ps1</code>末尾加上:</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Import-Module</span> oh-my-posh</span><br><span class="line">Set-Theme Agnoster</span><br></pre></td></tr></table></figure><p>效果图：</p><img src="/p/d67c16f7/result_cmder.png" title="powershell效果图"><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuaXN6eS5jYy8yMDE4LzA1LzA2L2JlYXV0aWZ5LXBvd2Vyc2hlbGwv" title="https://www.iszy.cc/2018/05/06/beautify-powershell/">Powershell 美化 ——oh-my-posh<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9zcGVuY2Vyd29vLmNvbS9wb3N0cy8yMDE5LzAxLzEyL3Njb29wLmh0bWw=" title="https://spencerwoo.com/posts/2019/01/12/scoop.html">「一行代码」搞定软件安装卸载，用 Scoop 管理你的 Windows 软件<i class="fa fa-external-link"></i></span></li></ol>]]></content>
+    <content type="html"><![CDATA[<p>折腾一下PS的美化——oh my posh</p><a id="more"></a><h2 id="安装-scoop"><a href="#安装-scoop" class="headerlink" title="安装 scoop"></a>安装 scoop</h2><p>可参考<span class="exturl" data-url="aHR0cHM6Ly9zcGVuY2Vyd29vLmNvbS8=" title="https://spencerwoo.com/">@Spencer Woo<i class="fa fa-external-link"></i></span>的<span class="exturl" data-url="aHR0cHM6Ly9zcGVuY2Vyd29vLmNvbS9wb3N0cy8yMDE5LzAxLzEyL3Njb29wLmh0bWwjc2Nvb3AtJUU3JTlBJTg0JUU1JUFFJTg5JUU4JUEzJTg1JUU5JTg1JThEJUU3JUJEJUFF" title="https://spencerwoo.com/posts/2019/01/12/scoop.html#scoop-%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE">这篇文章<i class="fa fa-external-link"></i></span>，介绍了关于scoop的安装以，配置及使用</p><p>主要步骤：(使用powershell进行以下操作)</p><ol><li>允许本地脚本执行</li></ol><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set-executionpolicy</span> remotesigned -scope currentuser</span><br></pre></td></tr></table></figure><ol start="2"><li>安装 Scoop</li></ol><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iex (<span class="built_in">new-object</span> net.webclient).downloadstring(<span class="string">'https://get.scoop.sh'</span>)</span><br></pre></td></tr></table></figure><h2 id="安装-concfg"><a href="#安装-concfg" class="headerlink" title="安装 concfg"></a>安装 concfg</h2><p><code>concfg</code>可以用来导入和导出 Windows 控制台的设置<br>可通过Scoop进行安装，会自动配置好环境变量</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install concfg</span><br></pre></td></tr></table></figure><h2 id="安装-posh-git"><a href="#安装-posh-git" class="headerlink" title="安装 posh-git"></a>安装 posh-git</h2><p><code>posh-git</code> 是 <code>oh-my-posh</code> 的依赖，在 <code>scoop</code> 的 <code>extras</code> 包中。</p><ol><li>添加名为 <code>extras</code> 的 <code>bucket</code></li></ol><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket add extras</span><br></pre></td></tr></table></figure><ol start="2"><li>安装 <code>posh-git</code></li></ol><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install posh-git</span><br></pre></td></tr></table></figure><h2 id="安装-oh-my-posh"><a href="#安装-oh-my-posh" class="headerlink" title="安装 oh my posh"></a>安装 oh my posh</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install oh-my-posh</span><br></pre></td></tr></table></figure><p>但是在没有设置<code>更纱字体 Team SC</code>之前，我的powershell的命令提示符会出现很奇怪的箭头（向上弯），估计是有一些字体不匹配，不能很好地显示出来。看着别扭，把更纱字体加到注册表中，以便修改powershell中的字体配置。</p><img src="/p/d67c16f7/1.png" title="修改字体前"><img src="/p/d67c16f7/2.png" title="修改字体后"><h3 id="字体配置"><a href="#字体配置" class="headerlink" title="字体配置"></a>字体配置</h3><ol><li>安装<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2JlNWludmlzL1NhcmFzYS1Hb3RoaWM=" title="https://github.com/be5invis/Sarasa-Gothic">更纱字体<i class="fa fa-external-link"></i></span></li><li>修改注册表，在<code>HKEY_LOCAL_MACHINE &gt;&gt; SOFTWARE &gt;&gt; Microsoft &gt;&gt; Windows NT &gt;&gt; CurrentVersion &gt;&gt; Console &gt;&gt; TrueTypeFont</code>中添加一个字符串项目，内容为<code>Sarasa Term SC</code></li></ol><h3 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-Theme Agnoster</span><br></pre></td></tr></table></figure><h3 id="应用配置"><a href="#应用配置" class="headerlink" title="应用配置"></a>应用配置</h3><p>新建一个 <code>config.json</code> 文件，键入如下内容，根据个人需要自行修改，我的是<span class="exturl" data-url="aHR0cHM6Ly91bW0uanMub3JnL2Rvd25sb2FkL29oX215X3Bvc2gvb2hfbXlfcG9zaF9jZmcuanNvbg==" title="https://umm.js.org/download/oh_my_posh/oh_my_posh_cfg.json">oh_my_posh_cfg.json<i class="fa fa-external-link"></i></span></p><p>这里用的是<code>.json</code>文件，之前看了很多教程，用的是<code>.cfg</code>文件，然后我用的时候出现了<code>concfg: ERROR: couldn&#39;t load settings from xxx.cfg</code>这样的错误。</p><p>然后，我查了一下看到有人用<code>.json</code>文件在其他地方进行配置，我就试了一下，感人~<br>出现 <code>Console settings were imported from &#39;xxx.json&#39;</code>就说明导入配置成功。</p><p>ps. 如果导入配置文件，但字体无法正常加载可以手动修改powershell的属性，设置字体为<code>Sarasa Team SC</code></p><p>另外，可以在PowerShell 配置文件中设置字体以及启动加载项：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 输入<span class="variable">$Profile</span>得到PowerShell默认配置文件的位置</span><br><span class="line">&gt; <span class="variable">$Profile</span></span><br><span class="line">C:\Users\用户名\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. 查看下路径下是否存在该文件</span><br><span class="line">&gt; <span class="built_in">Test-path</span> <span class="variable">$profile</span></span><br><span class="line">返回True ，表示存在</span><br><span class="line">返回False，则需要自己创建：</span><br><span class="line">&gt; <span class="built_in">New-item</span> –type file –force <span class="variable">$profile</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. 修改配置文件</span><br><span class="line">&gt; Notepad <span class="variable">$profile</span></span><br><span class="line">写入：</span><br><span class="line"><span class="built_in">Import-Module</span> oh-my-posh</span><br><span class="line">Set-Theme Agnoster</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. 重启powershell查看变化</span><br></pre></td></tr></table></figure><h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><img src="/p/d67c16f7/result.png" title="powershell效果图"><h2 id="配合cmder使用"><a href="#配合cmder使用" class="headerlink" title="配合cmder使用"></a>配合cmder使用</h2><p>除了设置powershell为默认环境外，以及修改字体为<code>Sarasa Term SC</code>，还需要在<code>cmder\vendor\profile.ps1</code>末尾加上:</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Import-Module</span> oh-my-posh</span><br><span class="line">Set-Theme Agnoster</span><br></pre></td></tr></table></figure><p>效果图：</p><img src="/p/d67c16f7/result_cmder.png" title="powershell效果图"><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuaXN6eS5jYy8yMDE4LzA1LzA2L2JlYXV0aWZ5LXBvd2Vyc2hlbGwv" title="https://www.iszy.cc/2018/05/06/beautify-powershell/">Powershell 美化 ——oh-my-posh<i class="fa fa-external-link"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9zcGVuY2Vyd29vLmNvbS9wb3N0cy8yMDE5LzAxLzEyL3Njb29wLmh0bWw=" title="https://spencerwoo.com/posts/2019/01/12/scoop.html">「一行代码」搞定软件安装卸载，用 Scoop 管理你的 Windows 软件<i class="fa fa-external-link"></i></span></li></ol>]]></content>
     
     <summary type="html">
     
@@ -77,21 +77,21 @@
     
     </summary>
     
-      <category term="PowerShell" scheme="https://umm.js.org/categories/PowerShell/"/>
+      <category term="PowerShell" scheme="https://umm.github.com/categories/PowerShell/"/>
     
     
-      <category term="Software" scheme="https://umm.js.org/tags/Software/"/>
+      <category term="Software" scheme="https://umm.github.com/tags/Software/"/>
     
-      <category term="Windows" scheme="https://umm.js.org/tags/Windows/"/>
+      <category term="Windows" scheme="https://umm.github.com/tags/Windows/"/>
     
-      <category term="PowerShell" scheme="https://umm.js.org/tags/PowerShell/"/>
+      <category term="PowerShell" scheme="https://umm.github.com/tags/PowerShell/"/>
     
   </entry>
   
   <entry>
     <title>简单整合Excel信息</title>
-    <link href="https://umm.js.org/p/1ff69962/"/>
-    <id>https://umm.js.org/p/1ff69962/</id>
+    <link href="https://umm.github.com/p/1ff69962/"/>
+    <id>https://umm.github.com/p/1ff69962/</id>
     <published>2019-03-22T05:30:43.000Z</published>
     <updated>2019-03-22T08:00:52.663Z</updated>
     
@@ -103,19 +103,19 @@
     
     </summary>
     
-      <category term="Python" scheme="https://umm.js.org/categories/Python/"/>
+      <category term="Python" scheme="https://umm.github.com/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://umm.js.org/tags/Python/"/>
+      <category term="Python" scheme="https://umm.github.com/tags/Python/"/>
     
-      <category term="Excel" scheme="https://umm.js.org/tags/Excel/"/>
+      <category term="Excel" scheme="https://umm.github.com/tags/Excel/"/>
     
   </entry>
   
   <entry>
     <title>GIF Compression</title>
-    <link href="https://umm.js.org/p/e9fa3cd1/"/>
-    <id>https://umm.js.org/p/e9fa3cd1/</id>
+    <link href="https://umm.github.com/p/e9fa3cd1/"/>
+    <id>https://umm.github.com/p/e9fa3cd1/</id>
     <published>2019-02-27T13:27:58.000Z</published>
     <updated>2019-03-05T14:14:14.824Z</updated>
     
@@ -127,19 +127,19 @@
     
     </summary>
     
-      <category term="图像处理" scheme="https://umm.js.org/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+      <category term="图像处理" scheme="https://umm.github.com/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
     
-      <category term="Image" scheme="https://umm.js.org/tags/Image/"/>
+      <category term="Image" scheme="https://umm.github.com/tags/Image/"/>
     
-      <category term="Compress" scheme="https://umm.js.org/tags/Compress/"/>
+      <category term="Compress" scheme="https://umm.github.com/tags/Compress/"/>
     
   </entry>
   
   <entry>
     <title>git中关于CRLF的Warning</title>
-    <link href="https://umm.js.org/p/a91d33b/"/>
-    <id>https://umm.js.org/p/a91d33b/</id>
+    <link href="https://umm.github.com/p/a91d33b/"/>
+    <id>https://umm.github.com/p/a91d33b/</id>
     <published>2019-02-09T16:09:53.000Z</published>
     <updated>2019-02-09T16:29:33.335Z</updated>
     
@@ -151,19 +151,19 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://umm.js.org/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://umm.github.com/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://umm.js.org/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://umm.github.com/tags/Hexo/"/>
     
-      <category term="Git" scheme="https://umm.js.org/tags/Git/"/>
+      <category term="Git" scheme="https://umm.github.com/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>Blog back up</title>
-    <link href="https://umm.js.org/p/cbef7cfa/"/>
-    <id>https://umm.js.org/p/cbef7cfa/</id>
+    <link href="https://umm.github.com/p/cbef7cfa/"/>
+    <id>https://umm.github.com/p/cbef7cfa/</id>
     <published>2019-02-09T13:15:28.000Z</published>
     <updated>2019-02-09T16:06:14.054Z</updated>
     
@@ -178,19 +178,19 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://umm.js.org/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://umm.github.com/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://umm.js.org/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://umm.github.com/tags/Hexo/"/>
     
-      <category term="Git" scheme="https://umm.js.org/tags/Git/"/>
+      <category term="Git" scheme="https://umm.github.com/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>Update NexT</title>
-    <link href="https://umm.js.org/p/b601309c/"/>
-    <id>https://umm.js.org/p/b601309c/</id>
+    <link href="https://umm.github.com/p/b601309c/"/>
+    <id>https://umm.github.com/p/b601309c/</id>
     <published>2019-02-05T05:30:13.000Z</published>
     <updated>2019-02-10T11:46:10.006Z</updated>
     
@@ -202,19 +202,19 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://umm.js.org/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://umm.github.com/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://umm.js.org/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://umm.github.com/tags/Hexo/"/>
     
-      <category term="NexT" scheme="https://umm.js.org/tags/NexT/"/>
+      <category term="NexT" scheme="https://umm.github.com/tags/NexT/"/>
     
   </entry>
   
   <entry>
     <title>Hexo writing</title>
-    <link href="https://umm.js.org/p/cb3898/"/>
-    <id>https://umm.js.org/p/cb3898/</id>
+    <link href="https://umm.github.com/p/cb3898/"/>
+    <id>https://umm.github.com/p/cb3898/</id>
     <published>2019-02-02T11:44:42.000Z</published>
     <updated>2019-03-07T08:45:51.160Z</updated>
     
@@ -226,21 +226,21 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://umm.js.org/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://umm.github.com/categories/Hexo/"/>
     
     
-      <category term="Note" scheme="https://umm.js.org/tags/Note/"/>
+      <category term="Note" scheme="https://umm.github.com/tags/Note/"/>
     
-      <category term="Hexo" scheme="https://umm.js.org/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://umm.github.com/tags/Hexo/"/>
     
-      <category term="Writing" scheme="https://umm.js.org/tags/Writing/"/>
+      <category term="Writing" scheme="https://umm.github.com/tags/Writing/"/>
     
   </entry>
   
   <entry>
     <title>爬取探书FM-每天听本书</title>
-    <link href="https://umm.js.org/p/e09d667/"/>
-    <id>https://umm.js.org/p/e09d667/</id>
+    <link href="https://umm.github.com/p/e09d667/"/>
+    <id>https://umm.github.com/p/e09d667/</id>
     <published>2019-01-11T14:00:38.000Z</published>
     <updated>2019-03-22T09:11:22.513Z</updated>
     
@@ -252,12 +252,12 @@
     
     </summary>
     
-      <category term="Python" scheme="https://umm.js.org/categories/Python/"/>
+      <category term="Python" scheme="https://umm.github.com/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://umm.js.org/tags/Python/"/>
+      <category term="Python" scheme="https://umm.github.com/tags/Python/"/>
     
-      <category term="Spider" scheme="https://umm.js.org/tags/Spider/"/>
+      <category term="Spider" scheme="https://umm.github.com/tags/Spider/"/>
     
   </entry>
   
