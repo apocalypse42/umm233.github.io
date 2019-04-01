@@ -4,21 +4,21 @@
   
     
     <entry>
-      <title>Dove Daily第2期</title>
-      <link href="/dove-daily/1e2e0372/"/>
-      <url>/dove-daily/1e2e0372/</url>
+      <title>分享记录 No.2</title>
+      <link href="/p/1e2e0372/"/>
+      <url>/p/1e2e0372/</url>
       
       
       <categories>
           
-          <category> Dove Daily </category>
+          <category> 日常 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Dove Daily </tag>
+            <tag> Anime </tag>
             
         </tags>
       
@@ -45,6 +45,8 @@
             
             <tag> Network </tag>
             
+            <tag> Cisco </tag>
+            
         </tags>
       
     </entry>
@@ -52,21 +54,21 @@
     
     
     <entry>
-      <title>Dove Daily第1期</title>
-      <link href="/dove-daily/aa5cf34e/"/>
-      <url>/dove-daily/aa5cf34e/</url>
+      <title>分享记录 No.1</title>
+      <link href="/p/aa5cf34e/"/>
+      <url>/p/aa5cf34e/</url>
       
       
       <categories>
           
-          <category> Dove Daily </category>
+          <category> 日常 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Dove Daily </tag>
+            <tag> share </tag>
             
         </tags>
       
@@ -649,5 +651,43 @@
     
     
   
+  
+    
+    
+    <entry>
+      <title>About</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/downloads/oh_my_posh/oh_my_posh_cfg.json"/>
+      <url>/downloads/oh_my_posh/oh_my_posh_cfg.json</url>
+      
+    </entry>
+    
+    
   
 </search>
