@@ -115,7 +115,7 @@
 
 
   <meta name="description" content="Cisco Packet Tracer模拟配置交换机主要是基本介绍、划分配置vlan和telnet远程登录配置">
-<meta name="keywords" content="Note,Network,Cisco">
+<meta name="keywords" content="Note,Network,Cisco,Switch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="交换机基本配置使用">
 <meta property="og:url" content="https://umm.js.org/p/29c0cb74/index.html">
@@ -126,7 +126,7 @@
 <meta property="og:image" content="https://umm.js.org/p/29c0cb74/switchport-access-vlan.png">
 <meta property="og:image" content="https://umm.js.org/p/29c0cb74/configure-shortcut.png">
 <meta property="og:image" content="https://umm.js.org/p/29c0cb74/success-access.png">
-<meta property="og:updated_time" content="2019-04-01T01:11:44.304Z">
+<meta property="og:updated_time" content="2019-04-07T03:30:45.368Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="交换机基本配置使用">
 <meta name="twitter:description" content="Cisco Packet Tracer模拟配置交换机主要是基本介绍、划分配置vlan和telnet远程登录配置">
@@ -533,7 +533,7 @@
 <ul>
 <li><code>?</code>的使用<br>eg. 输入<code>?</code>可显示当前模式下所有可执行命令，以及命令介绍，对于命令也可以显示缺少的参数，如<code>conf ?</code>显示可以在后面输入<code>terminal</code>或者<code>&lt;cr&gt;</code>(回车)，如下就进入了配置模式</li>
 </ul>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Switch<span class="comment">#configure ?</span></span><br><span class="line">  terminal  Configure <span class="built_in">from</span> <span class="keyword">the</span> terminal</span><br><span class="line">  &lt;<span class="literal">cr</span>&gt;</span><br><span class="line">Switch<span class="comment">#configure terminal ?</span></span><br><span class="line">  &lt;<span class="literal">cr</span>&gt;</span><br><span class="line">Switch<span class="comment">#configure terminal </span></span><br><span class="line">Enter configuration commands, <span class="literal">one</span> per <span class="built_in">line</span>.  End <span class="keyword">with</span> CNTL/Z.</span><br><span class="line">Switch(config)<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Switch<span class="comment">#configure ?</span></span><br><span class="line">  terminal  Configure <span class="built_in">from</span> <span class="keyword">the</span> terminal</span><br><span class="line">  &lt;<span class="literal">cr</span>&gt;</span><br><span class="line">Switch<span class="comment">#configure terminal ?</span></span><br><span class="line">  &lt;<span class="literal">cr</span>&gt;</span><br><span class="line">Switch<span class="comment">#configure terminal</span></span><br><span class="line">Enter configuration commands, <span class="literal">one</span> per <span class="built_in">line</span>.  End <span class="keyword">with</span> CNTL/Z.</span><br><span class="line">Switch(config)<span class="comment">#</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>在无歧义情况下，命令可缺省<br>eg. 输入<code>en</code>，在该模式下可执行命令中只有<code>enable</code>是<code>en</code>开头，这时候输入<code>en</code>即可代表<code>enable</code>而不出现错误。</p>
 </li>
@@ -553,7 +553,7 @@
 <li><code>config t</code> 进入全局配置模式</li>
 <li><code>enable secret xxx</code> 设置加密密码</li>
 </ol>
-<p>ps. <code>enable password xxx</code> 设置明文密码（不推荐） </p>
+<p>ps. <code>enable password xxx</code> 设置明文密码（不推荐）</p>
 <p>在特权模式下，<code>show run</code> 可查看当前配置的信息：<br><img src="/p/29c0cb74/set-console-password.png" title="set console password"></p>
 <h2 id="交换机特定接口分配vlan"><a href="#交换机特定接口分配vlan" class="headerlink" title="交换机特定接口分配vlan"></a>交换机特定接口分配vlan</h2><ol start="0">
 <li><code>enable</code> 进入特权模式</li>
@@ -651,6 +651,8 @@
             <a href="/tags/Network/" rel="tag"># Network</a>
           
             <a href="/tags/Cisco/" rel="tag"># Cisco</a>
+          
+            <a href="/tags/Switch/" rel="tag"># Switch</a>
           
         </div>
       
@@ -771,7 +773,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -861,7 +863,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">23</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -988,7 +998,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">39k</span>
+    <span title="站点总字数">42k</span>
   
 
   
