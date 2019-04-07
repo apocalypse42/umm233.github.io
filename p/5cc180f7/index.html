@@ -128,7 +128,7 @@
 <meta property="og:image" content="https://umm.js.org/p/5cc180f7/watch-route-run.png">
 <meta property="og:image" content="https://umm.js.org/p/5cc180f7/route-topu.png">
 <meta property="og:image" content="https://umm.js.org/p/5cc180f7/route-table.png">
-<meta property="og:updated_time" content="2019-04-07T08:13:35.555Z">
+<meta property="og:updated_time" content="2019-04-07T08:18:08.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cisco路由配置及基本使用">
 <meta name="twitter:description" content="Cisco Packet Tracer模拟配置路由器主要是基本配置说明、静态路由表及默认路由表配置">
@@ -561,7 +561,9 @@
 <h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><p>网络拓扑：<br><img src="/p/5cc180f7/route-topu.png"></p>
 <p>路由表设置如下：(类型中C表示直连，S表示静态路由)<br><img src="/p/5cc180f7/route-table.png"></p>
 <p>这样子配置好不同路由下的主机，即使处于不同网段，也可以相互通信。</p>
-<p>如果为完全配置好路由表，<code>tracert 某IP</code>有可能出现一直查询网关IP，而不把信息传给下一跳的情况。</p>
+<blockquote>
+<p>ps.如果未完全配置好路由表，执行<code>tracert 某IP</code>有可能出现一直查询网关IP，而不把信息传给下一跳的情况。<br>别问我怎么知道:-)</p>
+</blockquote>
 
       
     </div>
