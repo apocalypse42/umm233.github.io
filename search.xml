@@ -4,7 +4,36 @@
   
     
     <entry>
-      <title>Cisco路由配置及基本使用</title>
+      <title>Cisco路由基本配置使用(二)</title>
+      <link href="/p/47e0dab5/"/>
+      <url>/p/47e0dab5/</url>
+      
+      
+      <categories>
+          
+          <category> 网络管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Note </tag>
+            
+            <tag> Network </tag>
+            
+            <tag> Cisco </tag>
+            
+            <tag> Route </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Cisco路由基本配置使用</title>
       <link href="/p/5cc180f7/"/>
       <url>/p/5cc180f7/</url>
       
@@ -547,9 +576,9 @@
       
         <tags>
             
-            <tag> CAJ </tag>
-            
             <tag> Software </tag>
+            
+            <tag> CAJ </tag>
             
         </tags>
       
@@ -572,9 +601,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Note </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -597,9 +626,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> Note </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
